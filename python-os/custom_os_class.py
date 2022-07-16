@@ -45,3 +45,5 @@ class CustomOs:
             self.current_directory=os.getcwd()
             # return type of this method is string
             return f'Navigated Back to {self.current_directory}'
+        except AssertionError:
+            return note
