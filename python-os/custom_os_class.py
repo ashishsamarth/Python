@@ -11,3 +11,8 @@ class CustomOs:
         self.my_filepath = _my_file_path
         self.my_filename = _my_file_name
         self.current_directory = os.getcwd()
+    
+    # Method to navigate into a target directory
+    # This method utilizes the file path captured during class initialization
+    def change_dir(self):
+        os.chdir(self.my_filepath)
