@@ -40,3 +40,6 @@ class CustomOs:
             # build the navigation command using string concatenation
             navigation = ('..\\' * num_of_dirs).rstrip('\\')
             # Change the directory based on navigation variable
+            os.chdir(navigation)
+            # assign the current directory variable in __init__ to actual current directory
+            
