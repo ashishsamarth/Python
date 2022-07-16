@@ -21,4 +21,9 @@ class CustomOs:
     @staticmethod
     def rename_files(self, _current_file_name, _new_file_name):
         os.renames(_current_file_name, _new_file_name)
-        
+    
+    # Method to list the contents of the directory
+    # Note: listdir() does not need an argument
+    @staticmethod
+    def dir_contents(self):
+        os.listdir()
