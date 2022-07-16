@@ -27,3 +27,9 @@ class CustomOs:
     @staticmethod
     def dir_contents(self):
         os.listdir()
+    
+    # Method to go back n number of directories
+    # Argument to this method is: number (integer) of directories to go back
+    def go_back_n_dirs(self, num_of_dirs: int):
+        # method variable to hold the message
+        note = 'Input Argument must be valid integer'
