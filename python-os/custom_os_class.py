@@ -42,4 +42,6 @@ class CustomOs:
             # Change the directory based on navigation variable
             os.chdir(navigation)
             # assign the current directory variable in __init__ to actual current directory
-            
+            self.current_directory=os.getcwd()
+            # return type of this method is string
+            return f'Navigated Back to {self.current_directory}'
