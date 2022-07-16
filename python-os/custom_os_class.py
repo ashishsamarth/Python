@@ -33,3 +33,10 @@ class CustomOs:
     def go_back_n_dirs(self, num_of_dirs: int):
         # method variable to hold the message
         note = 'Input Argument must be valid integer'
+        try:
+            # Validate if the input argument is indeed an integer
+            # if not, Assertion Error will be generated, along with message printed (note) and execution will move to except block
+            assert isinstance(num_of_dirs, int), note
+            # build the navigation command using string concatenation
+            navigation = ('..\\' * num_of_dirs).rstrip('\\')
+            # Change the directory based on navigation variable
