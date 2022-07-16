@@ -7,3 +7,5 @@ class CustomOs:
 
     # Initialize the class with filepath and filename
     def __init__(self, _my_file_path, _my_file_name):
+        self.my_filepath = _my_file_path
+        
