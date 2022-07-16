@@ -16,3 +16,9 @@ class CustomOs:
     # This method utilizes the file path captured during class initialization
     def change_dir(self):
         os.chdir(self.my_filepath)
+    
+    # Method to rename the files
+    @staticmethod
+    def rename_files(self, _current_file_name, _new_file_name):
+        os.renames(_current_file_name, _new_file_name)
+        
