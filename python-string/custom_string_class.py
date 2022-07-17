@@ -138,3 +138,12 @@ class CustomString:
     def top_5_occurrences_in_str(_my_string_1):
         # We use the 'most_common' method for Counter
         return dict(collections.Counter(_my_string_1).most_common(5))
+    
+
+    # Method to check if given string is empty or not
+    @staticmethod
+    # Argument to this method: string
+    def chk_if_string_empty(_my_string: str):
+        if not _my_string:
+            return f'Given String is empty'
+        return f'Given String is not empty'
