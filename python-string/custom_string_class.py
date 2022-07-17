@@ -2,6 +2,7 @@
 
 import string
 import collections
+from xml.etree.ElementTree import TreeBuilder
 
 
 # Class definitions should use CamelCase convention based on pep-8 guidelines
@@ -47,4 +48,28 @@ class CustomString:
     @staticmethod
     def ret_str_upr_case_a_to_f():
         return ''.join(_ for _ in string.hexdigits if _.isupper())
+    
+
+    # Method to get special characters
+    @staticmethod
+    def ret_str_spcl_chars():
+        # returns: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+        return string.punctuation
+    
+
+    # Method to reverse the string
+    @staticmethod
+    # Argument to this method is string
+    def ret_str_reversed(_my_string):
+        return _my_string[::-1]
+    
+
+    # Method to check if a string is a palindrome
+    @staticmethod
+    def str_is_palindrome(_my_string):
+        reversed_string = _my_string[::-1]
+        if _my_string == reversed_string:
+            return True
+        return False
+    
     
