@@ -1,5 +1,5 @@
 # Import string package
-# iMPORT collections package
+# Import collections package
 
 import string
 import collections
