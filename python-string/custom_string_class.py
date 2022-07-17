@@ -78,3 +78,10 @@ class CustomString:
     def strs_are_anagram(_my_string_1, _my_string_2):
         # returns a dictionary where each alphabet of string is 'key' and their # of occurrences are values
         return collections.Counter(_my_string_1) == collections.Counter(_my_string_2)
+    
+
+    # Method to get occurrences of alphabets in string along with string
+    @staticmethod
+    def cnt_occurrences_of_str(_my_string_1):
+        # returns a dictionary where each alphabet of string is 'key' and their # of occurrences are values
+        return collections.Counter(_my_string_1)
