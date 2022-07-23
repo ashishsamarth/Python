@@ -40,3 +40,6 @@ class ManageCassandra:
     # Since the Cassandra DB is on a cloud server, managing it from location machine needs SSH client
     # Hence 'execute_method()' of 'paramiko' module is used, even though the focus is to manage Cassandra and not the remote server
     def start_dse_cassandra(self, _dir_path):
+        # Build the chained command to navigate to the directory and execute the required command
+        # This command will navigate to the cassandra_home directory and stop Datastax-Enterprise version of Cassandra
+        
