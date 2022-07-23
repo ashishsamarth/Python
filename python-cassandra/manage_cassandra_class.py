@@ -52,3 +52,5 @@ class ManageCassandra:
     # Hence 'execute_method()' of 'paramiko' module is used, even though the focus is to manage Cassandra and not the remote server
     def stop_dse_cassandra(self, _dir_path):
         # Build the chained command to navigate to the directory and execute the required command
+        # This command will navigate to the cassandra_home directory and stop Datastax-Enterprise version of Cassandra
+        stop_cassandra = f'cd {_dir_path}' + ';' + './dse cassandra-stop'
