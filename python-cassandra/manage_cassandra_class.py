@@ -63,3 +63,5 @@ class ManageCassandra:
     def cassandra_status(self, _dir_path):
         # Build the chained command to navigate to the directory and execute the required command
         # This command will navigate to the cassandra_home directory and check the node status of Datastax-Enterprise version of Cassandra
+        check_cassandra = f'cd {_dir_path}' + ';' + './nodetool status'
+        self.execute_command = (check_cassandra)
