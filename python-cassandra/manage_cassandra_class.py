@@ -18,3 +18,5 @@ class ManageCassandra:
         self.hostname = connection_params.get('hostname')
         # assign the user provided db_user to initialization method, for reuse across all methods
         self.username = connection_params.get('username')
+        # assign the user provided db_user to initialization method, for reuse during connection
+        self.key_filename = connection_params.get('key_filename')
