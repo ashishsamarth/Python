@@ -33,4 +33,5 @@ class ManageCassandra:
         stdin, stdout, stderr = self.ssh.exec_command(_command)
         # standard output from the command execution is sent to a variable
         command_output = stdout.read()
-        
+        # command output is returned to the code execution
+        return command_output
