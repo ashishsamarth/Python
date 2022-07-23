@@ -54,3 +54,5 @@ class ManageCassandra:
         # Build the chained command to navigate to the directory and execute the required command
         # This command will navigate to the cassandra_home directory and stop Datastax-Enterprise version of Cassandra
         stop_cassandra = f'cd {_dir_path}' + ';' + './dse cassandra-stop'
+        self.execute_command(stop_cassandra)
+        # The return type of this method is None
