@@ -20,3 +20,9 @@ class ManageCassandra:
         self.username = connection_params.get('username')
         # assign the user provided db_user to initialization method, for reuse during connection
         self.key_filename = connection_params.get('key_filename')
+
+    # Method to remotely connect to host
+    # Argument to this method is: Hostname, Username and Location of Private Key for authentication
+    def host_connect(self):
+        remote_connect = self.ssh.connect(hostname=self.hostname, username=self.username, key_filename = self.key_filename)
+        return remote_connect
