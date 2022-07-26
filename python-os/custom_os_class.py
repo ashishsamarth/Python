@@ -1,5 +1,7 @@
 import os
-
+import shutil
+from pwd import getpwuid
+from time import ctime
 
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class CustomOs:
@@ -9,8 +11,48 @@ class CustomOs:
     def __init__(self, _my_file_path, _my_file_name):
         self.my_filepath = _my_file_path
         self.my_filename = _my_file_name
+        # Get the current working directory
         self.current_directory = os.getcwd()
+        # Get the OS type name
+        self.os_type = os.uname().sysname
+        # Get the OS distribution name
+        self.os_distrib = os.uname().nodename
+        # Get the OS Machine name
+        self.os_machine = os.uname().machine
     
+    # Method to get the shell
+    # Assumption: OS is Linux
+    def get_shell_info(self):
+        if self.os_type == 'Linux':
+            return os.environ['SHELL'].split('/')[-1]
+    
+    # Method to get disk information
+    def get_disk_info():
+        # Capture the disk usage in three different variable (Note these are in bytes)
+        total_b, used_b, available_b = shutil.disk_usage('.')
+        gb = 10 ** 9
+        # Convert bytes to gigabytes
+        total_gb = '{:6.2f} GB'.format(total_b / gb)
+        used_gb = '{:6.2f} GB'.format(used_b / gb)
+        available_gb = '{:6.2f} GB'.format(available_b / gb)
+        # Create a dictionary with the information
+        disk_info={'Total': total_gb,
+               'Used': used_gb,
+               'Available': available_gb}
+        return disk_info
+
+    # Method to get file metadata
+    # Argument to this method: input filename
+    def get_file_metadata(self):
+        file_metadata = {'File_Name': self.my_filename,
+                     'File_Owner_username': getpwuid(os.stat(self.my_filename).st_uid).pw_name,
+                     'File_Owner_name': getpwuid(os.stat(self.my_filename).st_uid).pw_gecos,
+                     'Created': ctime(os.stat(self.my_filename).st_ctime),
+                     'Accessed': ctime(os.stat(self.my_filename).st_atime),
+                     'Modified': ctime(os.stat(self.my_filename).st_mtime)
+                     }
+        return file_metadata
+
     # Method to navigate into a target directory
     # This method utilizes the file path captured during class initialization
     def change_dir(self):
