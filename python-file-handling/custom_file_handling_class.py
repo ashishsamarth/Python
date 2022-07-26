@@ -1,3 +1,7 @@
+import os
+from pwd import getpwuid
+from time import ctime
+
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class CustomFileHandler:
 
@@ -10,6 +14,18 @@ class CustomFileHandler:
         my_file_extension = self.my_filename.split('.')[-1]
         # This will only return the result and does not perform printing
         return my_file_extension
+        
+    # Method to get file metadata
+    # Argument to this method: None
+    def get_file_metadata(self):
+        file_metadata = {'File_Name': self.my_filename,
+                     'File_Owner_username': getpwuid(os.stat(self.my_filename).st_uid).pw_name,
+                     'File_Owner_name': getpwuid(os.stat(self.my_filename).st_uid).pw_gecos,
+                     'Created': ctime(os.stat(self.my_filename).st_ctime),
+                     'Accessed': ctime(os.stat(self.my_filename).st_atime),
+                     'Modified': ctime(os.stat(self.my_filename).st_mtime)
+                     }
+        return file_metadata
 
     # Method to read the file, default num of lines is 0
     def file_read_mode_read_line(self, num_of_lines=0):
