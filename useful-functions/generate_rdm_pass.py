@@ -1,5 +1,5 @@
 # Method to generate a random password
-# Import the string module
+# Import the string package
 import string
 # From the random module import the choice method
 from random import choice
