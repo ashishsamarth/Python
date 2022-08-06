@@ -1,4 +1,4 @@
-# Import the platform module
+# Import the platform package
 import platform
 
 # Method to get the hostname
