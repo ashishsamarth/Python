@@ -1,5 +1,6 @@
 # Import os package
 import os
+# Import shutil package to deal with copy / paste needs
 import shutil
 from pwd import getpwuid
 from time import ctime
