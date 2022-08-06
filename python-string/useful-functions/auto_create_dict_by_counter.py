@@ -1,6 +1,6 @@
 # Import String Package
 import string
-# Import Collections Module
+# Import Collections Package
 import collections
 
 # Method to get only upper case letters (A through Z)
