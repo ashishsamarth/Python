@@ -1,4 +1,4 @@
-# Import String Module
+# Import String Package
 import string
 # Import Collections Module
 import collections
