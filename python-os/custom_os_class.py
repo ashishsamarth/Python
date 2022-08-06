@@ -1,3 +1,4 @@
+# Import os package
 import os
 import shutil
 from pwd import getpwuid
