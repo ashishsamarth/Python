@@ -1,4 +1,4 @@
-# Import the plaform module
+# Import the plaform package
 import platform
 # Method to get the architectural informartion of the machine
 def get_architecture():
