@@ -1,4 +1,4 @@
-# Import Collections Module
+# Import Collections Package
 import collections
 
 # Method to get unique alphabets from string
