@@ -1,5 +1,6 @@
 # Import String Module
 import string
+# Import Collections Module
 import collections
 
 # Method to get only upper case letters (A through Z)
