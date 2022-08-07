@@ -10,6 +10,7 @@ class CustomPandas:
     def __init__(self, _my_file_name, _sheet_name=0):
         self.my_filename = _my_file_name
         # If the file extension is xlsx, then read_excel function will be used
+        # Following line identifies the extension of the input file name
         if self.my_filename.split('.')[-1] == 'xlsx':
             # Following line reads the multi sheet excel file
             self._file = pd.ExcelFile(_my_file_name)
