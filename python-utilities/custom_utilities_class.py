@@ -39,3 +39,12 @@ class UsefulUtils:
         merged_list = list(set(list(itertools.chain(*lists))))
         # Return type is a list
         return merged_list
+    
+    # Method to join multiple dictionaries to a single dictionary
+    # Argument to this method: Multiple Dictionaries
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def join_dicts_m1(*dicts):
+        # Using list comprehension to create a new dictionary with keys and values iterated from all input dictionaries
+        chained_dict = {k:v for d in dicts for k,v in d.items()}
+        # Return type is a dictionary
+        return chained_dict
