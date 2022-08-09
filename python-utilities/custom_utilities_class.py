@@ -61,3 +61,16 @@ class UsefulUtils:
             chained_dict.update(_)
         # Return type is a dictionary
         return chained_dict
+    
+    # Method to join multiple dictionaries to a single dictionary
+    # Argument to this method: Multiple Dictionaries
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def join_dicts_m3(*dicts):
+        # Create an empty dictionary
+        merged_dict = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in dicts:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            merged_dict |= _
+        # Return type is a dictionary
+        return merged_dict
