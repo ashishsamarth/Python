@@ -77,6 +77,7 @@ class UsefulUtils:
     
     # Method to join multiple dictionaries to a single dictionary and sort by keys in ascending order
     # Argument to this method: Multiple Dictionaries
+    # * takes care of the unpacking multiple dictionaries passed as arguments
     def join_dicts_sort_by_keys_asc(*dicts):
         merged_dict = {}
         for _ in dicts:
