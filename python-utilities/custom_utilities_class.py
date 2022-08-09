@@ -75,8 +75,8 @@ class UsefulUtils:
         # Return type is a dictionary
         return merged_dict
     
-
-    def join_dicts_sort_by_keys(*dicts):
+    # Method to join multiple dictionaries to a single dictionary and sort by keys in ascending order
+    def join_dicts_sort_by_keys_asc(*dicts):
         merged_dict = {}
         for _ in dicts:
             merged_dict |= _
