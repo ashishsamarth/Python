@@ -81,6 +81,7 @@ class UsefulUtils:
     def join_dicts_sort_by_keys_asc(*dicts):
         # Create an empty dictionary
         merged_dict = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in dicts:
             merged_dict |= _
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[0]))
