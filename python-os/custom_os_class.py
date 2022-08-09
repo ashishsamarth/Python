@@ -2,6 +2,8 @@
 import os
 # Import shutil package to deal with copy / paste needs
 import shutil
+# Note pwd is only available for unix like os
+# if you wish to use pwd module for windows, try winpwd
 from pwd import getpwuid
 from time import ctime
 
