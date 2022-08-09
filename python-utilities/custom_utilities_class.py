@@ -79,6 +79,7 @@ class UsefulUtils:
     # Argument to this method: Multiple Dictionaries
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def join_dicts_sort_by_keys_asc(*dicts):
+        # Create an empty dictionary
         merged_dict = {}
         for _ in dicts:
             merged_dict |= _
