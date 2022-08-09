@@ -44,7 +44,18 @@ class UsefulUtils:
     # Argument to this method: Multiple Dictionaries
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def join_dicts_m1(*dicts):
-        # Using list comprehension to create a new dictionary with keys and values iterated from all input dictionaries
+        # Using list comprehension to create a new dictionary with keys and values iterated from all the dictionaries in the unpacked list of dictionaries
         chained_dict = {k:v for d in dicts for k,v in d.items()}
         # Return type is a dictionary
+        return chained_dict
+    
+    # Method to join multiple dictionaries to a single dictionary
+    # Argument to this method: Multiple Dictionaries
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def join_dicts_m2(*dicts):
+        # Create an empty dictionary
+        chained_dict = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in dicts:
+            chained_dict.update(_)
         return chained_dict
