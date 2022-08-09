@@ -74,3 +74,6 @@ class UsefulUtils:
             merged_dict |= _
         # Return type is a dictionary
         return merged_dict
+    
+
+    def join_dicts_sort_by_keys(*dicts):
