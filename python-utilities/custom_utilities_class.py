@@ -83,7 +83,28 @@ class UsefulUtils:
         merged_dict = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in dicts:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
             merged_dict |= _
+        # Sort the updated dictionary based on keys in ascending order
+        # usage of sorted method: sorted(iterable, key)
+        # for sorting key, I am using the anonymous lambda function and item[0] refers to the dictionary keys
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[0]))
+        # Return type is a dictionary
         return sorted_dict
 
+    # Method to join multiple dictionaries to a single dictionary and sort by keys in ascending order
+    # Argument to this method: Multiple Dictionaries
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def join_dicts_sort_by_vals(*dicts):
+        # Create an empty dictionary
+        merged_dict = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in dicts:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            merged_dict |= _
+        # Sort the updated dictionary based on values in ascending order
+        # usage of sorted method: sorted(iterable, key)
+        # for sorting key, I am using the anonymous lambda function and item[-1] refers to the dictionary values
+        sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[-1]))
+        # Return type is a dictionary
+        return sorted_dict
