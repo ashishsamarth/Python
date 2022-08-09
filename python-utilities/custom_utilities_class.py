@@ -12,7 +12,7 @@ class UsefulUtils:
         return len(_arg)
     
     # Method to assign same values to provided keys
-    # Arguments to this method: _keys as a list, _value as any value
+    # Arguments to this method: _keys as a list of elements, _value as any value
     def assign_same_val_to_keys(_keys, _value):
         # itertools.repeat : repeats the passed value seamlessly
         # zip : ties the keys and value together together
