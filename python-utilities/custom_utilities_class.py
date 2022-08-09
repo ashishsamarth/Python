@@ -57,5 +57,7 @@ class UsefulUtils:
         chained_dict = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in dicts:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
             chained_dict.update(_)
+        # Return type is a dictionary
         return chained_dict
