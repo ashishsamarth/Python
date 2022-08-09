@@ -19,3 +19,12 @@ class UsefulUtils:
         my_dict = dict(zip(_keys, itertools.repeat(_value)))
         # Return type is a dictionary
         return my_dict
+    
+    # Method to join multiple lists into one list
+    # Argument to this method: Multiple Lists
+    # * takes care of the unpacking multiple lists passed as arguments
+    def join_lists(*lists):
+        # itertools.chain : joins the multiple lists into one
+        chained_list = list(itertools.chain(*lists))
+        # Return type is a list
+        return chained_list
