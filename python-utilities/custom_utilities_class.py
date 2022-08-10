@@ -129,3 +129,5 @@ class UsefulUtils:
     def join_dicts_sort_by_vals_asc(*dicts):
         merged_dict = {}
         for _ in dicts:
+            merged_dict |= _
+            
