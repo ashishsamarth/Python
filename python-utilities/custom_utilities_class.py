@@ -127,6 +127,7 @@ class UsefulUtils:
         return sorted_dict
     
     # Method to join multiple dictionaries to a single dictionary and sort by values in descending order
+    # Argument to this method: Multiple Dictionaries
     def join_dicts_sort_by_vals_asc(*dicts):
         merged_dict = {}
         for _ in dicts:
