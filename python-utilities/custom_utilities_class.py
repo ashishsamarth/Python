@@ -92,7 +92,7 @@ class UsefulUtils:
         # Return type is a dictionary
         return sorted_dict
 
-    # Method to join multiple dictionaries to a single dictionary and sort by keys in ascending order
+    # Method to join multiple dictionaries to a single dictionary and sort by values in ascending order
     # Argument to this method: Multiple Dictionaries
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def join_dicts_sort_by_vals_asc(*dicts):
@@ -119,5 +119,6 @@ class UsefulUtils:
         for _ in dicts:
             # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
             merged_dict |= _
+        # Sort the updated dictionary based on values in descending order
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[0], reverse=True))
         return sorted_dict
