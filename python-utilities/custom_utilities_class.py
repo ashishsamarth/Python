@@ -130,4 +130,4 @@ class UsefulUtils:
         merged_dict = {}
         for _ in dicts:
             merged_dict |= _
-            
+        sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[-1], reverse=True))
