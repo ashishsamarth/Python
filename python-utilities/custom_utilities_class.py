@@ -109,8 +109,11 @@ class UsefulUtils:
         # Return type is a dictionary
         return sorted_dict
 
+    # Method to join multiple dictionaries to a single dictionary and sort by keys in descending order
+    # Argument to this method: Multiple Dictionaries
     def join_dicts_sort_by_keys_desc(*dicts):
         merged_dict = {}
         for _ in dicts:
             merged_dict |= _
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[0], reverse=True))
+        return sorted_dict
