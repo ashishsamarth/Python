@@ -132,7 +132,13 @@ class UsefulUtils:
     def join_dicts_sort_by_vals_asc(*dicts):
         # Create an empty dictionary
         merged_dict = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in dicts:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
             merged_dict |= _
+        # Sort the updated dictionary based on values in descending order
+        # usage of sorted method: sorted(iterable, key, reverse=True)
+        # for sorting key, I am using the anonymous lambda function and item[-1] refers to the dictionary values
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[-1], reverse=True))
+        # Return type is a dictionary
         return sorted_dict
