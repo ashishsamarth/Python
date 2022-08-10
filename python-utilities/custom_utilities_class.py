@@ -111,4 +111,5 @@ class UsefulUtils:
 
     def join_dicts_sort_by_keys_desc(*dicts):
         merged_dict = {}
-        
+        for _ in dicts:
+            
