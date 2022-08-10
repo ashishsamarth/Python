@@ -127,4 +127,4 @@ class UsefulUtils:
         return sorted_dict
     
     def join_dicts_sort_by_vals_asc(*dicts):
-        
+        merged_dict = {}
