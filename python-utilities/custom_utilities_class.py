@@ -125,3 +125,6 @@ class UsefulUtils:
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[0], reverse=True))
         # Return type is a dictionary
         return sorted_dict
+    
+    def join_dicts_sort_by_vals_asc(*dicts):
+        
