@@ -120,5 +120,6 @@ class UsefulUtils:
             # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
             merged_dict |= _
         # Sort the updated dictionary based on values in descending order
+        # usage of sorted method: sorted(iterable, key, reverse=True)
         sorted_dict = dict(sorted(merged_dict.items(), key=lambda item:item[0], reverse=True))
         return sorted_dict
