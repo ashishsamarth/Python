@@ -64,7 +64,7 @@ class UsefulUtils:
             return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[1], reverse=_sort_reversal)))
 
     # Method to count occurrences of provided element in multiple lists
-    # Arguments to this method: Multiple lists as arguments (separated by comma)
+    # Arguments to this method: Multiple lists as arguments (separated by comma), element to be counted
     # * takes care of the unpacking multiple lists passed as arguments
     def cnt_occurrence_of_elem_in_joined_lists(*_lists_iterable, _element):
         # itertools.chain : joins the multiple lists into one
@@ -72,17 +72,16 @@ class UsefulUtils:
         # chained_list.count(_element) counts the number of occurrences, if will be triggered only the result is not zero
         return chained_list.count(_element) if chained_list.count(_element) else 0
 
-    # Method to count occurences of all elements in multiple lists
+    # Method to count occurrences of all elements in multiple lists
     # Arguments to this method: Multiple lists as arguments (separated by comma)
     # * takes care of the unpacking multiple lists passed as arguments
-    def cnt_occurence_of_all_elems_in_joined_lists(*_lists_iterable):
+    def cnt_occurrence_of_all_elems_in_joined_lists(*_lists_iterable):
         # itertools.chain : joins the multiple lists into one
         chained_list = list(itertools.chain(*_lists_iterable))
-        # Count the Occurence of each value in chained list and keep value as key and count as value
-        occurrence_dict = dict(collections.Counter(chained_list))
+        # Count the Occurrence of each value in chained list and keep value as key and occurrence count as value
         # Return type is a dictionary
-        return occurrence_dict
-    
+        return dict(collections.Counter(chained_list))
+        
     # Method to count occurences of all values in multiple dictionaries
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
