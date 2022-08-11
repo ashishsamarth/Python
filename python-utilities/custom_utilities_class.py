@@ -35,7 +35,7 @@ class UsefulUtils:
 
     # Method to check if given string is empty or not
     # Argument to this method: string
-    def chk_if_string_empty(_inp_str: str):
+    def chk_if_str_empty(_inp_str: str):
         return True if not _inp_str else False
 
     # Method to get occurrences of alphabets in string along with string
