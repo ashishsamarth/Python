@@ -324,6 +324,24 @@ class UsefulUtils:
         except KeyError:
             return 0
     
+    # Method to return Values by min count of occurence
+    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def get_vals_by_min_occurence_in_joined_dicts(*_dicts_iterables):
+        # Create an empty dictionary
+        merged_dicts = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in _dicts_iterables:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            merged_dicts |= _
+        # Count the Occurence of each value in merged dictionary and keep value as key and count as value            
+        occurence_dict = dict(collections.Counter(merged_dicts.values()))
+        # List comprehension to get the list of values with min occurence in dictionaries
+        # Using list comprehension, since their may be mutliple values having same occurence count as min count
+        min_value = [k for k, v in occurence_dict.items() if v == min(occurence_dict.values())]
+        # Return type is a List
+        return min_value
+
     # Method to return Values by max count of occurence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
