@@ -141,9 +141,9 @@ class UsefulUtils:
         return dict(collections.Counter(_inp_str).most_common(5))
     
     # Method to get top n alphabets based on their occurrences in string
-    # Argument to this method: string
+    # Argument to this method: string, and n = Integer
     @staticmethod
-    def top_n_elem_occurrences_in_str(_inp_str: str, n):
+    def top_n_elem_occurrences_in_str(_inp_str: str, n: int):
         # We use the 'most_common' method for Counter
         return dict(collections.Counter(_inp_str).most_common(n))
     
