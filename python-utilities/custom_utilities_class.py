@@ -12,7 +12,7 @@ class UsefulUtils:
     # Method to check if two strings are anagrams
     # Argument to this method: two strings
     def are_strs_an_anagram(_inp_str_1: str, _inp_str_2: str):
-        # returns a dictionary where each alphabet of string is 'key' and their # of occurrences are values
+        # Return type is boolean
         return True if collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2) else False
 
     # Method to assign same values to provided keys
@@ -27,7 +27,7 @@ class UsefulUtils:
     # Method to create a dictionary dataset automatically
     # Argument to this method: None
     def auto_create_dict_by_counter():
-        my_str = UsefulUtils.ret_upr_case_alphabets()
+        my_str = UsefulUtils.get_upper_case_alphabets()
         return dict(collections.Counter(my_str))
 
     # Method to check if given string is empty or not
