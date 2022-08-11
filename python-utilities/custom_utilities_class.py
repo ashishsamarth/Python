@@ -63,13 +63,13 @@ class UsefulUtils:
         elif _sort_key == 'value':
             return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[1], reverse=_sort_reversal)))
 
-    # Method to count occurences of provided element in multiple lists
+    # Method to count occurrences of provided element in multiple lists
     # Arguments to this method: Multiple lists as arguments (separated by comma)
     # * takes care of the unpacking multiple lists passed as arguments
-    def cnt_occurence_of_elem_in_joined_lists(*_lists_iterable, _element):
+    def cnt_occurrence_of_elem_in_joined_lists(*_lists_iterable, _element):
         # itertools.chain : joins the multiple lists into one
         chained_list = list(itertools.chain(*_lists_iterable))
-        # chained_list.count(_element) counts the number of occurences, if will be triggered only the result is not zero
+        # chained_list.count(_element) counts the number of occurrences, if will be triggered only the result is not zero
         return chained_list.count(_element) if chained_list.count(_element) else 0
 
     # Method to count occurences of all elements in multiple lists
