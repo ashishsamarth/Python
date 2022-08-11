@@ -316,7 +316,7 @@ class UsefulUtils:
         # Count the Occurence of each element in joined string and keep element as key and count as value
         occurence_dict = dict(collections.Counter(joined_string))
         # Return type is a dictionary
-        if _sort_key=='key':
+        if _sort_key == 'key':
             return dict(sorted(occurence_dict.items(), key= lambda item:item[0], reverse=_sort_reversal))
-        elif _sort_key=='value':
+        elif _sort_key == 'value':
             return dict(sorted(occurence_dict.items(), key= lambda item:item[-1], reverse=_sort_reversal)) 
