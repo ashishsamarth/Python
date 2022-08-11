@@ -14,5 +14,10 @@ class UsefulUtils:
     def get_arg_cnt(*_arg):
         # Return type is an integer
         return len(_arg)
- 
- 
+    
+    # Method to get only lower case letters (a through z)
+    @staticmethod
+    # Argument to this method: None
+    def get_lower_case_alphabets():
+        # Return type is a string
+        return string.ascii_lowercase
