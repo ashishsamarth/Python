@@ -55,9 +55,11 @@ class UsefulUtils:
         # element is the key and count is the value of that key
         result_set = collections.Counter(_inp_str)
         # Following if statement is triggered when user wants to sort the result by key
+        # key can be any function, I have used the anonymous lambda function
         if _sort_key == 'key':
             return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[0], reverse=_sort_reversal)))
         # Following elif statement is triggered when user wants to sort the result by value of the key
+        # key can be any function, I have used the anonymous lambda function
         elif _sort_key == 'value':
             return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[1], reverse=_sort_reversal)))
 
