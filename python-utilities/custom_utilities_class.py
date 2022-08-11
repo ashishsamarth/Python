@@ -15,7 +15,7 @@ class UsefulUtils:
         # Return type is boolean
         return True if collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2) else False
 
-    # Method to assign same values to provided keys
+    # Method to assign same values to provided keys and create a dictionary
     # Arguments to this method: _keys as a list of elements, _value as any value
     def assign_same_val_to_all_keys(_keys, _value):
         # itertools.repeat : repeats the passed value seamlessly
