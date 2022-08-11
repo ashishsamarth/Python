@@ -323,6 +323,24 @@ class UsefulUtils:
             # If the searched value does not exist in dictionary, return integer 0
         except KeyError:
             return 0
+    
+    # Method to return Values by max count of occurence
+    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def get_vals_by_max_occurence_in_joined_dicts(*_dicts_iterables):
+        # Create an empty dictionary
+        merged_dicts = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in _dicts_iterables:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            merged_dicts |= _
+        # Count the Occurence of each value in merged dictionary and keep value as key and count as value
+        occurence_dict = dict(collections.Counter(merged_dicts.values()))
+        # List comprehension to get the list of values with max occurence in dictionaries
+        # Using list comprehension, since their may be mutliple values having same occurence count as max count
+        max_value = [k for k, v in occurence_dict.items() if v == max(occurence_dict.values())]
+        # Return type is a List
+        return max_value
 
     # Method to count occurences of all elements in multiple strings
     # Argument to this method: Multiple strings as arguments (separated by comma), sorting key and sorting type
