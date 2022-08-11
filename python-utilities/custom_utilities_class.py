@@ -303,7 +303,27 @@ class UsefulUtils:
         occurence_dict = dict(collections.Counter(merged_dicts.values()))
         # Return type is a dictionary
         return occurence_dict
-    
+
+    # Method to count occurences of specific value in multiple dictionaries
+    # Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def cnt_occurence_of_val_in_joined_dicts(*_dicts_iterables, _value):
+        # Create an empty dictionary
+        merged_dicts = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in _dicts_iterables:
+            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            merged_dicts |= _
+        # Count the Occurence of each value in merged dictionary and keep value as key and count as value
+        occurence_dict = dict(collections.Counter(merged_dicts.values()))
+        # Return type is an integer
+        try:
+            # If the searched value exists in the dictionary, return its count of occurence
+            return occurence_dict[_value]
+            # If the searched value does not exist in dictionary, return integer 0
+        except KeyError:
+            return 0
+
     # Method to count occurences of all elements in multiple strings
     # Argument to this method: Multiple strings as arguments (separated by comma), sorting key and sorting type
     # * takes care of the unpacking multiple strings passed as arguments
