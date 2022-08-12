@@ -99,7 +99,7 @@ class UsefulUtils:
     # Arguments to this method: Multiple strings as arguments (separated by comma), user provided delimiter
     # * takes care of the unpacking multiple tuples passed as arguments
     # If no delimiter is provided, <space> is used as default value
-    def concatenate_strs(*_inp_strs, case='original', delim=' '):
+    def concatenate_strs_alpbhabets(*_inp_strs, case='original', delim=' '):
         # Return type is a string
         conditional = {'capitalize' : delim.join(_ for _ in _inp_strs if str(_).isalpha()).capitalize(),
                        'lower'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).lower(),
