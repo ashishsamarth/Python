@@ -203,68 +203,18 @@ class UsefulUtils:
             return dict(sorted(occurrence_dict.items(), key = lambda item:item[0], reverse=_sort_reversal))
         elif _sort_key == 'value':
             return dict(sorted(occurrence_dict.items(), key = lambda item:item[-1], reverse=_sort_reversal))
-    
-    # Method to get the number of arguments
-    # Arguments are passed as a list, separated by comma
-    def get_arg_cnt(*_arg):
-        # Return type is an integer
-        return len(_arg)
-    
-    # Method to get only lower case letters (a through z)
-    # Argument to this method: None
-    def get_lower_case_alphabets():
-        # Return type is a string
-        return string.ascii_lowercase
-    
-    # Method to get only upper case letters (A through Z)
-    # Argument to this method: None
-    def get_upper_case_alphabets():
-        # Return type is a string
-        return string.ascii_uppercase
-    
+
     # Method to get both lower case and upper case letters (a through Z)
     # Argument to this method: None
     def get_alphabets():
         # Return type is a string
         return string.ascii_letters
-    
-    # Method to get numbers 0 through 9 as string
-    # Argument to this method: None
-    def get_str_0_9():
-        # Return type is a string
-        return string.digits
-    
-    # Method to get numbers 0 through 7 as string
-    # Argument to this method: None
-    def get_str_0_7():
-        # Return type is a string
-        return string.octdigits
-    
-    # Method to get lower case a through f
-    # Use of list comprehension with join
-    # Argument to this method: None    
-    def get_lower_case_a_to_f():
-        # Return type is a string
-        return ''.join(_ for _ in string.hexdigits if _.islower())
-    
-    # Method to get upper case A through F
-    # Use of list comprehension with join
-    # Argument to this method: None
-    def get_upper_case_a_to_f():
-        # Return type is a string
-        return ''.join(_ for _ in string.hexdigits if _.isupper())
-    
-    # Method to get special characters
-    # Argument to this method: None
-    def get_special_chars():
-        # Return type is a string
-        # returns: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-        return string.punctuation
 
-    # Method to get unique alphabets from input string
-    # Argument to this method: string
-    def get_unique_elems_from_str(_inp_str):
-        return collections.Counter(_inp_str).keys()
+    # Method to get the number of arguments
+    # Arguments are passed as a list, separated by comma
+    def get_arg_cnt(*_arg):
+        # Return type is an integer
+        return len(_arg)
 
     # Method to return first value by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
@@ -301,6 +251,56 @@ class UsefulUtils:
         max_last_value = max(reversed(occurrence_dict), key=occurrence_dict.get)
         # Return type dependent on key
         return max_last_value
+            
+    # Method to get only lower case letters (a through z)
+    # Argument to this method: None
+    def get_lower_case_alphabets():
+        # Return type is a string
+        return string.ascii_lowercase
+
+    # Method to get lower case a through f
+    # Use of list comprehension with join
+    # Argument to this method: None    
+    def get_lower_case_a_to_f():
+        # Return type is a string
+        return ''.join(_ for _ in string.hexdigits if _.islower())
+
+    # Method to get numbers 0 through 9 as string
+    # Argument to this method: None
+    def get_str_0_9():
+        # Return type is a string
+        return string.digits
+    
+    # Method to get numbers 0 through 7 as string
+    # Argument to this method: None
+    def get_str_0_7():
+        # Return type is a string
+        return string.octdigits
+     
+    # Method to get special characters
+    # Argument to this method: None
+    def get_special_chars():
+        # Return type is a string
+        # returns: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+        return string.punctuation
+
+    # Method to get unique alphabets from input string
+    # Argument to this method: string
+    def get_unique_elems_from_str(_inp_str):
+        return collections.Counter(_inp_str).keys()
+
+    # Method to get upper case A through F
+    # Use of list comprehension with join
+    # Argument to this method: None
+    def get_upper_case_a_to_f():
+        # Return type is a string
+        return ''.join(_ for _ in string.hexdigits if _.isupper())
+
+    # Method to get only upper case letters (A through Z)
+    # Argument to this method: None
+    def get_upper_case_alphabets():
+        # Return type is a string
+        return string.ascii_uppercase
 
     # Method to return Values by min count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
