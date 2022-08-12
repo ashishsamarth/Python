@@ -424,12 +424,14 @@ class UsefulUtils:
         # Return type is a string
         return _inp_str[::-1]
 
-    # Method to sum integer elements of given list
-    # Argument to this method: list
-    def sum_elems_of_list(_inp_list):
+    # Method to join multiple lists into one list and sum all the digits
+    # Argument to this method: Multiple lists as arguments (separated by comma)
+    # * takes care of the unpacking multiple lists passed as arguments
+    def sum_elems_of_list(*_inp_list):
+        # itertools.chain(*_inp_list) : Joins all the lists into one list
         # Following List comprehension, filters only digits from the input list
         # Return type is an integer
-        return sum(_ for _ in _inp_list if str(_).isdigit())
+        return sum(_ for _ in itertools.chain(*_inp_list) if str(_).isdigit())
 
     # Method to get top 5 alphabets based on their occurrences in string
     # Argument to this method: string
