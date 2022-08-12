@@ -99,14 +99,14 @@ class UsefulUtils:
     # Arguments to this method: Multiple strings as arguments (separated by comma), user provided delimiter
     # * takes care of the unpacking multiple tuples passed as arguments
     # If no delimiter is provided, <space> is used as default value
-    def concatenate_strs_alpbhabets(*_inp_strs, case='original', delim=' '):
+    def concatenate_multiple_strs(*_inp_strs, case='original', delim=''):
         # Return type is a string
-        conditional = {'capitalize' : delim.join(_ for _ in _inp_strs if str(_).isalpha()).capitalize(),
-                       'lower'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).lower(),
-                       'original'   : delim.join(_ for _ in _inp_strs if str(_).isalpha()),
-                       'swapcase'   : delim.join(_ for _ in _inp_strs if str(_).isalpha()).swapcase(),
-                       'title'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).title(),
-                       'upper'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).upper()}
+        conditional = {'capitalize' : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).capitalize(),
+                       'lower'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).lower(),
+                       'original'   : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))),
+                       'swapcase'   : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).swapcase(),
+                       'title'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).title(),
+                       'upper'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).upper()}
         return conditional.get(case)
 
     # Method to get occurrences of alphabets in string along with string
