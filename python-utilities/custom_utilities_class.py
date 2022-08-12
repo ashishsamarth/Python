@@ -9,6 +9,44 @@ import itertools
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class UsefulUtils:
 
+    # Method to add elements at same index from multiple lists and create a new list
+    # Argument to this method: Multiple lists as arguments (separated by comma)
+    # * takes care of the unpacking multiple lists passed as arguments
+    def add_same_idx_elems_in_lists(*_lists_iterable):
+        # create an empty list to hold result of index wise additions
+        final_result = []
+        # Get the count of lists passed as arguments
+        list_arg_cnt = UsefulUtils.get_arg_cnt(*_lists_iterable)
+        # Identify the number of elements in biggest list
+        biggest_list = [max(len(_) for _ in _lists_iterable)][0]
+        # Depending on which variable is bigger, create a new dynamic condition for final addition
+        # Creation of dynamic condition is needed since we will use it with zip(*_lists_iterable)
+        if biggest_list < list_arg_cnt:
+            dyn_condition = str(','.join('var'+str(_) for _ in range(1, list_arg_cnt+1)))
+        else:
+            dyn_condition = str(','.join('var'+str(_) for _ in range(1, biggest_list+1)))
+        # Iterate over the lists from arguments and append the list which are shorter than the biggest list
+        # If the iterated list is smaller than biggest list, append the list with 0 (int) to resize the list
+        for _iter in _lists_iterable:
+            if len(_iter) < dyn_condition.count(',') + 1:
+                list_len_manager = (dyn_condition.count(',') + 1) - (len(_iter))
+                for _extend in range(list_len_manager):
+                    _iter.append(0)
+        # Iterate over elements starting at 0th index of all lists and add them
+        # Once Addition is done for the 0th index, append the sum to final_result
+        # This approach is more of a columnar addition
+        for dyn_condition in zip(*_lists_iterable):
+            # Define an Initial result variable and assign it with 0
+            # This gets reset for every index position (vertically)
+            init_res = 0
+            # Iterate over new vertical list (0th, 1st, 2nd etc index positions) and add them
+            for _ in dyn_condition:
+                init_res += _
+            # Append the sum of each columnar index position to final result
+            final_result.append(init_res)
+        # Return type is a list
+        return final_result
+
     # Method to check if two strings are anagrams
     # Argument to this method: two strings
     def are_strs_an_anagram(_inp_str_1: str, _inp_str_2: str):
@@ -85,7 +123,7 @@ class UsefulUtils:
     # Method to count occurrences of all values in multiple dictionaries
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
-    def cnt_occurence_of_all_vals_in_joined_dicts(*_dicts_iterables):
+    def cnt_occurrence_of_all_vals_in_joined_dicts(*_dicts_iterables):
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
@@ -99,7 +137,7 @@ class UsefulUtils:
     # Method to count occurrences of specific value in multiple dictionaries
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
     # * takes care of the unpacking multiple dictionaries passed as arguments
-    def cnt_occurence_of_val_in_joined_dicts(*_dicts_iterables, _value):
+    def cnt_occurrence_of_val_in_joined_dicts(*_dicts_iterables, _value):
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
@@ -107,31 +145,31 @@ class UsefulUtils:
             # Update the empty dictionary with keys and Values from unpacked list of dictionaries
             merged_dicts |= _
         # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
-        occurence_dict = dict(collections.Counter(merged_dicts.values()))
+        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
         # Return type is an integer
         try:
             # If the searched value exists in the dictionary, return its count of occurence
-            return occurence_dict[_value]
+            return occurrence_dict[_value]
             # If the searched value does not exist in dictionary, return integer 0
         except KeyError:
             return 0
 
-    # Method to count occurences of all elements in multiple strings
+    # Method to count occurrences of all elements in multiple strings
     # Argument to this method: Multiple strings as arguments (separated by comma), sorting key and sorting type
     # * takes care of the unpacking multiple strings passed as arguments
     # _sort_key='key', _sort_reversal=False is defaulted to sorting by key in ascending order
     # _sort_key='value' will sort the resulting dictionary by values in ascending order
     # _sort_key='value', _sort_reversal=True will sort the resulting dictionary by values in descending order
-    def cnt_occurrences_of_str_vals_in_joined_str_and_sort(*_iterables, _sort_key='key', _sort_reversal=False):
+    def cnt_and_sort_occurrences_of_str_vals_in_concatenated_str(*_iterables, _sort_key='key', _sort_reversal=False):
         # Use list comprehension to join the string without a space / delimiter
         joined_string = ''.join(_ for _ in _iterables)
-        # Count the Occurence of each element in joined string and keep element as key and count as value
-        occurence_dict = dict(collections.Counter(joined_string))
+        # Count the Occurrence of each element in joined string and keep element as key and occurrence count as value
+        occurrence_dict = dict(collections.Counter(joined_string))
         # Return type is a dictionary
         if _sort_key == 'key':
-            return dict(sorted(occurence_dict.items(), key= lambda item:item[0], reverse=_sort_reversal))
+            return dict(sorted(occurrence_dict.items(), key = lambda item:item[0], reverse=_sort_reversal))
         elif _sort_key == 'value':
-            return dict(sorted(occurence_dict.items(), key= lambda item:item[-1], reverse=_sort_reversal))
+            return dict(sorted(occurrence_dict.items(), key = lambda item:item[-1], reverse=_sort_reversal))
     
     # Method to get the number of arguments
     # Arguments are passed as a list, separated by comma
@@ -190,12 +228,12 @@ class UsefulUtils:
         # returns: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
         return string.punctuation
 
-    # Method to get unique alphabets from string
+    # Method to get unique alphabets from input string
     # Argument to this method: string
-    def get_unique_elems_from_string(_inp_str: str):
+    def get_unique_elems_from_str(_inp_str: str):
         return collections.Counter(_inp_str).keys()
 
-    # Method to return first value by max count of occurence
+    # Method to return first value by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_first_val_by_max_occurence_in_joined_dicts(*_dicts_iterables):
@@ -203,17 +241,17 @@ class UsefulUtils:
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in _dicts_iterables:
-            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
             merged_dicts |= _
-        # Count the Occurence of each value in merged dictionary and keep value as key and count as value
-        occurence_dict = dict(collections.Counter(merged_dicts.values()))
+        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
+        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
         # Following will pick the first value from the dictionary with max count of occurence
         # If their are others, they will be ignored
-        max_first_value = max(occurence_dict, key=occurence_dict.get)
+        max_first_value = max(occurrence_dict, key=occurrence_dict.get)
         # Return type dependent on key
         return max_first_value
 
-    # Method to return last value by max count of occurence
+    # Method to return last value by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_last_val_by_max_occurence_in_joined_dicts(*_dicts_iterables):
@@ -221,17 +259,17 @@ class UsefulUtils:
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in _dicts_iterables:
-            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
             merged_dicts |= _
-        # Count the Occurence of each value in merged dictionary and keep value as key and count as value
-        occurence_dict = dict(collections.Counter(merged_dicts.values()))
-        # Following will pick the last value from the dictionary with max count of occurence
+        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
+        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
+        # Following will pick the last value from the dictionary with max count of occurrence
         # If their are others, they will be ignored
-        max_last_value = max(reversed(occurence_dict), key=occurence_dict.get)
+        max_last_value = max(reversed(occurrence_dict), key=occurrence_dict.get)
         # Return type dependent on key
         return max_last_value
 
-    # Method to return Values by min count of occurence
+    # Method to return Values by min count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_vals_by_min_occurence_in_joined_dicts(*_dicts_iterables):
@@ -239,17 +277,17 @@ class UsefulUtils:
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in _dicts_iterables:
-            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
             merged_dicts |= _
-        # Count the Occurence of each value in merged dictionary and keep value as key and count as value            
-        occurence_dict = dict(collections.Counter(merged_dicts.values()))
-        # List comprehension to get the list of values with min occurence in dictionaries
+        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value            
+        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
+        # List comprehension to get the list of values with min occurrence in dictionaries
         # Using list comprehension, since their may be mutliple values having same occurence count as min count
-        min_value = [k for k, v in occurence_dict.items() if v == min(occurence_dict.values())]
+        min_value = [k for k, v in occurrence_dict.items() if v == min(occurrence_dict.values())]
         # Return type is a List
         return min_value
 
-    # Method to return Values by max count of occurence
+    # Method to return Values by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_vals_by_max_occurence_in_joined_dicts(*_dicts_iterables):
@@ -257,13 +295,13 @@ class UsefulUtils:
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
         for _ in _dicts_iterables:
-            # Update the Blank dictionary with keys and Values from unpacked list of dictionaries
+            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
             merged_dicts |= _
-        # Count the Occurence of each value in merged dictionary and keep value as key and count as value
-        occurence_dict = dict(collections.Counter(merged_dicts.values()))
-        # List comprehension to get the list of values with max occurence in dictionaries
-        # Using list comprehension, since their may be mutliple values having same occurence count as max count
-        max_value = [k for k, v in occurence_dict.items() if v == max(occurence_dict.values())]
+        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
+        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
+        # List comprehension to get the list of values with max occurrence in dictionaries
+        # Using list comprehension, since their may be mutliple values having same occurrence count as max count
+        max_value = [k for k, v in occurrence_dict.items() if v == max(occurrence_dict.values())]
         # Return type is a List
         return max_value
 
@@ -396,4 +434,4 @@ class UsefulUtils:
     # Argument to this method: string, and n = Integer
     def top_n_elem_occurrences_in_str(_inp_str: str, n: int):
         # We use the 'most_common' method for Counter
-        return dict(collections.Counter(_inp_str).most_common(n))        
+        return dict(collections.Counter(_inp_str).most_common(n))
