@@ -76,6 +76,24 @@ class UsefulUtils:
     def chk_if_str_empty(_inp_str):
         return True if not _inp_str else False
 
+    # Method to concatenate elements of multiple lists
+    # Arguments to this method: Multiple lists as arguments (separated by comma), case of the result
+    # Valid values for case are: 'capitalize', 'lower', 'original', 'swapcase', 'title', 'upper'
+    # Default value of case is : original
+    def concatenate_elems_of_lists(*_inp_list, case='original'):
+        # Following is a dictionary with case values as keys and corresponding list comprehensions as their evaluated values
+        # itertools.chain(*_inp_list) will join all the lists in to one list
+        # Each element of the list will be evaluated and only elements having alphabet will be passed over
+        # Each passed over element is then joined using space as delimiter and then strin function based on user selection are applied
+        conditional = {'capitalize' : ' '.join(_ for _ in itertools.chain(*_inp_list) if str(_).isalpha()).capitalize(),
+                       'lower'      : ' '.join(_ for _ in itertools.chain(*_inp_list) if str(_).isalpha()).lower(),
+                       'original'   : ' '.join(_ for _ in itertools.chain(*_inp_list) if str(_).isalpha()),
+                       'swapcase'   : ' '.join(_ for _ in itertools.chain(*_inp_list) if str(_).isalpha()).swapcase(),
+                       'title'      : ' '.join(_ for _ in itertools.chain(*_inp_list) if str(_).isalpha()).title(),
+                       'upper'      : ' '.join(_ for _ in itertools.chain(*_inp_list) if str(_).isalpha()).upper()}
+        # Return type is a string
+        return conditional.get(case)
+
     # Method to get occurrences of alphabets in string along with string
     # Argument to this method: string
     def cnt_elem_occurrences_in_str(_inp_str):
