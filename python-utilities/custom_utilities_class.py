@@ -216,6 +216,24 @@ class UsefulUtils:
         # Return type is an integer
         return len(_arg)
 
+    # Method to extract alphabets from given list of strings
+    # Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
+    # * takes care of the unpacking multiple strings passed as arguments
+    # Default value for delimiter is ''
+    def get_alphabets_from_strs(*_inp_strs, delim=''):
+        # Interbal for loop is calling the 'concatenate_multiple_strs' method in the same class
+        # Result of this method is a concatenated string
+        # The Outer for loop simply iterates over all the elements of the concatenated string and filter only aplhabetical values
+        # These alphabetical values are then joined with user provided or default delimiter
+        # Return type is  string
+        return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs)  if _.isalpha())
+
+    def get_digits_from_strs(*_inp_strs, delim=''):
+        return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if _.isdigit())
+
+    def get_punctuations_from_strs(*_inp_strs, delim=''):
+        return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if not _.isalnum())         
+
     # Method to return first value by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
@@ -251,7 +269,7 @@ class UsefulUtils:
         max_last_value = max(reversed(occurrence_dict), key=occurrence_dict.get)
         # Return type dependent on key
         return max_last_value
-            
+
     # Method to get only lower case letters (a through z)
     # Argument to this method: None
     def get_lower_case_alphabets():
