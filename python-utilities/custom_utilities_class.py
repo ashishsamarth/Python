@@ -95,6 +95,20 @@ class UsefulUtils:
         # Return type is a string
         return conditional.get(case)
 
+    # Method to join multiple string arguments into one concatenated string
+    # Arguments to this method: Multiple strings as arguments (separated by comma), user provided delimiter
+    # * takes care of the unpacking multiple tuples passed as arguments
+    # If no delimiter is provided, <space> is used as default value
+    def concatenate_strs(*_inp_strs, case='original', delim=' '):
+        # Return type is a string
+        conditional = {'capitalize' : delim.join(_ for _ in _inp_strs if str(_).isalpha()).capitalize(),
+                       'lower'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).lower(),
+                       'original'   : delim.join(_ for _ in _inp_strs if str(_).isalpha()),
+                       'swapcase'   : delim.join(_ for _ in _inp_strs if str(_).isalpha()).swapcase(),
+                       'title'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).title(),
+                       'upper'      : delim.join(_ for _ in _inp_strs if str(_).isalpha()).upper()}
+        return conditional.get(case)
+
     # Method to get occurrences of alphabets in string along with string
     # Argument to this method: string
     def cnt_elem_occurrences_in_str(_inp_str):
@@ -329,14 +343,6 @@ class UsefulUtils:
     def is_str_a_palindrome(_inp_str):
         reversed_string = _inp_str[::-1]
         return True if _inp_str == reversed_string else False
-
-    # Method to join multiple string arguments into one concatenated string
-    # Arguments to this method: Multiple strings as arguments (separated by comma), user provided delimiter
-    # * takes care of the unpacking multiple tuples passed as arguments
-    # If no delimiter is provided, <space> is used as default value
-    def join_strs(*_string_iterables, _delim=' '):
-        # Return type is a string
-        return f'{_delim}'.join(_ for _ in _string_iterables)
 
     # Method to join multiple tuple arguments into one tuple
     # Arguments to this method: Multiple tuples as arguments (separated by comma)
