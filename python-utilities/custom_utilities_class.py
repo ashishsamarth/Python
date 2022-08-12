@@ -221,7 +221,7 @@ class UsefulUtils:
     # * takes care of the unpacking multiple strings passed as arguments
     # Default value for delimiter is ''
     def get_alphabets_from_strs(*_inp_strs, delim=''):
-        # Interbal for loop is calling the 'concatenate_multiple_strs' method in the same class
+        # Internal for loop is calling the 'concatenate_multiple_strs' method in the same class
         # Result of this method is a concatenated string
         # The Outer for loop simply iterates over all the elements of the concatenated string and filter only aplhabetical values
         # These alphabetical values are then joined with user provided or default delimiter
@@ -233,7 +233,7 @@ class UsefulUtils:
     # * takes care of the unpacking multiple strings passed as arguments
     # Default value for delimiter is ''
     def get_alphanum_from_strs(*_inp_strs, delim=''):
-        # Interbal for loop is calling the 'concatenate_multiple_strs' method in the same class
+        # Internal for loop is calling the 'concatenate_multiple_strs' method in the same class
         # Result of this method is a concatenated string
         # The Outer for loop simply iterates over all the elements of the concatenated string and filter only alphabets and numbers
         # These numerical values are then joined with user provided or default delimiter
@@ -245,7 +245,7 @@ class UsefulUtils:
     # * takes care of the unpacking multiple strings passed as arguments
     # Default value for delimiter is ''
     def get_digits_from_strs(*_inp_strs, delim=''):
-        # Interbal for loop is calling the 'concatenate_multiple_strs' method in the same class
+        # Internal for loop is calling the 'concatenate_multiple_strs' method in the same class
         # Result of this method is a concatenated string
         # The Outer for loop simply iterates over all the elements of the concatenated string and filter only digits
         # These numerical values are then joined with user provided or default delimiter
@@ -257,7 +257,7 @@ class UsefulUtils:
     # * takes care of the unpacking multiple strings passed as arguments
     # Default value for delimiter is ''
     def get_punctuations_from_strs(*_inp_strs, delim=''):
-        # Interbal for loop is calling the 'concatenate_multiple_strs' method in the same class
+        # Internal for loop is calling the 'concatenate_multiple_strs' method in the same class
         # Result of this method is a concatenated string
         # The Outer for loop simply iterates over all the elements of the concatenated string and filter only digits
         # These numerical values are then joined with user provided or default delimiter
