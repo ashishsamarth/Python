@@ -49,7 +49,7 @@ class UsefulUtils:
 
     # Method to check if two strings are anagrams
     # Argument to this method: two strings
-    def are_strs_an_anagram(_inp_str_1: str, _inp_str_2: str):
+    def are_strs_an_anagram(_inp_str_1, _inp_str_2):
         # Return type is boolean
         return True if collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2) else False
 
@@ -73,12 +73,12 @@ class UsefulUtils:
 
     # Method to check if given string is empty or not
     # Argument to this method: string
-    def chk_if_str_empty(_inp_str: str):
+    def chk_if_str_empty(_inp_str):
         return True if not _inp_str else False
 
     # Method to get occurrences of alphabets in string along with string
     # Argument to this method: string
-    def cnt_elem_occurrences_in_str(_inp_str: str):
+    def cnt_elem_occurrences_in_str(_inp_str):
         # Return type is a dictionary where each alphabet of string is 'key' and their # of occurrences are values
         return dict(collections.Counter(_inp_str))
 
@@ -88,7 +88,7 @@ class UsefulUtils:
     # Valid values for _sort_reversal are True / False
     # Valid values for _sort_key are key / value
     # Arguments to this method are: string, sorting key and sorting type
-    def cnt_elem_occurrences_in_str_ordered_rslt(_inp_str:str, _sort_key='key', _sort_reversal=False):
+    def cnt_elem_occurrences_in_str_ordered_rslt(_inp_str, _sort_key='key', _sort_reversal=False):
         # collections.Counter will create a dictionary structure and get the count of each element of the string
         # element is the key and count is the value of that key
         result_set = collections.Counter(_inp_str)
@@ -230,7 +230,7 @@ class UsefulUtils:
 
     # Method to get unique alphabets from input string
     # Argument to this method: string
-    def get_unique_elems_from_str(_inp_str: str):
+    def get_unique_elems_from_str(_inp_str):
         return collections.Counter(_inp_str).keys()
 
     # Method to return first value by max count of occurrence
@@ -307,7 +307,7 @@ class UsefulUtils:
 
     # Method to check if a string is a palindrome
     # Argument to this method: string
-    def is_str_a_palindrome(_inp_str: str):
+    def is_str_a_palindrome(_inp_str):
         reversed_string = _inp_str[::-1]
         return True if _inp_str == reversed_string else False
 
@@ -420,7 +420,7 @@ class UsefulUtils:
 
     # Method to reverse the string
     # Argument to this method: string
-    def reverse_string(_inp_str: str):
+    def reverse_string(_inp_str):
         # Return type is a string
         return _inp_str[::-1]
 
@@ -433,12 +433,12 @@ class UsefulUtils:
 
     # Method to get top 5 alphabets based on their occurrences in string
     # Argument to this method: string
-    def top_5_elem_occurrences_in_str(_inp_str: str):
+    def top_5_elem_occurrences_in_str(_inp_str):
         # We use the 'most_common' method for Counter
         return dict(collections.Counter(_inp_str).most_common(5))
     
     # Method to get top n alphabets based on their occurrences in string
     # Argument to this method: string, and n = Integer
-    def top_n_elem_occurrences_in_str(_inp_str: str, n: int):
+    def top_n_elem_occurrences_in_str(_inp_str, n):
         # We use the 'most_common' method for Counter
         return dict(collections.Counter(_inp_str).most_common(n))
