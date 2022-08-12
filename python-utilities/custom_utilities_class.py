@@ -78,6 +78,7 @@ class UsefulUtils:
 
     # Method to concatenate elements of multiple lists
     # Arguments to this method: Multiple lists as arguments (separated by comma), case of the result
+    # * takes care of the unpacking multiple lists passed as arguments
     # Valid values for case are: 'capitalize', 'lower', 'original', 'swapcase', 'title', 'upper'
     # Default value of case is : original
     def concatenate_elems_of_lists(*_inp_list, case='original'):
