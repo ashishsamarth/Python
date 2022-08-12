@@ -424,6 +424,13 @@ class UsefulUtils:
         # Return type is a string
         return _inp_str[::-1]
 
+    # Method to sum integer elements of given list
+    # Argument to this method: list
+    def sum_elems_of_list(_inp_list):
+        # Following List comprehension, filters only digits from the input list
+        # Return type is an integer
+        return sum(_ for _ in _inp_list if str(_).isdigit())
+
     # Method to get top 5 alphabets based on their occurrences in string
     # Argument to this method: string
     def top_5_elem_occurrences_in_str(_inp_str: str):
