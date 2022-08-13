@@ -76,21 +76,6 @@ class UsefulUtils:
     def chk_if_str_empty(_inp_str):
         return True if not _inp_str else False
 
-    # Method to check if list of strings has only (a-z) and (0-9), or underscores (_)
-    # Arguments to this method: Multiple strings as arguments (separated by comma), user provided delimiter
-    # * takes care of the unpacking multiple tuples passed as arguments
-    def chk_str_only_has_alnum_underscore(*_inp_strs):
-        '''
-        A string is considered a valid identifier if it only contains alphanumeric letters (a-z) and (0-9), or underscores (_). 
-        A valid identifier cannot start with a number, or contain any spaces
-        '''
-        # Internal for loop is calling the 'concatenate_multiple_strs' method in the same class
-        # Result of this method is a concatenated string
-        # The Outer for loop simply iterates over all the elements of the concatenated string and joins them
-        concatenated_string = ''.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs))
-        # Return type is Boolean
-        return True if concatenated_string.isidentifier() else False
-
     # Method to concatenate elements of multiple lists
     # Arguments to this method: Multiple lists as arguments (separated by comma), case of the result
     # * takes care of the unpacking multiple lists passed as arguments
