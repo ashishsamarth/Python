@@ -93,6 +93,85 @@ class UsefulUtils:
         elif _sort_key == 'value':
             return dict(sorted(occurrence_dict.items(), key = lambda item:item[-1], reverse=_sort_reversal))
     
+
+    # Method to get occurrences of alphabets in string along with string
+    # Argument to this method: string
+    def cnt_elem_occurrences_in_str(_inp_str):
+        # Return type is a dictionary where each alphabet of string is 'key' and their # of occurrences are values
+        return dict(collections.Counter(_inp_str))
+
+    # Method to get occurrences of alphabets in string
+    # Sort the result dictionary by key or value
+    # Order the dictionary in asc or desc based on _sort_reversal
+    # Valid values for _sort_reversal are True / False
+    # Valid values for _sort_key are key / value
+    # Arguments to this method are: string, sorting key and sorting type
+    def cnt_elem_occurrences_in_str_ordered_rslt(_inp_str, _sort_key='key', _sort_reversal=False):
+        # collections.Counter will create a dictionary structure and get the count of each element of the string
+        # element is the key and count is the value of that key
+        result_set = collections.Counter(_inp_str)
+        # Following if statement is triggered when user wants to sort the result by key
+        # key can be any function, I have used the anonymous lambda function
+        if _sort_key == 'key':
+            return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[0], reverse=_sort_reversal)))
+        # Following elif statement is triggered when user wants to sort the result by value of the key
+        # key can be any function, I have used the anonymous lambda function
+        elif _sort_key == 'value':
+            return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[1], reverse=_sort_reversal)))
+
+    # Method to count occurrences of all elements in multiple lists
+    # Arguments to this method: Multiple lists as arguments (separated by comma)
+    # * takes care of the unpacking multiple lists passed as arguments
+    def cnt_occurrence_of_all_elems_in_chained_lists(*_lists_iterable):
+        # itertools.chain : joins the multiple lists into one
+        chained_list = list(itertools.chain(*_lists_iterable))
+        # Count the Occurrence of each value in chained list and keep value as key and occurrence count as value
+        # Return type is a dictionary
+        return dict(collections.Counter(chained_list))
+
+    # Method to count occurrences of all values in multiple dictionaries
+    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def cnt_occurrence_of_all_vals_in_joined_dicts(*_dicts_iterables):
+        # Create an empty dictionary
+        merged_dicts = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in _dicts_iterables:
+            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
+            merged_dicts |= _
+        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
+        # Return type is a dictionary
+        return dict(collections.Counter(merged_dicts.values()))
+
+    # Method to count occurrences of provided element in multiple lists
+    # Arguments to this method: Multiple lists as arguments (separated by comma), element to be counted
+    # * takes care of the unpacking multiple lists passed as arguments
+    def cnt_occurrence_of_elem_in_chained_lists(*_lists_iterable, _element):
+        # itertools.chain : joins the multiple lists into one
+        chained_list = list(itertools.chain(*_lists_iterable))
+        # chained_list.count(_element) counts the number of occurrences, if will be triggered only the result is not zero
+        return chained_list.count(_element) if chained_list.count(_element) else 0
+        
+    # Method to count occurrences of specific value in multiple dictionaries
+    # Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def cnt_occurrence_of_val_in_joined_dicts(*_dicts_iterables, _value):
+        # Create an empty dictionary
+        merged_dicts = {}
+        # Iterate over all the dictionaries in the unpacked list of dictionaries
+        for _ in _dicts_iterables:
+            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
+            merged_dicts |= _
+        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
+        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
+        # Return type is an integer
+        try:
+            # If the searched value exists in the dictionary, return its count of occurence
+            return occurrence_dict[_value]
+            # If the searched value does not exist in dictionary, return integer 0
+        except KeyError:
+            return 0
+
     # Method to concatenate elements of multiple lists
     # Arguments to this method: Multiple lists as arguments (separated by comma), case of the result
     # * takes care of the unpacking multiple lists passed as arguments
@@ -124,84 +203,6 @@ class UsefulUtils:
                        'title'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).title(),
                        'upper'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).upper()}
         return conditional.get(case)
-
-    # Method to get occurrences of alphabets in string along with string
-    # Argument to this method: string
-    def cnt_elem_occurrences_in_str(_inp_str):
-        # Return type is a dictionary where each alphabet of string is 'key' and their # of occurrences are values
-        return dict(collections.Counter(_inp_str))
-
-    # Method to get occurrences of alphabets in string
-    # Sort the result dictionary by key or value
-    # Order the dictionary in asc or desc based on _sort_reversal
-    # Valid values for _sort_reversal are True / False
-    # Valid values for _sort_key are key / value
-    # Arguments to this method are: string, sorting key and sorting type
-    def cnt_elem_occurrences_in_str_ordered_rslt(_inp_str, _sort_key='key', _sort_reversal=False):
-        # collections.Counter will create a dictionary structure and get the count of each element of the string
-        # element is the key and count is the value of that key
-        result_set = collections.Counter(_inp_str)
-        # Following if statement is triggered when user wants to sort the result by key
-        # key can be any function, I have used the anonymous lambda function
-        if _sort_key == 'key':
-            return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[0], reverse=_sort_reversal)))
-        # Following elif statement is triggered when user wants to sort the result by value of the key
-        # key can be any function, I have used the anonymous lambda function
-        elif _sort_key == 'value':
-            return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[1], reverse=_sort_reversal)))
-
-    # Method to count occurrences of provided element in multiple lists
-    # Arguments to this method: Multiple lists as arguments (separated by comma), element to be counted
-    # * takes care of the unpacking multiple lists passed as arguments
-    def cnt_occurrence_of_elem_in_chained_lists(*_lists_iterable, _element):
-        # itertools.chain : joins the multiple lists into one
-        chained_list = list(itertools.chain(*_lists_iterable))
-        # chained_list.count(_element) counts the number of occurrences, if will be triggered only the result is not zero
-        return chained_list.count(_element) if chained_list.count(_element) else 0
-
-    # Method to count occurrences of all elements in multiple lists
-    # Arguments to this method: Multiple lists as arguments (separated by comma)
-    # * takes care of the unpacking multiple lists passed as arguments
-    def cnt_occurrence_of_all_elems_in_chained_lists(*_lists_iterable):
-        # itertools.chain : joins the multiple lists into one
-        chained_list = list(itertools.chain(*_lists_iterable))
-        # Count the Occurrence of each value in chained list and keep value as key and occurrence count as value
-        # Return type is a dictionary
-        return dict(collections.Counter(chained_list))
-        
-    # Method to count occurrences of all values in multiple dictionaries
-    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
-    # * takes care of the unpacking multiple dictionaries passed as arguments
-    def cnt_occurrence_of_all_vals_in_joined_dicts(*_dicts_iterables):
-        # Create an empty dictionary
-        merged_dicts = {}
-        # Iterate over all the dictionaries in the unpacked list of dictionaries
-        for _ in _dicts_iterables:
-            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
-            merged_dicts |= _
-        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
-        # Return type is a dictionary
-        return dict(collections.Counter(merged_dicts.values()))
-
-    # Method to count occurrences of specific value in multiple dictionaries
-    # Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
-    # * takes care of the unpacking multiple dictionaries passed as arguments
-    def cnt_occurrence_of_val_in_joined_dicts(*_dicts_iterables, _value):
-        # Create an empty dictionary
-        merged_dicts = {}
-        # Iterate over all the dictionaries in the unpacked list of dictionaries
-        for _ in _dicts_iterables:
-            # Update the empty dictionary with keys and Values from unpacked list of dictionaries
-            merged_dicts |= _
-        # Count the Occurrence of each value in merged dictionary and keep value as key and occurrence count as value
-        occurrence_dict = dict(collections.Counter(merged_dicts.values()))
-        # Return type is an integer
-        try:
-            # If the searched value exists in the dictionary, return its count of occurence
-            return occurrence_dict[_value]
-            # If the searched value does not exist in dictionary, return integer 0
-        except KeyError:
-            return 0
 
     # Method to get both lower case and upper case letters (a through Z)
     # Argument to this method: None
