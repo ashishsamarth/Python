@@ -3,7 +3,7 @@
 # * takes care of the unpacking multiple lists passed as arguments
 # Valid values for case are: 'capitalize', 'lower', 'original', 'swapcase', 'title', 'upper'
 # Default value of case is : original
-def concatenate_elems_of_lists(*_inp_list, case='original'):
+def concatenate_elems_of_lists_to_str(*_inp_list, case='original'):
     # Following is a dictionary with case values as keys and corresponding list comprehensions as their evaluated values
     # itertools.chain(*_inp_list) will join all the lists in to one list
     # Each element of the list will be joined using space as delimiter and then string function based on user selection are applied
