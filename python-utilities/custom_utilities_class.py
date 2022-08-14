@@ -293,6 +293,17 @@ class UsefulUtils:
         # Return type dependent on key
         return max_first_value
 
+    # Method to get Indices of a given element in provided strings
+    # Arguments to this method: Multiple Strings and Element for which we need indices
+    # * takes care of the unpacking multiple dictionaries passed as arguments
+    def get_indices_of_elem_in_str(*_inp_str, _elem):
+        # Call the method concatenate_multiple_strs to join the provided strings
+        concatenated_str = UsefulUtils.concatenate_multiple_strs(*_inp_str)
+        # Iterate over the elements concatenated string
+        # Using Enumerate and List Comprehension with Conditional statement, get the <list> of Indices of matched values
+        # Return type is a List
+        return [key for key, val in enumerate(concatenated_str) if val == _elem]
+
     # Method to return last value by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
