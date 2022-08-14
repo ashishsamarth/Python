@@ -54,13 +54,13 @@ class UsefulUtils:
         return True if collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2) else False
 
     # Method to assign same values to provided keys and create a dictionary
-    # Arguments to this method: _keys as a list of elements, _value as any value
-    def assign_same_val_to_all_keys(_keys, _value):
+    # Arguments to this method: _keys as multiple list of elements, _value as any value
+    def assign_same_val_to_all_keys(*_keys, _value):
         # itertools.repeat : repeats the passed value seamlessly
         # zip : ties the keys and value together together
-        my_dict = dict(zip(_keys, itertools.repeat(_value)))
+        # itertools.chain(*_keys) : Joins all lists to form a single list
         # Return type is a dictionary
-        return my_dict
+        return dict(zip(itertools.chain(*_keys), itertools.repeat(_value)))
 
     # Method to create a dictionary dataset automatically
     # Argument to this method: None
@@ -344,9 +344,17 @@ class UsefulUtils:
         return string.punctuation
 
     # Method to get unique alphabets from input string
-    # Argument to this method: string
-    def get_unique_elems_from_str(_inp_str):
-        return collections.Counter(_inp_str).keys()
+    # Argument to this method: string or concatenated strings
+    # case user selected values to get output in specific data structure
+    # Valid values for case are:- str, list, tuple
+    # Default value for case : str
+    def get_unique_elems_from_str(_inp_str, case='str'):
+        # Following dictionary creates a case based logic
+        conditional = { 'str'    : ''.join(_ for _ in collections.Counter(_inp_str).keys()),
+                        'list'   : [_ for _ in collections.Counter(_inp_str).keys()],
+                        'tuple'  : tuple(_ for _ in collections.Counter(_inp_str).keys())}
+        # Return type is dependent on user selection of case
+        return conditional.get(case)
 
     # Method to get upper case A through F
     # Use of list comprehension with join
@@ -364,7 +372,7 @@ class UsefulUtils:
     # Method to return Values by min count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
-    def get_vals_by_min_occurence_in_joined_dicts(*_dicts_iterables):
+    def get_vals_by_min_occurrence_in_joined_dicts(*_dicts_iterables):
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
@@ -382,7 +390,7 @@ class UsefulUtils:
     # Method to return Values by max count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
-    def get_vals_by_max_occurence_in_joined_dicts(*_dicts_iterables):
+    def get_vals_by_max_occurrence_in_joined_dicts(*_dicts_iterables):
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
@@ -481,6 +489,13 @@ class UsefulUtils:
             # Return type is a dictionary
             return dict(sorted(merged_dict.items(), key=lambda item:item[-1], reverse=_sort_reversal))
 
+    # Method to create a dictionary based on two lists
+    # Argument to this method: Two lists
+    # Elements of 1st list are treated as 'Keys' and 2nd list as 'Values'
+    def lists_to_dict(key_list, val_list):
+        # Return type is a dictionary
+        return dict(zip(key_list, val_list))
+
     # Method to join multiple tuples arguments into one tuple and remove duplicate elements from result tuple
     # Arguments to this method: Multiple tuples as arguments (separated by comma)
     # * takes care of the unpacking multiple tuples passed as arguments
@@ -501,6 +516,37 @@ class UsefulUtils:
         merged_list = list(set(list(itertools.chain(*_lists_iterables))))
         # Return type is a list
         return merged_list
+
+    # Method to join multiple iterables to single iterable and then split that iterable in to elements of n length
+    # Argument to this method: Multiple lists as arguments (separated by comma), number of elements to use for splitting
+    # case user selected values to get output in specific data structure
+    # Valid values for case are:- list_of_lists, list_of_tuples, tuple_of_lists, tuple_of_tuples
+    # Default value for case : list_of_lists
+    def partition_iterables_to_iterable_of_n_elems(*_inp_lists, num_of_elems=3, case='list_of_lists'):
+        # itertools.chain(*_inp_list) will join all the lists in to one list
+        chained_iterable = list(itertools.chain(*_inp_lists))
+        
+        # Iternal Method to return the new iterable split based on user provided number of elements
+        # Argument to this method: Joined list from above and number of elements to use for splitting
+        def core_logic(chained_iterable, num_of_elems):
+            # Create an empty list
+            new_iterable = []
+            # Iterate over all elements of the joined list based on the range and use the step function of list data strcuture
+            # num_of_elems is passed as the step value
+            for _ in range(0, len(chained_iterable), num_of_elems):
+                # Append the empty list based on the slicing of list
+                new_iterable.append(chained_iterable[_:_+num_of_elems])
+            # Return type of this method is list
+            return new_iterable
+        # Following dictionary creates a case based logic
+        # Valid values are the keys and value is the function call with parameters to core_logic method
+        # Data type of values is changed based on the key selection by user
+        driver = {'list_of_lists'   : core_logic(chained_iterable, num_of_elems),
+                  'list_of_tuples'  : core_logic(tuple(chained_iterable), num_of_elems),
+                  'tuple_of_lists'  : tuple(core_logic(chained_iterable, num_of_elems)),
+                  'tuple_of_tuples' : tuple(core_logic(tuple(chained_iterable), num_of_elems))}
+        # Return type is dependent on the case provided by user
+        return driver.get(case)
 
     # Method to reverse the string
     # Argument to this method: string
