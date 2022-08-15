@@ -221,12 +221,6 @@ class UsefulUtils:
         # Return type is a string
         return string.ascii_letters
 
-    # Method to get the number of arguments
-    # Arguments are passed as a list, separated by comma
-    def get_arg_cnt(*_arg):
-        # Return type is an integer
-        return len(_arg)
-
     # Method to extract aplhabets and numbers from given list of strings
     # Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
     # * takes care of the unpacking multiple strings passed as arguments
@@ -251,6 +245,12 @@ class UsefulUtils:
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if _.isalnum() or _ in ('_')) 
 
+    # Method to get the number of arguments
+    # Arguments are passed as a list, separated by comma
+    def get_arg_cnt(*_arg):
+        # Return type is an integer
+        return len(_arg)
+        
     # Method to extract digits from given list of strings
     # Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
     # * takes care of the unpacking multiple strings passed as arguments
