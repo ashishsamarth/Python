@@ -341,7 +341,7 @@ class UsefulUtils:
     def get_lower_case_a_to_f():
         # Return type is a string
         return ''.join(_ for _ in string.hexdigits if _.islower())
-        
+
     # Method to get only lower case letters (a through z)
     # Argument to this method: None
     def get_lower_case_alphabets():
@@ -360,18 +360,6 @@ class UsefulUtils:
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if not _.isalnum())  
 
-    # Method to get numbers 0 through 9 as string
-    # Argument to this method: None
-    def get_str_0_9():
-        # Return type is a string
-        return string.digits
-    
-    # Method to get numbers 0 through 7 as string
-    # Argument to this method: None
-    def get_str_0_7():
-        # Return type is a string
-        return string.octdigits
-     
     # Method to get special characters
     # Argument to this method: None
     def get_special_chars():
@@ -379,6 +367,18 @@ class UsefulUtils:
         # returns: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
         return string.punctuation
 
+    # Method to get numbers 0 through 7 as string
+    # Argument to this method: None
+    def get_str_0_7():
+        # Return type is a string
+        return string.octdigits
+        
+    # Method to get numbers 0 through 9 as string
+    # Argument to this method: None
+    def get_str_0_9():
+        # Return type is a string
+        return string.digits
+       
     # Method to get unique alphabets from input string
     # Argument to this method: string or concatenated strings
     # case user selected values to get output in specific data structure
