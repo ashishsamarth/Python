@@ -203,18 +203,6 @@ class UsefulUtils:
                        'upper'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).upper()}
         return conditional.get(case)
 
-    # Method to get both lower case and upper case letters (a through Z)
-    # Argument to this method: None
-    def get_alphabets():
-        # Return type is a string
-        return string.ascii_letters
-
-    # Method to get the number of arguments
-    # Arguments are passed as a list, separated by comma
-    def get_arg_cnt(*_arg):
-        # Return type is an integer
-        return len(_arg)
-
     # Method to extract alphabets from given list of strings
     # Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
     # * takes care of the unpacking multiple strings passed as arguments
@@ -226,6 +214,18 @@ class UsefulUtils:
         # These alphabetical values are then joined with user provided or default delimiter
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs)  if _.isalpha())
+        
+    # Method to get both lower case and upper case letters (a through Z)
+    # Argument to this method: None
+    def get_alphabets():
+        # Return type is a string
+        return string.ascii_letters
+
+    # Method to get the number of arguments
+    # Arguments are passed as a list, separated by comma
+    def get_arg_cnt(*_arg):
+        # Return type is an integer
+        return len(_arg)
 
     # Method to extract aplhabets and numbers from given list of strings
     # Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
