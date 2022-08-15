@@ -462,7 +462,7 @@ class UsefulUtils:
     # * takes care of the unpacking multiple tuples passed as arguments
     def join_tuples(*_tuple_iterables):
         # itertools.chain : joins multiple tuples in to one
-        joined_tuple = tuple(itertools.chain(*_tuple_iterables))
+        joined_tuple = _tuple_iterables.__class__(itertools.chain(*_tuple_iterables))
         # Return type is a tuple
         return joined_tuple
 
