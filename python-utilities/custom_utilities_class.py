@@ -93,13 +93,6 @@ class UsefulUtils:
         elif _sort_key == 'value':
             return dict(sorted(occurrence_dict.items(), key = lambda item:item[-1], reverse=_sort_reversal))
     
-
-    # Method to get occurrences of alphabets in string along with string
-    # Argument to this method: string
-    def cnt_elem_occurrences_in_str(_inp_str):
-        # Return type is a dictionary where each alphabet of string is 'key' and their # of occurrences are values
-        return dict(collections.Counter(_inp_str))
-
     # Method to get occurrences of alphabets in string
     # Sort the result dictionary by key or value
     # Order the dictionary in asc or desc based on _sort_reversal
@@ -118,6 +111,12 @@ class UsefulUtils:
         # key can be any function, I have used the anonymous lambda function
         elif _sort_key == 'value':
             return dict(collections.OrderedDict(sorted(result_set.items(), key=lambda _: _[1], reverse=_sort_reversal)))
+
+    # Method to get occurrences of alphabets in string along with string
+    # Argument to this method: string
+    def cnt_elem_occurrences_in_str(_inp_str):
+        # Return type is a dictionary where each alphabet of string is 'key' and their # of occurrences are values
+        return dict(collections.Counter(_inp_str))
 
     # Method to count occurrences of all elements in multiple lists
     # Arguments to this method: Multiple lists as arguments (separated by comma)
