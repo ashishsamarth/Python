@@ -4,6 +4,8 @@ import string
 import collections
 # Import Itertools module
 import itertools
+# Import Operator module
+import operator
 
 
 # Class definitions should use CamelCase convention based on pep-8 guidelines
@@ -335,6 +337,14 @@ class UsefulUtils:
         # Return type dependent on key
         return max_last_value
 
+    # Method to get length of input:
+    # This method is limited to basic data types (int, str, list, tuple, dict)
+    # Argument to this method: Input Variable
+    # Utilizes the length_hint function from the operator module
+    def get_length_basic_dtypes(_inp):
+        # Return type is an Integer
+        return operator.length_hint(str(_inp)) if type(_inp) is int else operator.length_hint(_inp)
+
     # Method to get lower case a through f
     # Use of list comprehension with join
     # Argument to this method: None    
@@ -422,7 +432,7 @@ class UsefulUtils:
         max_value = [k for k, v in occurrence_dict.items() if v == max(occurrence_dict.values())]
         # Return type is a List
         return max_value
-        
+
     # Method to return Values by min count of occurrence
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
