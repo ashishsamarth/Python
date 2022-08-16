@@ -457,24 +457,6 @@ class UsefulUtils:
         reversed_string = _inp_str[::-1]
         return True if _inp_str == reversed_string else False
 
-    # Method to join multiple tuple arguments into one tuple
-    # Arguments to this method: Multiple tuples as arguments (separated by comma)
-    # * takes care of the unpacking multiple tuples passed as arguments
-    def join_tuples(*_tuple_iterables):
-        # itertools.chain : joins multiple tuples in to one
-        joined_tuple = _tuple_iterables.__class__(itertools.chain(*_tuple_iterables))
-        # Return type is a tuple
-        return joined_tuple
-
-    # Method to join multiple lists into one list
-    # Argument to this method: Multiple lists as arguments (separated by comma)
-    # * takes care of the unpacking multiple lists passed as arguments
-    def join_lists(*_lists_iterables):
-        # itertools.chain : joins the multiple lists into one
-        chained_list = list(itertools.chain(*_lists_iterables))
-        # Return type is a list
-        return chained_list
-
     # Method to join multiple dictionaries to a single dictionary
     # Argument to this method: Multiple Dictionaries as arguments (separated by comma)
     # * takes care of the unpacking multiple dictionaries passed as arguments
@@ -510,6 +492,24 @@ class UsefulUtils:
         # Return type is a dictionary
         return merged_dict
 
+    # Method to join multiple lists into one list
+    # Argument to this method: Multiple lists as arguments (separated by comma)
+    # * takes care of the unpacking multiple lists passed as arguments
+    def join_lists(*_lists_iterables):
+        # itertools.chain : joins the multiple lists into one
+        chained_list = list(itertools.chain(*_lists_iterables))
+        # Return type is a list
+        return chained_list
+
+    # Method to join multiple tuple arguments into one tuple
+    # Arguments to this method: Multiple tuples as arguments (separated by comma)
+    # * takes care of the unpacking multiple tuples passed as arguments
+    def join_tuples(*_tuple_iterables):
+        # itertools.chain : joins multiple tuples in to one
+        joined_tuple = _tuple_iterables.__class__(itertools.chain(*_tuple_iterables))
+        # Return type is a tuple
+        return joined_tuple
+        
     # Method to join multiple dictionaries to a single dictionary and sort the new dictionary based on keys or values in
     # Ascending or Descending order
     # Argument to this method: Multiple Dictionaries as arguments (separated by comma), sorting key and sorting type
