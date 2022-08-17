@@ -51,9 +51,17 @@ class UsefulUtils:
 
     # Method to check if two strings are anagrams
     # Argument to this method: two strings
-    def are_strs_an_anagram(_inp_str_1, _inp_str_2):
+    def are_strs_an_anagram_m1(_inp_str_1, _inp_str_2):
         # Return type is boolean
         return True if collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2) else False
+    
+    # Method to check if two strings are anagrams
+    # Argument to this method: two strings
+    def are_strs_an_anagram_m2(_inp_str_1, _inp_str_2):
+        # Return type is boolean
+        # Utilizes Ternary Operator Approach
+        # In Ternary Operators: False Boolean is written first and True Boolean is written next
+        return ( (False, True) [collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2)])    
 
     # Method to assign same values to provided keys and create a dictionary
     # Arguments to this method: _keys as multiple list of elements, _value as any value
@@ -75,8 +83,17 @@ class UsefulUtils:
 
     # Method to check if given string is empty or not
     # Argument to this method: string
-    def chk_if_str_empty(_inp_str):
+    def chk_if_str_empty_m1(_inp_str):
+        # Return type is boolean
         return True if not _inp_str else False
+
+    # Method to check if given string is empty or not
+    # Argument to this method: string
+    def chk_if_str_empty_m2(_inp_str):
+        # Return type is boolean
+        # Utilizes Ternary Operator Approach
+        # In Ternary Operators: False Boolean is written first and True Boolean is written next
+        return ((False, True) [not _inp_str])
 
     # Method to count occurrences of all elements in multiple strings
     # Argument to this method: Multiple strings as arguments (separated by comma), sorting key and sorting type
