@@ -173,7 +173,7 @@ class UsefulUtils:
     # Method to count occurrences of specific value in multiple dictionaries
     # Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
     # * takes care of the unpacking multiple dictionaries passed as arguments
-    def cnt_occurrence_of_val_in_joined_dicts(*_dicts_iterables, _value):
+    def cnt_occurrence_of_val_in_joined_dicts(*_dicts_iterables, _value) -> dict:
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
