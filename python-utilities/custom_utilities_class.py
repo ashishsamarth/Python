@@ -660,14 +660,18 @@ class UsefulUtils:
         # Return type is an integer
         return sum(_ for _ in itertools.chain(*_inp_list) if str(_).isdigit())
 
-    # Method to get top 5 alphabets based on their occurrences in string
-    # Argument to this method: string
     def top_5_elem_occurrences_in_str(_inp_str):
+        '''
+        Method to get top 5 alphabets based on their occurrences in string
+        Argument to this method: string
+        '''
         # We use the 'most_common' method for Counter
         return dict(collections.Counter(_inp_str).most_common(5))
-    
-    # Method to get top n alphabets based on their occurrences in string
-    # Argument to this method: string, and n = Integer
+
     def top_n_elem_occurrences_in_str(_inp_str, n):
+        '''
+        Method to get top n alphabets based on their occurrences in string
+        Argument to this method: string, and n = Integer
+        '''
         # We use the 'most_common' method for Counter
         return dict(collections.Counter(_inp_str).most_common(n))
