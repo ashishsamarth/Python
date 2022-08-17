@@ -11,10 +11,12 @@ import operator
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class UsefulUtils:
 
-    # Method to add elements at same index from multiple lists and create a new list
-    # Argument to this method: Multiple lists as arguments (separated by comma)
-    # * takes care of the unpacking multiple lists passed as arguments
     def add_same_idx_elems_in_lists(*_lists_iterable) -> list:
+        '''
+        Method to add elements at same index from multiple lists and create a new list
+        Argument to this method: Multiple lists as arguments (separated by comma)
+        * takes care of the unpacking multiple lists passed as arguments
+        '''
         # create an empty list to hold result of index wise additions
         final_result = []
         # Get the count of lists passed as arguments
@@ -49,15 +51,19 @@ class UsefulUtils:
         # Return type is a list
         return final_result
 
-    # Method to check if two strings are anagrams
-    # Argument to this method: two strings
     def are_strs_an_anagram_m1(_inp_str_1: str, _inp_str_2: str) -> bool:
+        '''
+        Method to check if two strings are anagrams
+        Argument to this method: two strings
+        '''
         # Return type is boolean
         return True if collections.Counter(_inp_str_1) == collections.Counter(_inp_str_2) else False
     
-    # Method to check if two strings are anagrams
-    # Argument to this method: two strings
     def are_strs_an_anagram_m2(_inp_str_1: str, _inp_str_2: str) -> bool:
+        '''
+        Method to check if two strings are anagrams
+        Argument to this method: two strings
+        '''        
         # Return type is boolean
         # Utilizes Ternary Operator Approach
         # In Ternary Operators: False Boolean is written first and True Boolean is written next
