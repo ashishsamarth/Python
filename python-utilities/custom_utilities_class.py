@@ -157,10 +157,12 @@ class UsefulUtils:
         # Return type is a dictionary where each alphabet of string is 'key' and their # of occurrences are values
         return dict(collections.Counter(_inp_str))
 
-    # Method to count occurrences of all elements in multiple lists
-    # Arguments to this method: Multiple lists as arguments (separated by comma)
-    # * takes care of the unpacking multiple lists passed as arguments
     def cnt_occurrence_of_all_elems_in_chained_lists(*_lists_iterable) -> dict:
+        '''
+        Method to count occurrences of all elements in multiple lists
+        Arguments to this method: Multiple lists as arguments (separated by comma)
+        * takes care of the unpacking multiple lists passed as arguments
+        '''
         # itertools.chain : joins the multiple lists into one
         chained_list = list(itertools.chain(*_lists_iterable))
         # Count the Occurrence of each value in chained list and keep value as key and occurrence count as value
