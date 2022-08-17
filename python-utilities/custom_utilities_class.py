@@ -212,7 +212,7 @@ class UsefulUtils:
     # Arguments to this method: Multiple strings as arguments (separated by comma), user provided delimiter
     # * takes care of the unpacking multiple tuples passed as arguments
     # If no delimiter is provided, <space> is used as default value
-    def concatenate_multiple_strs(*_inp_strs, case='original', delim=''):
+    def concatenate_multiple_strs(*_inp_strs, case='original', delim='') -> str:
         # Return type is a string
         conditional = {'capitalize' : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).capitalize(),
                        'lower'      : delim.join(_ for _ in (''.join(_ for _ in _inp_strs))).lower(),
