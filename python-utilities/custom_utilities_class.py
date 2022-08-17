@@ -614,12 +614,14 @@ class UsefulUtils:
         # Return type is a list
         return merged_list
 
-    # Method to join multiple iterables to single iterable and then split that iterable in to elements of n length
-    # Argument to this method: Multiple lists as arguments (separated by comma), number of elements to use for splitting
-    # case user selected values to get output in specific data structure
-    # Valid values for case are:- list_of_lists, list_of_tuples, tuple_of_lists, tuple_of_tuples
-    # Default value for case : list_of_lists
     def partition_iterables_to_iterable_of_n_elems(*_inp_lists, num_of_elems=3, case='list_of_lists'):
+        '''
+        Method to join multiple iterables to single iterable and then split that iterable in to elements of n length
+        Argument to this method: Multiple lists as arguments (separated by comma), number of elements to use for splitting
+        case user selected values to get output in specific data structure
+        Valid values for case are:- list_of_lists, list_of_tuples, tuple_of_lists, tuple_of_tuples
+        Default value for case : list_of_lists
+        '''
         # itertools.chain(*_inp_list) will join all the lists in to one list
         chained_iterable = list(itertools.chain(*_inp_lists))
         
