@@ -268,9 +268,11 @@ class UsefulUtils:
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs)  if _.isalpha())
 
-    # Method to get both lower case and upper case letters (a through Z)
-    # Argument to this method: None
     def get_alphabets():
+        '''
+        Method to get both lower case and upper case letters (a through Z)
+        Argument to this method: None
+        '''
         # Return type is a string
         return string.ascii_letters
 
