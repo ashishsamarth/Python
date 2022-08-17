@@ -196,10 +196,12 @@ class UsefulUtils:
         # chained_list.count(_element) counts the number of occurrences, if will be triggered only the result is not zero
         return chained_list.count(_element) if chained_list.count(_element) else 0
         
-    # Method to count occurrences of specific value in multiple dictionaries
-    # Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
-    # * takes care of the unpacking multiple dictionaries passed as arguments
     def cnt_occurrence_of_val_in_joined_dicts(*_dicts_iterables, _value) -> dict:
+        '''
+        Method to count occurrences of specific value in multiple dictionaries
+        Arguments to this method: Multiple dictionaries as arguments (separated by comma), _value to count occurence for
+        * takes care of the unpacking multiple dictionaries passed as arguments
+        '''
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
