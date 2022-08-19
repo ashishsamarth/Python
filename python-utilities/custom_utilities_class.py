@@ -366,11 +366,13 @@ class UsefulUtils:
                         'tuple' : _inp_iterable.__class__(key for key, val in enumerate(chained_iterable) if val == _elem)}
         return conditional.get(return_type)
 
-    # Method to get Indices of a given element in provided strings
-    # Arguments to this method: Multiple Strings and Element for which we need indices, return type selected by user
-    # * takes care of the unpacking multiple dictionaries passed as arguments
-    # Default value for return_type is <list>
     def get_indices_of_elem_in_str(*_inp_str, _elem, return_type='list'):
+        '''
+        Method to get Indices of a given element in provided strings
+        Arguments to this method: Multiple Strings and Element for which we need indices, return type selected by user
+        * takes care of the unpacking multiple dictionaries passed as arguments
+        Default value for return_type is <list>
+        '''
         # Call the method concatenate_multiple_strs to join the provided strings
         concatenated_str = UsefulUtils.concatenate_multiple_strs(*_inp_str)
         # Following dictionary creates a case based logic
