@@ -326,10 +326,12 @@ class UsefulUtils:
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if _.isdigit())     
 
-    # Method to return first value by max count of occurrence
-    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
-    # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_first_val_by_max_occurence_in_joined_dicts(*_dicts_iterables):
+        '''
+        Method to return first value by max count of occurrence
+        Arguments to this method: Multiple dictionaries as arguments (separated by comma)
+        * takes care of the unpacking multiple dictionaries passed as arguments
+        '''
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
