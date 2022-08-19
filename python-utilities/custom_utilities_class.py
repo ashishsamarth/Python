@@ -304,9 +304,11 @@ class UsefulUtils:
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if _.isalnum() or _ in ('_')) 
 
-    # Method to get the number of arguments
-    # Arguments are passed as a list, separated by comma
     def get_arg_cnt(*_arg):
+        '''
+        Method to get the number of arguments
+        Arguments are passed as a list, separated by comma
+        '''
         # Return type is an integer
         return len(_arg)
 
