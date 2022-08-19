@@ -518,10 +518,12 @@ class UsefulUtils:
         # Return type is a List
         return max_value
 
-    # Method to return Values by min count of occurrence
-    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
-    # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_vals_by_min_occurrence_in_joined_dicts(*_dicts_iterables):
+        '''
+        Method to return Values by min count of occurrence
+        Arguments to this method: Multiple dictionaries as arguments (separated by comma)
+        * takes care of the unpacking multiple dictionaries passed as arguments
+        '''
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
