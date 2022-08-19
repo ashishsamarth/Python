@@ -500,10 +500,12 @@ class UsefulUtils:
         # Return type is a string
         return string.ascii_uppercase
 
-    # Method to return Values by max count of occurrence
-    # Arguments to this method: Multiple dictionaries as arguments (separated by comma)
-    # * takes care of the unpacking multiple dictionaries passed as arguments
     def get_vals_by_max_occurrence_in_joined_dicts(*_dicts_iterables):
+        '''
+        Method to return Values by max count of occurrence
+        Arguments to this method: Multiple dictionaries as arguments (separated by comma)
+        * takes care of the unpacking multiple dictionaries passed as arguments
+        '''
         # Create an empty dictionary
         merged_dicts = {}
         # Iterate over all the dictionaries in the unpacked list of dictionaries
