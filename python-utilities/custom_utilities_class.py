@@ -346,11 +346,13 @@ class UsefulUtils:
         # Return type dependent on key
         return max_first_value
 
-    # Method to get Indices of a given element in provided lists
-    # Arguments to this method: Multiple lists and Element for which we need indices, return type selected by user
-    # * takes care of the unpacking multiple dictionaries passed as arguments
-    # Default value for return_type is <list>
     def get_indices_of_elem_in_iterable(*_inp_iterable, _elem, return_type='list'):
+        '''
+        Method to get Indices of a given element in provided lists
+        Arguments to this method: Multiple lists and Element for which we need indices, return type selected by user
+        * takes care of the unpacking multiple dictionaries passed as arguments
+        Default value for return_type is <list>
+        '''
         # Call the method join_lists to join the provided lists
         chained_iterable = UsefulUtils.join_lists(*_inp_iterable)
         # Following dictionary creates a case based logic
