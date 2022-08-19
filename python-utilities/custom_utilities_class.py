@@ -447,9 +447,11 @@ class UsefulUtils:
         # Return type is string
         return delim.join(_ for _ in UsefulUtils.concatenate_multiple_strs(*_inp_strs) if not _.isalnum())  
 
-    # Method to get special characters
-    # Argument to this method: None
     def get_special_chars():
+        '''
+        Method to get special characters
+        Argument to this method: None
+        '''
         # Return type is a string
         # returns: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
         return string.punctuation
