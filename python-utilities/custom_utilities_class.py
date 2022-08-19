@@ -415,7 +415,7 @@ class UsefulUtils:
         '''
         # Return type is an Integer
         return operator.length_hint(str(_inp)) if type(_inp) is int else operator.length_hint(_inp)
-        
+
     def get_lower_case_a_to_f():
         '''
         Method to get lower case a through f
@@ -425,9 +425,11 @@ class UsefulUtils:
         # Return type is a string
         return ''.join(_ for _ in string.hexdigits if _.islower())
 
-    # Method to get only lower case letters (a through z)
-    # Argument to this method: None
     def get_lower_case_alphabets():
+        '''
+        Method to get only lower case letters (a through z)
+        Argument to this method: None
+        '''
         # Return type is a string
         return string.ascii_lowercase
 
