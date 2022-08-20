@@ -1,8 +1,10 @@
-# Method to extract aplhabets and numbers from given list of strings
-# Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
-# * takes care of the unpacking multiple strings passed as arguments
-# Default value for delimiter is ''
 def get_alphanum_from_strs(*_inp_strs, delim=''):
+    '''
+    Method to extract aplhabets and numbers from given list of strings
+    Argument to this method: Multiple strings as arguments (separated by comma), user provided delimiter
+    * takes care of the unpacking multiple strings passed as arguments
+    Default value for delimiter is ''
+    '''
     # Internal for loop is calling the 'concatenate_multiple_strs' method in the same class
     # Result of this method is a concatenated string
     # The Outer for loop simply iterates over all the elements of the concatenated string and filter only alphabets and numbers
