@@ -1,7 +1,9 @@
-# Method to add elements at same index from multiple lists and create a new list
-# Argument to this method: Multiple lists as arguments (separated by comma)
-# * takes care of the unpacking multiple lists passed as arguments
-def add_same_idx_elems_in_lists(*_lists_iterable):
+def add_same_idx_elems_in_lists(*_lists_iterable) -> list:
+    '''
+    Method to add elements at same index from multiple lists and create a new list
+    Argument to this method: Multiple lists as arguments (separated by comma)
+    * takes care of the unpacking multiple lists passed as arguments
+    '''
     # create an empty list to hold result of index wise additions
     final_result = []
     # Get the count of lists passed as arguments
