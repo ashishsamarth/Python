@@ -651,18 +651,6 @@ class UsefulUtils:
         # Return type is a dictionary
         return dict(zip(key_list, val_list))
 
-    def merge_tuples(*_tuple_iterables):
-        '''
-        Method to join multiple tuples arguments into one tuple and remove duplicate elements from result tuple
-        Arguments to this method: Multiple tuples as arguments (separated by comma)
-        * takes care of the unpacking multiple tuples passed as arguments
-        '''
-        # itertools.chain : joins multiple tuples in to one
-        # set : removes the duplicate elements from the result
-        joined_tuple = tuple(set(itertools.chain(*_tuple_iterables)))
-        # Return type is a tuple
-        return joined_tuple
-
     def merge_lists(*_lists_iterables):
         '''
         Method to join multiple lists into one list and keep only non-repeating values
@@ -675,6 +663,18 @@ class UsefulUtils:
         merged_list = list(set(list(itertools.chain(*_lists_iterables))))
         # Return type is a list
         return merged_list
+
+    def merge_tuples(*_tuple_iterables):
+        '''
+        Method to join multiple tuples arguments into one tuple and remove duplicate elements from result tuple
+        Arguments to this method: Multiple tuples as arguments (separated by comma)
+        * takes care of the unpacking multiple tuples passed as arguments
+        '''
+        # itertools.chain : joins multiple tuples in to one
+        # set : removes the duplicate elements from the result
+        joined_tuple = tuple(set(itertools.chain(*_tuple_iterables)))
+        # Return type is a tuple
+        return joined_tuple
 
     def partition_iterables_to_iterable_of_n_elems(*_inp_lists, num_of_elems=3, case='list_of_lists'):
         '''
