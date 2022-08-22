@@ -951,9 +951,11 @@ class CustomOpenpyxl:
                     sorted([_ for _ in _val.split(_delim)], reverse=True))
         self.save_wb()
 
-    # Method to reload the workbook after any value update or column additions
-    # No argument to this method
     def reload_wb(self):
+        '''
+        Method to reload the workbook after any value update or column additions
+        No argument to this method
+        '''
         # Call the initialization method with the file name to reload
         # since "openpyxl.load_workbook(self.my_filename, read_only=False)" is part of initialization
         self.__init__(self.my_filename)
