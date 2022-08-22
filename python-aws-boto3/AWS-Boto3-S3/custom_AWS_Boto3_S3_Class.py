@@ -79,9 +79,11 @@ class AwsBoto3S3:
         self.s3_resource.meta.client.copy(copy_source, _tgt_bucket_name, _tgt_file_name)
         return 'File Copied to Target S3 Bucket'
 
-    # Method to delete specific file from a given S3 bucket
-    # Arguments to this method are:- Bucket-Name and File-Name to be deleted
     def s3_bucket_delete_specific_file(self, _bucket_name, _file_name):
+        '''
+        Method to delete specific file from a given S3 bucket
+        Arguments to this method are:- Bucket-Name and File-Name to be deleted
+        '''
         try:
             # Pull the objects in the specified bucket in to a variable (return type is a dictionary)
             item = self.s3_client.list_objects(Bucket=_bucket_name)
