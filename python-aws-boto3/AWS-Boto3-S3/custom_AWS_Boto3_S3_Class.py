@@ -34,9 +34,11 @@ class AwsBoto3S3:
             if error_data.response['Error']['Code'] in AwsBoto3S3.S3_Error_Map.keys():
                 print(str(_bucket_name) + ':- ' + AwsBoto3S3.S3_Error_Map[error_data.response['Error']['Code']])    
 
-    # Method to list S3 buckets on the user account
-    # Argument to this method is: None
     def s3_list_buckets(self):
+        '''
+        Method to list S3 buckets on the user account
+        Argument to this method is: None
+        '''
         # Using List comprehension, pull the bucket names from the response of list_buckets method
         buckets = [_['Name'] for _ in self.s3_client.list_buckets()['Buckets']]
         # return type of this method is a list
