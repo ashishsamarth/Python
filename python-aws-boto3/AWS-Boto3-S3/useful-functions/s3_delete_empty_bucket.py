@@ -1,18 +1,8 @@
-import boto3
-from botocore.exceptions import ClientError
-
-class AwsBoto3S3:
-
-    AWS_REGION = {'loc_1': 'us-east-1'}
-
-    S3_Error_Map = {'InvalidBucketName': 'BucketName does not align with S3 naming convention',
-                    'BucketAlreadyExists': 'The requested bucket name is not available.',
-                    'IllegalLocationConstraintException': 'The unspecified location constraint is incompatible for the region',
-                    'NoSuchBucket': 'The specified bucket does not exist'}
-
-# Method to delete empty bucket
-# Argument to this method is:- Bucket Name
 def s3_delete_empty_bucket(self, _bucket_name):
+    '''
+    Method to delete empty bucket
+    Argument to this method is:- Bucket Name
+    '''
     try:
         # Pull the objects in the specified bucket in to a variable (return type is a dictionary)
         item = self.s3_client.list_objects(Bucket=_bucket_name)
