@@ -1,4 +1,5 @@
 # Note: openpyxl package provides both read and write capabilities to excel
+from curses import start_color
 import openpyxl
 from openpyxl.styles import PatternFill, Border, Side, Font, Alignment
 from openpyxl.utils import get_column_letter, column_index_from_string
@@ -22,6 +23,13 @@ class CustomOpenpyxl:
                      'white': '00FFFFFF',
                      'yellow': '00FFFF00'}
 
+    # Set Header font and font type as class variables to extend accessibility to all methods
+    header_font_name = 'Amasis MT Pro'
+    header_font_size = 9
+    # Set value font and font type as class variables to extend accessibility to all methods
+    cell_font_name = 'Cambria'
+    cell_font_size = 8
+
     # Define Color and border parameters as class variables to extend accessibility to all methods
     header_fill = PatternFill(start_color='CD5C5C', end_color='CD5C5C', fill_type="solid")
     even_row_fill = PatternFill(start_color='DCDCDC', end_color='DCDCDC', fill_type="solid")
@@ -30,13 +38,15 @@ class CustomOpenpyxl:
                          bottom=Side(style='thin'))
     thick_border = Border(left=Side(style='thick'), right=Side(style='thick'), top=Side(style='thick'),
                           bottom=Side(style='thick'))
-
-    # Set Header font and font type as class variables to extend accessibility to all methods
-    header_font_name = 'Amasis MT Pro'
-    header_font_size = 9
-    # Set value font and font type as class variables to extend accessibility to all methods
-    cell_font_name = 'Cambria'
-    cell_font_size = 8
+    error_fill = PatternFill(start_color='FF6347', end_color='FF6347', fill_type='solid')
+    alert_fill = PatternFill(start_color='DFFF00', end_color='DFFF00', fill_type='solid')
+    improvement_fill = PatternFill(start_color='7CF000', end_color='7CF000', fill_type='solid')
+    success_fill = PatternFill(start_color='228B22', end_color='228B22', fill_type='solid')
+    # Header & Value : Alignment and Fonts
+    value_alignment = Alignment(wrap_text=False, vertical='top', horizontal='left')
+    header_alignment = Alignment(wrap_text=False, vertical='top', horizontal='center')
+    value_font = Font(name=cell_font_name, size=cell_font_size)
+    header_font = Font(name=header_font_name, size=header_font_size, bold=True)
 
     # Initialize the class with filename as only argument
     def __init__(self, _my_file_name):
