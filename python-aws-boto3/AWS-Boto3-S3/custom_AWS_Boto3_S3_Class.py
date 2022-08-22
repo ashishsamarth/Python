@@ -11,15 +11,19 @@ class AwsBoto3S3:
                     'NoSuchBucket': 'The specified bucket does not exist'}
     
     def __init__(self):
-        # initialize the class with a variable s3_client & s3_resource
-        # region_name will hold the region name you want to work with as a part of initialization
+        ''' 
+        initialize the class with a variable s3_client & s3_resource
+        region_name will hold the region name you want to work with as a part of initialization 
+         '''
         self.s3_client = boto3.client('s3', region_name=AwsBoto3S3.AWS_REGION['loc_1'])
         self.s3_resource = boto3.resource('s3', region_name=AwsBoto3S3.AWS_REGION['loc_1'])
     
-    # Method to create a S3 Bucket
-    # Argument to this method is:- Bucket Name
-    # Note: S3 bucket names must be globally unique amongst all AWS customers
     def s3_create_bucket(self, _bucket_name):
+        '''
+        Method to create a S3 Bucket
+        Argument to this method is:- Bucket Name
+        Note: S3 bucket names must be globally unique amongst all AWS customers
+        '''
         try:
             # Call the create_bucket method on the object
             execute = self.s3_client.create_bucket(Bucket=_bucket_name)
