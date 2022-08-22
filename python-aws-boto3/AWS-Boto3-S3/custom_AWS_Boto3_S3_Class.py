@@ -44,9 +44,11 @@ class AwsBoto3S3:
         # return type of this method is a list
         return buckets
 
-    # Method to delete empty bucket
-    # Argument to this method is:- Bucket Name
     def s3_delete_empty_bucket(self, _bucket_name):
+        '''
+        Method to delete empty bucket
+        Argument to this method is:- Bucket Name
+        '''
         try:
             # Pull the objects in the specified bucket in to a variable (return type is a dictionary)
             item = self.s3_client.list_objects(Bucket=_bucket_name)
