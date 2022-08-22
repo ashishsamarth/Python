@@ -102,10 +102,12 @@ class CustomOpenpyxl:
             col_idx_name_map[_col_idx] = _col_cells[0]
         # Return type is dictionary
         return col_idx_name_map
-
-    # Method to get a map of column name and column index
-    # Argument to this method is: - Row number of header row
+    
     def ref_col_name_idx_map(self, _header_row_num):
+        '''
+        Method to get a map of column name and column index
+        Argument to this method is: - Row number of header row
+        '''
         # Create an empty dictionary
         col_name_idx_map = dict()
         # Iterate over the values of the header row
