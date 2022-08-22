@@ -87,9 +87,11 @@ class CustomOpenpyxl:
     ####################################################################################################################
     # Internal Methods for polymorphism support
 
-    # Method to get a map of column index and column name
-    # Argument to this method is: - Row number of header row
     def ref_col_idx_name_map(self, _header_row_num):
+        '''
+        Method to get a map of column index and column name
+        Argument to this method is: - Row number of header row
+        '''
         # Create an empty dictionary
         col_idx_name_map = dict()
         # Iterate over the values of the header row
