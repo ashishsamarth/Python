@@ -958,9 +958,11 @@ class CustomOpenpyxl:
         # since "openpyxl.load_workbook(self.my_filename, read_only=False)" is part of initialization
         self.__init__(self.my_filename)
 
-    # Method to save the workbook
-    # No arguments to this method
     def save_wb(self):
+        '''
+        Method to save the workbook
+        No arguments to this method
+        '''
         return self.my_base_wb.save(self.my_filename)
 
     def save_wb_as_new_file(self, _new_file_name):
