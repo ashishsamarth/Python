@@ -360,9 +360,11 @@ class CustomOpenpyxl:
             filled_cells.fill = _my_color
         self.save_wb()
 
-    # Method to change row color based on an exact match of cell value in particular column
-    # Arguments to this method: - Row number for header row, Column name, value of cell, user selected fill color
     def change_cell_color_by_cell_value_exact_match(self, _header_row_num, _col_name, _cell_value, _fill_color):
+        '''
+        Method to change row color based on an exact match of cell value in particular column
+        Arguments to this method: - Row number for header row, Column name, value of cell, user selected fill color
+        '''
         # Fetch the column index from column name using 'ref_col_name_letter_map' method
         _col_idx = column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name])
         # Get the list of indexes where near match of searched value if found excluding the header row
