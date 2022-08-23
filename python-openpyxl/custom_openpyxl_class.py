@@ -224,9 +224,11 @@ class CustomOpenpyxl:
             self.my_base_wb.create_sheet(_new_ws_name)
             self.save_wb()
 
-    # Method to add user provided prefix to value(s) in a given column
-    # Arguments to this method are:- Row number for header row, Column name & User provided prefix value
     def add_prefix_to_cell_val(self, _header_row_num, _col_name, _prefix_val):
+        '''
+        Method to add user provided prefix to value(s) in a given column
+        Arguments to this method are:- Row number for header row, Column name & User provided prefix value
+        '''
         # Fetch the column index from column name using 'ref_col_name_letter_map' method
         _col_idx = column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name])
         # Enumerate over the values from 'get_specific_col_val_by_col_name_in_active_ws' method
