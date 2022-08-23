@@ -262,9 +262,11 @@ class CustomOpenpyxl:
         # Save workbook
         self.save_wb()
 
-    # Method to automatically adjust column width based on max cell value in that columns
-    # This method has no argument
     def adjust_col_width_in_active_ws(self):
+        '''
+        Method to automatically adjust column width based on max cell value in that columns
+        This method has no argument
+        '''
         # Enumerate of the columns in the worksheet and start the index from 1
         # Start value is '1' since 'get_column_letter' method does not allow an index of 0
         for _col_num, _col in enumerate(self.my_base_active_ws.columns, start=1):
