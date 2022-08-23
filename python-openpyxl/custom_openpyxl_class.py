@@ -68,9 +68,11 @@ class CustomOpenpyxl:
         # Assumption is the column names are in 1st row
         self.my_base_active_ws_col_titles = [_col_name[0].value for _col_name in self.my_base_active_ws.iter_cols()]
 
-    # Method to set a specific worksheet as active where column names are in row#1
-    # Argument to this method is: - worksheet name
     def active_ws(self, _ws_name):
+        '''
+        Method to set a specific worksheet as active where column names are in row#1
+        Argument to this method is: - worksheet name
+        '''
         # if the worksheet name exists in the workbook
         if self.if_ws_in_wb(_ws_name):
             # Activate a particular worksheet in a workbook
