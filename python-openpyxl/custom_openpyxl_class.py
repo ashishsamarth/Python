@@ -408,9 +408,11 @@ class CustomOpenpyxl:
                 filled_cells.fill = _my_color
         self.save_wb()
 
-    # Method to change row color based on a non-empty cell in particular column
-    # Arguments to this method: - Row number for header row, Column name, and user selected fill color
     def change_row_color_non_empty_cell_in_col(self, _header_row_num, _col_name, _fill_color):
+        '''
+        Method to change row color based on a non-empty cell in particular column
+        Arguments to this method: - Row number for header row, Column name, and user selected fill color
+        '''
         # Fetch the column index from column name using 'ref_col_name_letter_map' method
         _col_idx = column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name])
         # Iterate over the values of the column and get row indexes of non-empty cells excluding header row
