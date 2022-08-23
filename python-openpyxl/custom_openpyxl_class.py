@@ -42,6 +42,7 @@ class CustomOpenpyxl:
     alert_fill = PatternFill(start_color='DFFF00', end_color='DFFF00', fill_type='solid')
     improvement_fill = PatternFill(start_color='7CF000', end_color='7CF000', fill_type='solid')
     success_fill = PatternFill(start_color='228B22', end_color='228B22', fill_type='solid')
+
     # Header & Value : Alignment and Fonts
     value_alignment = Alignment(wrap_text=False, vertical='top', horizontal='left')
     header_alignment = Alignment(wrap_text=False, vertical='top', horizontal='center')
@@ -96,9 +97,7 @@ class CustomOpenpyxl:
         col_idx_name_map = dict()
         # Iterate over the values of the header row
         # starting with index value of 0
-        for _col_idx, _col_cells in enumerate(
-                self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True),
-                start=1):
+        for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_idx_name_map[_col_idx] = _col_cells[0]
         # Return type is dictionary
         return col_idx_name_map
@@ -112,9 +111,7 @@ class CustomOpenpyxl:
         col_name_idx_map = dict()
         # Iterate over the values of the header row
         # starting with index value of 0
-        for _col_idx, _col_cells in enumerate(
-                self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True),
-                start=1):
+        for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_name_idx_map[_col_cells[0]] = _col_idx
         # Return type is dictionary
         return col_name_idx_map
@@ -128,29 +125,29 @@ class CustomOpenpyxl:
         col_name_letter_map = dict()
         # Iterate over the values of the header row
         # starting with index value of 0
-        for _col_idx, _col_cells in enumerate(
-                self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True),
-                start=1):
+        for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_name_letter_map[_col_cells[0]] = get_column_letter(_col_idx)
         # Return type is dictionary
         return col_name_letter_map
 
-    # Method to get a map of column letter and column map
-    # Argument to this method is: - Row number of header row
     def ref_col_letter_name_map(self, _header_row_num):
+        '''
+        Method to get a map of column letter and column map
+        Argument to this method is: - Row number of header row
+        '''
         col_letter_name_map = dict()
         # Iterate over the values of the header row
         # starting with index value of 0
-        for _col_idx, _col_cells in enumerate(
-                self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True),
-                start=1):
+        for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_letter_name_map[(get_column_letter(_col_idx))] = _col_cells[0]
         # Return type is dictionary
         return col_letter_name_map
 
-    # Method to get a map of column letter and column index
-    # Argument to this method is: - Row number of header row
     def ref_col_letter_idx_map(self, _header_row_num):
+        '''
+        Method to get a map of column letter and column index
+        Argument to this method is: - Row number of header row
+        '''
         col_letter_idx_map = dict()
         # Iterate over the maximum number of columns (start at 0th index)
         for _col_idx in range(1 + self.my_base_active_ws.max_column + 1):
@@ -162,9 +159,11 @@ class CustomOpenpyxl:
 
     ####################################################################################################################
 
-    # Method to add multiple columns with names as the last column of active worksheet
-    # Arguments to this method are:- Column Names (as an iterable), and row number of header row
     def add_multiple_cols_at_the_end_to_active_ws(self, _header_row_num, _col_names):
+        '''
+        Method to add multiple columns with names as the last column of active worksheet
+        Arguments to this method are:- Column Names (as an iterable), and row number of header row
+        '''
         # Iterate over the values in the iterable (column name)
         for _ in _col_names:
             if _ not in self.get_col_names_active_ws(_header_row_num):
@@ -175,9 +174,11 @@ class CustomOpenpyxl:
             # This method calls save internally, hence its auto save from user perspective
             self.save_wb()
 
-    # Method to add a new column with name as the last column of active worksheet
-    # Arguments to this method are: - New column name and row number of header row
     def add_new_col_at_the_end_to_active_ws(self, _header_row_num, _new_col_name):
+        '''
+        Method to add a new column with name as the last column of active worksheet
+        Arguments to this method are: - New column name and row number of header row
+        '''
         # New column will be added only if, it does not exist already
         if _new_col_name not in self.get_col_names_active_ws(_header_row_num):
             # Note:- Since we are adding the column at the end, we need to auto identify its index
@@ -188,9 +189,11 @@ class CustomOpenpyxl:
             # This method calls save internally, hence its auto save from user perspective
             self.save_wb()
 
-    # Method to add new column at specific index with a name
-    # Arguments to the method are: - New Column Name, New Column Position and row number for header
     def add_new_col_at_specific_idx_to_active_ws(self, _header_row_num, _new_col_name, _idx_pos):
+        '''
+        Method to add new column at specific index with a name
+        Arguments to the method are: - New Column Name, New Column Position and row number for header
+        '''
         # If the new column name already exists, nothing will be done
         if _new_col_name not in self.get_col_names_active_ws(_header_row_num):
             # Insert the column at the specific INDEX position
@@ -269,7 +272,9 @@ class CustomOpenpyxl:
             else:
                 # use the column dimensions parameter and set the width with a new value
                 self.my_base_active_ws.column_dimensions[(str(_col_letter))].width = adjusted_width
-            self.save_wb()
+        # Save the workbook after all changes to active worksheet are done.
+        # Saving the workbook with every iteration of for loop will increase time by 400%
+        self.save_wb()
 
     # Method to auto format the rows and columns in the worksheet
     # Argument to this method are: - Worksheet name and Row number of header
@@ -846,9 +851,11 @@ class CustomOpenpyxl:
                 # Return a list of values
                 return [_cell.value for _cell in _row]
 
-    # Method to get values for specific row in a given worksheet
-    # Argument to this method is: - Row number of values to be fetched
     def get_specific_row_val_as_str_in_active_ws(self, _val_row_num):
+        '''
+        Method to get values for specific row in a given worksheet
+        Argument to this method is: - Row number of values to be fetched
+        '''
         # Iterate once for all the columns in the active worksheet
         for _col in self.my_base_active_ws.iter_cols(min_col=1, max_col=1):
             # Iterate once for the specific row number in active worksheet
@@ -856,9 +863,11 @@ class CustomOpenpyxl:
                 # Return a string of values
                 return ', '.join(map(str, [_cell.value for _cell in _row]))
 
-    # Method to get values for specific row in a given worksheet
-    # Arguments to this method are: - Row number of values to be fetched and Row number of header row
     def get_specific_row_val_as_dict_in_active_ws(self, _header_row_num, _val_row_num):
+        '''
+        Method to get values for specific row in a given worksheet
+        Arguments to this method are: - Row number of values to be fetched and Row number of header row
+        '''
         # Iterate once for all the columns in the active worksheet
         _col_keys = [_ for _ in self.ref_col_name_idx_map(_header_row_num).keys()]
         # Create an empty list
@@ -876,17 +885,21 @@ class CustomOpenpyxl:
             # Return a dictionary of values
             return _result_set
 
-    # Method to check if a given worksheet exists in workbook
-    # Argument to this method is: workbook name
     def if_ws_in_wb(self, _ws_name):
+        '''
+        Method to check if a given worksheet exists in workbook
+        Argument to this method is: workbook name
+        '''
         # if worksheet exists in list of worksheets of workbook returns True else False
         if _ws_name in self.ws_names_in_my_base_wb:
             return True
         return False
 
-    # Method to read values from a cell range
-    # Arguments to this method are:- Row number for header row, Start range and Ending range
     def read_values_from_cell_range_active_ws(self, _header_row_num, _start_range, _end_range):
+        '''
+        Method to read values from a cell range
+        Arguments to this method are:- Row number for header row, Start range and Ending range
+        '''
         # Split start range to determine 'Column Letter' and Row index
         _start_rng_col = ''.join([_ for _ in _start_range if _.isalpha()])
         _start_rng_row = ''.join([_ for _ in _start_range if _.isdigit()])
@@ -910,9 +923,11 @@ class CustomOpenpyxl:
             _my_val.append(_val)
         return _my_val
 
-    # Method to remove a worksheet from a workbook
-    # Arguments to this method is: - worksheet name
     def remove_ws_from_wb(self, _ws_name):
+        '''
+        Method to remove a worksheet from a workbook
+        Arguments to this method is: - worksheet name
+        '''
         try:
             del self.my_base_wb[_ws_name]
             self.save_wb()
