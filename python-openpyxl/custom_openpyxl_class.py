@@ -328,9 +328,7 @@ class CustomOpenpyxl:
             # Exclude the header row
             if _xl_row_idx != _header_row_num:
                 # Write the contents of cells to target column from source column
-                self.my_base_active_ws.cell(row=_xl_row_idx,
-                                            column=_tgt_col_idx).value = self.my_base_active_ws.cell(
-                    row=_xl_row_idx, column=_src_col_idx).value
+                self.my_base_active_ws.cell(row=_xl_row_idx, column=_tgt_col_idx).value = self.my_base_active_ws.cell(row=_xl_row_idx, column=_src_col_idx).value
         # Save workbook
         self.save_wb()
 
