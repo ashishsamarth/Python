@@ -787,9 +787,11 @@ class CustomOpenpyxl:
         except ValueError:
             print('ValueError: Row or column values must be at least 1')
 
-    # Method to get column values for a given column letter
-    # Arguments to this method are:- Row number for header row & column letter
     def get_specific_col_val_by_col_letter_in_active_ws(self, _header_row_num, _col_letter):
+        '''
+        Method to get column values for a given column letter
+        Arguments to this method are:- Row number for header row & column letter
+        '''
         assert _col_letter in self.ref_col_letter_name_map(
             _header_row_num).keys(), 'Column Letter Outside Data-Set Range'
         _col_idx = column_index_from_string(_col_letter)
