@@ -814,9 +814,11 @@ class CustomOpenpyxl:
         # Return type is list
         return _row_idx_list
 
-    # Method to get row indexes of searched values in a specific column with exact match condition
-    # Arguments to this method are:- Row number for header row, Column name & Search value
     def get_row_idx_lst_based_on_search_val_specific_col_exact_match(self, _header_row_num, _col_name, _search_val):
+        '''
+        Method to get row indexes of searched values in a specific column with exact match condition
+        Arguments to this method are:- Row number for header row, Column name & Search value
+        '''
         # Fetch the column index from column name using 'ref_col_name_letter_map' method
         _col_idx = column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name])
         # Get the list of indexes where exact match of searched value is found excluding the header row
