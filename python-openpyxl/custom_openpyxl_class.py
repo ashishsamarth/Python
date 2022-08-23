@@ -433,9 +433,11 @@ class CustomOpenpyxl:
                 filled_cells.fill = _my_color
         self.save_wb()
 
-    # Method to change row color based on a near match of cell value in particular column
-    # Arguments to this method: - Row number for header row, Column name, value of cell, user selected fill color
     def change_row_color_by_cell_value_near_match(self, _header_row_num, _col_name, _cell_value, _fill_color):
+        '''
+        Method to change row color based on a near match of cell value in particular column
+        Arguments to this method: - Row number for header row, Column name, value of cell, user selected fill color
+        '''
         # Get the list of indexes where near match of searched value if found excluding the header row
         _row_idx = self.get_row_idx_lst_based_on_search_val_specific_col_near_match(_header_row_num, _col_name,
                                                                                     _cell_value)
