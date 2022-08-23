@@ -475,11 +475,12 @@ class CustomOpenpyxl:
                 filled_cells.fill = _my_color
         self.save_wb()
 
-    # Method to copy data from source and paste it to target of different worksheets in same workbook
-    # Arguments to this method are: - Source worksheet name, Column Letter of Source, Target worksheet name
-    # and Column letter of Target
-    def copy_src_col_paste_tgt_col_diff_sheets(self, _header_row_num, _src_ws_name, _src_col_name, _tgt_ws_name,
-                                               _tgt_col_name):
+    def copy_src_col_paste_tgt_col_diff_sheets(self, _header_row_num, _src_ws_name, _src_col_name, _tgt_ws_name, _tgt_col_name):
+        '''
+        Method to copy data from source and paste it to target of different worksheets in same workbook
+        Arguments to this method are: - Source worksheet name, Column Letter of Source, Target worksheet name
+        and Column letter of Target
+        '''
         # Fetch the column index from column name using 'ref_col_name_letter_map' method
         # Since we are dealing with multiple worksheets in this case
         # We must activate each worksheet before pulling column indexes
