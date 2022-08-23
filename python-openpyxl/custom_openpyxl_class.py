@@ -34,10 +34,8 @@ class CustomOpenpyxl:
     header_fill = PatternFill(start_color='CD5C5C', end_color='CD5C5C', fill_type="solid")
     even_row_fill = PatternFill(start_color='DCDCDC', end_color='DCDCDC', fill_type="solid")
     odd_row_fill = PatternFill(start_color='F5F5F5', end_color='F5F5F5', fill_type="solid")
-    thin_border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'),
-                         bottom=Side(style='thin'))
-    thick_border = Border(left=Side(style='thick'), right=Side(style='thick'), top=Side(style='thick'),
-                          bottom=Side(style='thick'))
+    thin_border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'),bottom=Side(style='thin'))
+    thick_border = Border(left=Side(style='thick'), right=Side(style='thick'), top=Side(style='thick'),bottom=Side(style='thick'))
     error_fill = PatternFill(start_color='FF6347', end_color='FF6347', fill_type='solid')
     alert_fill = PatternFill(start_color='DFFF00', end_color='DFFF00', fill_type='solid')
     improvement_fill = PatternFill(start_color='7CF000', end_color='7CF000', fill_type='solid')
@@ -90,7 +88,7 @@ class CustomOpenpyxl:
     ####################################################################################################################
     # Internal Methods for polymorphism support
 
-    def ref_col_idx_name_map(self, _header_row_num):
+    def ref_col_idx_name_map(self, _header_row_num) -> dict:
         '''
         Method to get a map of column index and column name
         Argument to this method is: - Row number of header row
@@ -98,13 +96,13 @@ class CustomOpenpyxl:
         # Create an empty dictionary
         col_idx_name_map = dict()
         # Iterate over the values of the header row
-        # starting with index value of 0
+        # starting with index value of 1
         for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_idx_name_map[_col_idx] = _col_cells[0]
         # Return type is dictionary
         return col_idx_name_map
 
-    def ref_col_name_idx_map(self, _header_row_num):
+    def ref_col_name_idx_map(self, _header_row_num) -> dict:
         '''
         Method to get a map of column name and column index
         Argument to this method is: - Row number of header row
@@ -112,13 +110,13 @@ class CustomOpenpyxl:
         # Create an empty dictionary
         col_name_idx_map = dict()
         # Iterate over the values of the header row
-        # starting with index value of 0
+        # starting with index value of 1
         for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_name_idx_map[_col_cells[0]] = _col_idx
         # Return type is dictionary
         return col_name_idx_map
 
-    def ref_col_name_letter_map(self, _header_row_num):
+    def ref_col_name_letter_map(self, _header_row_num) -> dict:
         '''
         Method to get a map of column name and column letter
         Argument to this method is: - Row number of header row
@@ -126,33 +124,33 @@ class CustomOpenpyxl:
         # Create an empty dictionary
         col_name_letter_map = dict()
         # Iterate over the values of the header row
-        # starting with index value of 0
+        # starting with index value of 1
         for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_name_letter_map[_col_cells[0]] = get_column_letter(_col_idx)
         # Return type is dictionary
         return col_name_letter_map
 
-    def ref_col_letter_name_map(self, _header_row_num):
+    def ref_col_letter_name_map(self, _header_row_num) -> dict:
         '''
         Method to get a map of column letter and column map
         Argument to this method is: - Row number of header row
         '''
         col_letter_name_map = dict()
         # Iterate over the values of the header row
-        # starting with index value of 0
+        # starting with index value of 1
         for _col_idx, _col_cells in enumerate(self.my_base_active_ws.iter_cols(min_row=_header_row_num, max_row=_header_row_num, values_only=True), start=1):
             col_letter_name_map[(get_column_letter(_col_idx))] = _col_cells[0]
         # Return type is dictionary
         return col_letter_name_map
 
-    def ref_col_letter_idx_map(self, _header_row_num):
+    def ref_col_letter_idx_map(self, _header_row_num) -> dict:
         '''
         Method to get a map of column letter and column index
         Argument to this method is: - Row number of header row
         '''
         col_letter_idx_map = dict()
         # Iterate over the maximum number of columns (start at 0th index)
-        for _col_idx in range(1 + self.my_base_active_ws.max_column + 1):
+        for _col_idx in range(_header_row_num + self.my_base_active_ws.max_column + 1):
             # Note:- For get column letter we need Column Index + 1 since,
             # get column letter does not recognize 0 as first index
             col_letter_idx_map[get_column_letter(_col_idx + 1)] = _col_idx + 1
@@ -189,7 +187,7 @@ class CustomOpenpyxl:
             # Once the columns is added, we correctly identify the cell where the column name will be written
             self.my_base_active_ws.cell(row=_header_row_num, column=_new_col_idx).value = _new_col_name
             # This method calls save internally, hence its auto save from user perspective
-            self.save_wb()
+        self.save_wb()
 
     def add_new_col_at_specific_idx_to_active_ws(self, _header_row_num, _new_col_name, _idx_pos):
         '''
@@ -212,7 +210,7 @@ class CustomOpenpyxl:
                         # Update cell value to new column name
                         _cell.value = _new_col_name
                     # This method calls save internally, hence its auto save from user perspective
-                    self.save_wb()
+            self.save_wb()
 
     def add_new_ws_at_end_of_wb(self, _new_ws_name):
         '''
@@ -253,12 +251,10 @@ class CustomOpenpyxl:
         # Enumerate over the values from 'get_specific_col_val_by_col_name_in_active_ws' method
         # start with index of (header_row+1) since we need to add prefix values to column values only not column header
         # This updated index start value is used for the row for enumeration
-        for _idx, _val in enumerate(self.get_specific_col_val_by_col_name_in_active_ws(_header_row_num, _col_name),
-                                    start=_header_row_num + 1):
+        for _idx, _val in enumerate(self.get_specific_col_val_by_col_name_in_active_ws(_header_row_num, _col_name), start=_header_row_num + 1):
             # LHS: Assign values to each cell in the column
             # RHS: Concatenate existing value of the cell with the prefixed value
-            self.my_base_active_ws.cell(row=_idx, column=_col_idx).value = (
-                    str(self.my_base_active_ws.cell(row=_idx, column=_col_idx).value) + str(_suffix_val))
+            self.my_base_active_ws.cell(row=_idx, column=_col_idx).value = (str(self.my_base_active_ws.cell(row=_idx, column=_col_idx).value) + str(_suffix_val))
         # Save workbook
         self.save_wb()
 
@@ -301,18 +297,18 @@ class CustomOpenpyxl:
                 # Identify cell range for non-header row
                 filled_cells = self.my_base_active_ws.cell(_row, _col)
                 # set the alignment of the non-header row
-                filled_cells.alignment = Alignment(wrap_text=False, vertical='top', horizontal='left')
+                filled_cells.alignment = self.value_alignment
                 # set the font of the non-header row
-                filled_cells.font = Font(name=self.cell_font_name, size=self.cell_font_size)
+                filled_cells.font = self.value_font
                 # set the border for non-header row
                 filled_cells.border = self.thin_border
             # Set font, border and alignment for header cells
             # Identify cell range for header row
             _cell_header = self.my_base_active_ws.cell(_header_row_num, _col)
             # set the alignment of the header row
-            _cell_header.alignment = Alignment(wrap_text=False, vertical='top', horizontal='center')
+            _cell_header.alignment = self.header_alignment
             # set the font of the header row
-            _cell_header.font = Font(name=self.header_font_name, size=self.header_font_size, bold=True)
+            _cell_header.font = self.header_font
             # set the color fill for header row
             _cell_header.fill = self.header_fill
             # set the border for header row
@@ -492,15 +488,16 @@ class CustomOpenpyxl:
         for _xl_row_idx, _row_val in enumerate(self.my_base_wb[_src_ws_name].iter_rows(values_only=True), start=1):
             # Write the contents of cells to target column from source column excluding header row
             self.my_base_wb[_tgt_ws_name].cell(row=_xl_row_idx + _header_row_num, column=_tgt_col_idx).value = \
-                self.my_base_wb[
-                    _src_ws_name].cell(row=_xl_row_idx + _header_row_num, column=_src_col_idx).value
+                self.my_base_wb[_src_ws_name].cell(row=_xl_row_idx + _header_row_num, column=_src_col_idx).value
         # Save workbook
         self.save_wb()
 
-    # Method to copy data from source worksheet to target worksheet
-    # Arguments to this method are: -  source worksheet name and target worksheet name
-    # Note: This method will create a new worksheet, if the target worksheet does not exist
     def copy_ws_src_to_tgt(self, _src_ws, _tgt_ws):
+        '''
+        Method to copy data from source worksheet to target worksheet
+        Arguments to this method are: -  source worksheet name and target worksheet name
+        Note: This method will create a new worksheet, if the target worksheet does not exist
+        '''
         # Code block will only proceed if source worksheet exists
         if self.if_ws_in_wb(_src_ws):
             # If the target worksheet exists, code will proceed to iterations and copy
@@ -522,10 +519,12 @@ class CustomOpenpyxl:
                     self.my_base_wb[_tgt_ws].cell(row=_row, column=_col).value = self.my_base_wb[_src_ws].cell(row=_row,
                                                                                                                column=_col).value
             self.save_wb()
-    
-    # Method to copy the header value from one worksheet to another
-    # Arguments to this method are: Row number of the header row, source worksheet name and target worksheet name    
+
     def copy_header_row_src_ws_to_tgt_ws(self, _header_row_num, _src_ws_name, _tgt_ws_name):
+        '''
+        Method to copy the header value from one worksheet to another
+        Arguments to this method are: Row number of the header row, source worksheet name and target worksheet name  
+        '''
         # Capture the column names from the source worksheet names using list comprehension
         _src_col_name = [_ for _ in self.my_base_wb[_src_ws_name].iter_rows(min_row=_header_row_num, max_row=(_header_row_num), values_only=True)][0]
         # Iterate over the column names and the column indexes starting at position = 1
@@ -535,14 +534,18 @@ class CustomOpenpyxl:
         # Save the workbook
         self.save_wb()
 
-    # Method to convert multi-column values in to single column values from active worksheet
     def convert_multi_col_val_to_single_col_in_active_ws(self):
+        '''
+        Method to convert multi-column values in to single column values from active worksheet
+        '''
         # Return a list of values
         return [_cell.value for _ in self.my_base_active_ws.columns for _cell in _]
 
-    # Create a dictionary from Excel cell values
-    # No arguments to this method
     def create_dict_from_values(self):
+        '''
+        Create a dictionary from Excel cell values
+        No arguments to this method
+        '''
         # Create an empty dictionary
         _my_dict = dict()
         # get the unique keys (numeric) from the first column of the worksheet
@@ -553,9 +556,11 @@ class CustomOpenpyxl:
             _my_dict[_] = [_row[1] for _row in self.my_base_active_ws.values if _row[0] == _]
         return _my_dict
 
-    # Method to convert dataframe to excel rows
-    # Arguments to this method are: - Dataframe and Worksheet name
     def df_to_rows(self, _dataframe, _ws_name):
+        '''
+        Method to convert dataframe to excel rows
+        Arguments to this method are: - Dataframe and Worksheet name
+        '''
         # Iterate over the rows in dataframe
         for _ in dataframe_to_rows(_dataframe, index=False):
             # Append the rows to worksheet
@@ -567,9 +572,11 @@ class CustomOpenpyxl:
     def del_row_by_idx(self, _row_idx):
         return self.my_base_active_ws.delete_rows(_row_idx)
 
-    # Method to delete rows based on an exact match of cell value in a given column
-    # Argument to this method are: - Row number of the header row, Column name and cell value
     def del_row_by_val_in_col_exact_match(self, _header_row_num, _col_name, _cell_val):
+        '''
+        Method to delete rows based on an exact match of cell value in a given column
+        Argument to this method are: - Row number of the header row, Column name and cell value
+        '''
         # Check if provided column name exists in the worksheet using 'ref_col_name_idx_map' method
         # 'ref_col_name_idx_map' method has return type of dict
         if _col_name in self.ref_col_name_idx_map(_header_row_num).keys():
@@ -593,9 +600,11 @@ class CustomOpenpyxl:
                     # delete the last element from the index to deplete the iteration count
                     del _depleting_idx[-1]
 
-    # Method to delete rows based on a near match of cell value in a given column
-    # Argument to this method are: - Row number of the header row, Column name and cell value
     def del_row_by_val_in_col_near_match(self, _header_row_num, _col_name, _search_val):
+        '''
+        Method to delete rows based on a near match of cell value in a given column
+        Argument to this method are: - Row number of the header row, Column name and cell value
+        '''
         # Check if provided column name exists in the worksheet using 'ref_col_name_idx_map' method
         # 'ref_col_name_idx_map' method has return type of dict
         if _col_name in self.ref_col_name_idx_map(_header_row_num).keys():
@@ -619,9 +628,11 @@ class CustomOpenpyxl:
                     # delete the last element from the index to deplete the iteration count
                     del _depleting_idx[-1]
 
-    # Method to drop column by name
-    # Arguments to this method are:- Row number for header row, worksheet name and column name
     def drop_col_by_name_in_active_ws(self, _header_row_num, _ws_name, _col_name):
+        '''
+        Method to drop column by name
+        Arguments to this method are:- Row number for header row, worksheet name and column name
+        '''
         # Activate the worksheet
         self.active_ws(_ws_name)
         # get the column index based on the column name
@@ -631,9 +642,11 @@ class CustomOpenpyxl:
         # Save the workbook
         self.save_wb()
 
-    # Method to drop the column by column letter
-    # Arguments to this method are:- Row number for header row, worksheet name and column letter
     def drop_col_by_letter_in_active_ws(self, _header_row_num, _ws_name, _col_letter):
+        '''
+        Method to drop the column by column letter
+        Arguments to this method are:- Row number for header row, worksheet name and column letter
+        '''
         # Activate the worksheet
         self.active_ws(_ws_name)
         # get the column index based on the column name
@@ -643,9 +656,11 @@ class CustomOpenpyxl:
         # Save the workbook
         self.save_wb()
 
-    # Method to filter a row based on a value present in any column of worksheet
-    # Argument to this method is:- value to be used as filter
     def filter_rows_by_val_in_any_col_in_active_ws(self, _header_row_num, _filter_val):
+        '''
+        Method to filter a row based on a value present in any column of worksheet
+        Argument to this method is:- value to be used as filter
+        '''
         # Create an empty list to hold values
         # One can always use list comprehension if needed
         returned_val = []
@@ -658,9 +673,11 @@ class CustomOpenpyxl:
                 returned_val.append(_main_rec)
         return returned_val
 
-    # Method to filter a row based on a value present in any column of worksheet
-    # Argument to this method is:- value to be used as filter
     def filter_rows_by_val_not_in_any_col_in_active_ws(self, _header_row_num, _filter_val):
+        '''
+        Method to filter a row based on a value present in any column of worksheet
+        Argument to this method is:- value to be used as filter
+        '''
         # Create an empty list to hold values
         # One can always use list comprehension if needed
         returned_val = []
@@ -673,9 +690,11 @@ class CustomOpenpyxl:
                 returned_val.append(_main_rec)
         return returned_val
 
-    # Method to filter rows based on a value present in a specific column of worksheet
-    # Arguments to this method are: - value used as filter, column idx where filter will be applied
     def filter_rows_by_val_in_a_col_in_active_ws(self, _header_row_num, _filter_col_name, _filter_val):
+        '''
+        Method to filter rows based on a value present in a specific column of worksheet
+        Arguments to this method are: - value used as filter, column idx where filter will be applied
+        '''
         # Create an empty list to hold values
         # One can always use list comprehension if needed
         returned_val = []
@@ -690,9 +709,11 @@ class CustomOpenpyxl:
                 returned_val.append(_main_rec)
         return returned_val
 
-    # Method to filter rows based on a value present in a specific column of worksheet
-    # Arguments to this method are: - value used as filter, column idx where filter will be applied
     def filter_rows_by_val_not_in_a_col_in_active_ws(self, _header_row_num, _filter_col_name, _filter_val):
+        '''
+        Method to filter rows based on a value present in a specific column of worksheet
+        Arguments to this method are: - value used as filter, column idx where filter will be applied
+        '''
         # Create an empty list to hold values
         # One can always use list comprehension if needed
         returned_val = []
@@ -707,10 +728,12 @@ class CustomOpenpyxl:
                 returned_val.append(_main_rec)
         return returned_val
 
-    # Method to format header row with user defined, cell color and font color
-    # Arguments to this method are: - Row number of the header row, fill color for the cells in header row
-    # Font color in the cells
     def format_header_row(self, _header_row_num, _cell_color, _font_color):
+        '''
+        Method to format header row with user defined, cell color and font color
+        Arguments to this method are: - Row number of the header row, fill color for the cells in header row
+        Font color in the cells
+        '''
         # Iterate over the cells in the header row to the max column size
         for _col_idx in range(1, self.my_base_active_ws_max_col + 1):
             # Set the header cells for easy style formatting
@@ -729,10 +752,12 @@ class CustomOpenpyxl:
                                      color=self._my_color_map[_font_color])
         self.save_wb()
 
-    # Method to format columns values with user defined, horizontal alignment ant font color
-    # Arguments to this method are: - Row number of the header row, column name,
-    # Font color in the cells
     def format_val_in_column(self, _header_row_num, _col_name, _h_align, _font_color):
+        '''
+        Method to format columns values with user defined, horizontal alignment ant font color
+        Arguments to this method are: - Row number of the header row, column name,
+        Font color in the cells
+        '''
         note = 'Valid Values are:- right, justify, general, centerContinuous, fill, center, left, distributed'
         assert _h_align in ['right', 'justify', 'general', 'centerContinuous', 'fill', 'center', 'left',
                             'distributed'], note
@@ -755,15 +780,19 @@ class CustomOpenpyxl:
                                     color=self._my_color_map[_font_color])
         self.save_wb()
 
-    # Method to get column names of the active worksheet
     def get_col_names_active_ws(self, _header_row_num):
+        '''
+        Method to get column names of the active worksheet
+        '''
         _col_names = [_ for _ in self.ref_col_idx_name_map(_header_row_num).values()]
         # Return type is a list
         return _col_names
 
-    # Method to get list of cell coordinate by a search value
-    # Argument to this method is:- search string
     def get_cell_coordinate_by_search_string(self, _search_val):
+        '''
+        Method to get list of cell coordinate by a search value
+        Argument to this method is:- search string
+        '''
         # Create an empty list
         _match_row_idx_lst = []
         # Enumerate over the values (in rows) with starting index of 1
@@ -780,29 +809,27 @@ class CustomOpenpyxl:
         # Return type is a list
         return _match_row_idx_lst
 
-    # Method to get column values for a given column name
-    # Arguments to this method are:- Row number for header row & column name
     def get_specific_col_val_by_col_name_in_active_ws(self, _header_row_num, _col_name):
+        '''
+        Method to get column values for a given column name
+        Arguments to this method are:- Row number for header row & column name
+        '''
         # Check if provided column name exists in the worksheet
         if _col_name in self.ref_col_idx_name_map(_header_row_num).values():
             # Fetch the values from the column provided
             # Skip the header row
             # Fetch the column index from column name using 'ref_col_name_letter_map' method
             return [_col_value[0] for _col_value in self.my_base_active_ws.iter_rows(min_row=_header_row_num + 1,
-                                                                                     min_col=column_index_from_string(
-                                                                                         self.ref_col_name_letter_map(
-                                                                                             _header_row_num)[
-                                                                                             _col_name]),
-                                                                                     max_col=column_index_from_string(
-                                                                                         self.ref_col_name_letter_map(
-                                                                                             _header_row_num)[
-                                                                                             _col_name]),
+                                                                                     min_col=column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name]),
+                                                                                     max_col=column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name]),
                                                                                      values_only=True)]
 
-    # Method to get column values for a given column index
-    # Arguments to this method are:- Row number for header row & column index
-    # Note:- Column index starts with 1
     def get_specific_col_val_by_col_idx_in_active_ws(self, _header_row_num, _col_idx):
+        '''
+        Method to get column values for a given column index
+        Arguments to this method are:- Row number for header row & column index
+        Note:- Column index starts with 1
+        '''
         # Fetch the values from the column index provided
         # Skip the header row
         assert _col_idx >= 1, 'ValueError: Row or column values must be at least 1'
@@ -952,11 +979,9 @@ class CustomOpenpyxl:
         # 1 is added to maximum column to make the last column inclusive for result return
         for _val in self.my_base_active_ws.iter_rows(values_only=True,
                                                      min_row=int(_start_rng_row),
-                                                     min_col=int(
-                                                         self.ref_col_letter_idx_map(_header_row_num)[_start_rng_col]),
+                                                     min_col=int(self.ref_col_letter_idx_map(_header_row_num)[_start_rng_col]),
                                                      max_row=int(_end_rng_row),
-                                                     max_col=int(self.ref_col_letter_idx_map(_header_row_num)[
-                                                                     _end_rng_col] + 1)):
+                                                     max_col=int(self.ref_col_letter_idx_map(_header_row_num)[_end_rng_col] + 1)):
             _my_val.append(_val)
         return _my_val
 
@@ -980,14 +1005,11 @@ class CustomOpenpyxl:
         '''
         _col_idx = column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name])
         # The Excel columns start with 1, however when iterating, the tuples start with index 0
-        for _idx, _val in enumerate(self.get_specific_col_val_by_col_name_in_active_ws(_header_row_num, _col_name),
-                                    start=1):
+        for _idx, _val in enumerate(self.get_specific_col_val_by_col_name_in_active_ws(_header_row_num, _col_name), start=1):
             # Bug fix to handle None values in the column
             # Otherwise it will fail during the sorting for split method
             if _val is not None:
-                self.my_base_active_ws.cell(row=_idx + _header_row_num,
-                                            column=_col_idx).value = _join_by_delim.join(
-                    sorted([_ for _ in _val.split(_delim)]))
+                self.my_base_active_ws.cell(row=_idx + _header_row_num, column=_col_idx).value = _join_by_delim.join(sorted([_ for _ in _val.split(_delim)]))
         self.save_wb()
 
     def sort_dsc_row_val_in_col_sep_by_delim_active_ws(self, _header_row_num, _col_name, _delim, _join_by_delim):
