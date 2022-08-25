@@ -130,7 +130,7 @@ class CustomOpenpyxl:
         # Return type is dictionary
         return col_name_letter_map
 
-    def ref_col_letter_name_map(self, _header_row_num) -> dict:
+    def ref_col_letter_name_map(self, _header_row_num: int) -> dict:
         '''
         Method to get a map of column letter and column map
         Argument to this method is: - Row number of header row
@@ -143,7 +143,7 @@ class CustomOpenpyxl:
         # Return type is dictionary
         return col_letter_name_map
 
-    def ref_col_letter_idx_map(self, _header_row_num) -> dict:
+    def ref_col_letter_idx_map(self, _header_row_num: int) -> dict:
         '''
         Method to get a map of column letter and column index
         Argument to this method is: - Row number of header row
