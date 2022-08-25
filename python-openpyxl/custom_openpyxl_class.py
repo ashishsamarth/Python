@@ -243,7 +243,7 @@ class CustomOpenpyxl:
         # Save workbook
         self.save_wb()
 
-    def add_suffix_to_cell_val(self, _header_row_num, _col_name, _suffix_val):
+    def add_suffix_to_cell_val(self, _header_row_num: int, _col_name: str, _suffix_val: str):
         '''
         Method to add user provided prefix to value in a given column
         Arguments to this method are:- Row number for header row, Column name & User provided prefix value
@@ -263,7 +263,7 @@ class CustomOpenpyxl:
     def adjust_col_width_in_active_ws(self):
         '''
         Method to automatically adjust column width based on max cell value in that columns
-        This method has no argument
+        Arguments to this Method: None
         '''
         # Enumerate of the columns in the worksheet and start the index from 1
         # Start value is '1' since 'get_column_letter' method does not allow an index of 0
