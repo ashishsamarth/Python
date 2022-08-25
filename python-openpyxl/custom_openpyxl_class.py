@@ -159,10 +159,10 @@ class CustomOpenpyxl:
 
     ####################################################################################################################
 
-    def add_multiple_cols_at_the_end_to_active_ws(self, _header_row_num, _col_names):
+    def add_multiple_cols_at_the_end_to_active_ws(self, _header_row_num, *_col_names):
         '''
         Method to add multiple columns with names as the last column of active worksheet
-        Arguments to this method are:- Column Names (as an iterable), and row number of header row
+        Arguments to this method are:- Column Names (as an packed iterable), and row number of header row
         '''
         # Iterate over the values in the iterable (column name)
         for _ in _col_names:
