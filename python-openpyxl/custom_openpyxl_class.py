@@ -176,7 +176,7 @@ class CustomOpenpyxl:
             # This method calls save internally, hence its auto save from user perspective
             self.save_wb()
 
-    def add_new_col_at_the_end_to_active_ws(self, _header_row_num, _new_col_name):
+    def add_new_col_at_the_end_to_active_ws(self, _header_row_num: int, _new_col_name: str):
         '''
         Method to add a new column with name as the last column of active worksheet
         Arguments to this method are: - New column name and row number of header row
