@@ -354,7 +354,7 @@ class CustomOpenpyxl:
             filled_cells.fill = _my_color
         self.save_wb()
 
-    def change_cell_color_by_cell_value_exact_match(self, _header_row_num, _col_name, _cell_value, _fill_color):
+    def change_cell_color_by_cell_value_exact_match(self, _header_row_num: int, _col_name: str, _cell_value, _fill_color: str):
         '''
         Method to change row color based on an exact match of cell value in particular column
         Arguments to this method: - Row number for header row, Column name, value of cell, user selected fill color
