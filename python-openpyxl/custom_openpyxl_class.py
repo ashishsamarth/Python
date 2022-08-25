@@ -163,6 +163,8 @@ class CustomOpenpyxl:
         '''
         Method to add multiple columns with names as the last column of active worksheet
         Arguments to this method are:- Column Names (as an packed iterable), and row number of header row
+        Note: Default Datatype of packed iterables is tuples
+        _header_row_num may need to be called as a keyword/named argument, rather than positional
         '''
         # Iterate over the values in the iterable (column name)
         for _ in _col_names:
