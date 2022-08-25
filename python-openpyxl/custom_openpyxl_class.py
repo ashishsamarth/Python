@@ -214,7 +214,7 @@ class CustomOpenpyxl:
                     # This method calls save internally, hence its auto save from user perspective
             self.save_wb()
 
-    def add_new_ws_at_end_of_wb(self, _new_ws_name):
+    def add_new_ws_at_end_of_wb(self, _new_ws_name: str):
         '''
         Method to create a new worksheet in workbook
         Argument to this method is: - New worksheet name
