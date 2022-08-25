@@ -224,7 +224,7 @@ class CustomOpenpyxl:
             self.my_base_wb.create_sheet(_new_ws_name)
             self.save_wb()
 
-    def add_prefix_to_cell_val(self, _header_row_num, _col_name, _prefix_val):
+    def add_prefix_to_cell_val(self, _header_row_num: int, _col_name: str, _prefix_val: str):
         '''
         Method to add user provided prefix to value(s) in a given column
         Arguments to this method are:- Row number for header row, Column name & User provided prefix value
