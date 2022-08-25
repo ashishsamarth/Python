@@ -411,8 +411,7 @@ class CustomOpenpyxl:
                     enumerate(self.my_base_active_ws.iter_rows(values_only=True), start=1) if _row_val[_col_idx - 1] if
                     _xl_row_idx != _header_row_num]
         # define the color pattern and using the class variable match the color hex code
-        _my_color = PatternFill(start_color=self._my_color_map[_fill_color], end_color=self._my_color_map[_fill_color],
-                                fill_type='solid')
+        _my_color = PatternFill(start_color=self._my_color_map[_fill_color], end_color=self._my_color_map[_fill_color], fill_type='solid')
         # Iterate over the list of row indexes
         for _row_num in _row_idx:
             # Iterate over the columns of the row
