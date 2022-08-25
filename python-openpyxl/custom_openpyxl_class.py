@@ -284,7 +284,7 @@ class CustomOpenpyxl:
         # Saving the workbook with every iteration of for loop will increase time by 400%
         self.save_wb()
 
-    def auto_format_active_ws(self, _ws_name, _header_row_num):
+    def auto_format_active_ws(self, _ws_name: str, _header_row_num: int):
         '''
         Method to auto format the rows and columns in the worksheet
         Argument to this method are: - Worksheet name and Row number of header
