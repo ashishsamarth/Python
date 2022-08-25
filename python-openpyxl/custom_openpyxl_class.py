@@ -191,7 +191,7 @@ class CustomOpenpyxl:
             # This method calls save internally, hence its auto save from user perspective
         self.save_wb()
 
-    def add_new_col_at_specific_idx_to_active_ws(self, _header_row_num, _new_col_name, _idx_pos):
+    def add_new_col_at_specific_idx_to_active_ws(self, _header_row_num: int, _new_col_name: str, _idx_pos: int):
         '''
         Method to add new column at specific index with a name
         Arguments to the method are: - New Column Name, New Column Position and row number for header
