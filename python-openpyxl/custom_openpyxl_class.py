@@ -116,7 +116,7 @@ class CustomOpenpyxl:
         # Return type is dictionary
         return col_name_idx_map
 
-    def ref_col_name_letter_map(self, _header_row_num) -> dict:
+    def ref_col_name_letter_map(self, _header_row_num: int) -> dict:
         '''
         Method to get a map of column name and column letter
         Argument to this method is: - Row number of header row
