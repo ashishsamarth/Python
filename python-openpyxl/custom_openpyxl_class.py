@@ -374,7 +374,7 @@ class CustomOpenpyxl:
             filled_cells.fill = _my_color
         self.save_wb()
 
-    def change_row_color_empty_cell_in_col(self, _header_row_num, _col_name, _fill_color):
+    def change_row_color_empty_cell_in_col(self, _header_row_num: int, _col_name: str, _fill_color: str):
         '''
         Method to change row color based on an empty cell in particular column
         Arguments to this method: - Row number for header row, Column name, and user selected fill color
