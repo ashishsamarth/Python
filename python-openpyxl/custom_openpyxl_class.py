@@ -362,11 +362,9 @@ class CustomOpenpyxl:
         # Fetch the column index from column name using 'ref_col_name_letter_map' method
         _col_idx = column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name])
         # Get the list of indexes where near match of searched value if found excluding the header row
-        _row_idx = self.get_row_idx_lst_based_on_search_val_specific_col_exact_match(_header_row_num, _col_name,
-                                                                                     _cell_value)
+        _row_idx = self.get_row_idx_lst_based_on_search_val_specific_col_exact_match(_header_row_num, _col_name, _cell_value)
         # Set the color fill based on user selected color
-        _my_color = PatternFill(start_color=self._my_color_map[_fill_color], end_color=self._my_color_map[_fill_color],
-                                fill_type='solid')
+        _my_color = PatternFill(start_color=self._my_color_map[_fill_color], end_color=self._my_color_map[_fill_color], fill_type='solid')
         # Iterate over the list of row indexes identified earlier
         for _row_num in _row_idx:
             # Identify cell range with matching criteria
