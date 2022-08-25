@@ -317,7 +317,7 @@ class CustomOpenpyxl:
             _cell_header.border = self.thick_border
         self.save_wb()
 
-    def copy_and_paste_column_values_by_col_name(self, _src_col_name, _tgt_col_name, _header_row_num):
+    def copy_and_paste_column_values_by_col_name(self, _src_col_name: str, _tgt_col_name: str, _header_row_num: int):
         '''
         Method to copy and paste data from one column to another, excluding header
         Arguments to this method are: - name of source column, name of target column & row number for header
