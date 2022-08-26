@@ -460,7 +460,7 @@ class CustomOpenpyxl:
                 filled_cells.fill = _my_color
         self.save_wb()
 
-    def copy_src_col_paste_tgt_col_diff_sheets(self, _header_row_num, _src_ws_name, _src_col_name, _tgt_ws_name, _tgt_col_name):
+    def copy_src_col_paste_tgt_col_diff_sheets(self, _header_row_num: int, _src_ws_name: str, _src_col_name: str, _tgt_ws_name: str, _tgt_col_name: str):
         '''
         Method to copy data from source and paste it to target of different worksheets in same workbook
         Arguments to this method are: - Source worksheet name, Column Letter of Source, Target worksheet name
