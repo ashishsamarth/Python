@@ -645,7 +645,7 @@ class CustomOpenpyxl:
         # Save the workbook
         self.save_wb()
 
-    def filter_rows_by_val_in_any_col_in_active_ws(self, _header_row_num, _filter_val):
+    def filter_rows_by_val_in_any_col_in_active_ws(self, _header_row_num: int, _filter_val):
         '''
         Method to filter a row based on a value present in any column of worksheet
         Argument to this method is:- value to be used as filter
