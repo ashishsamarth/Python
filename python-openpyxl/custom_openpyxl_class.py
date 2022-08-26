@@ -481,7 +481,7 @@ class CustomOpenpyxl:
         # Save workbook
         self.save_wb()
 
-    def copy_ws_src_to_tgt(self, _src_ws, _tgt_ws):
+    def copy_ws_src_to_tgt(self, _src_ws: str, _tgt_ws: str):
         '''
         Method to copy data from source worksheet to target worksheet
         Arguments to this method are: -  source worksheet name and target worksheet name
