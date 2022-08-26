@@ -617,7 +617,7 @@ class CustomOpenpyxl:
                     # delete the last element from the index to deplete the iteration count
                     del _depleting_idx[-1]
 
-    def drop_col_by_name_in_active_ws(self, _header_row_num: int, _ws_name: str, _col_name):
+    def drop_col_by_name_in_active_ws(self, _header_row_num: int, _ws_name: str, _col_name: str):
         '''
         Method to drop column by name
         Arguments to this method are:- Row number for header row, worksheet name and column name
