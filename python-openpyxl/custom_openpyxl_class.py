@@ -698,7 +698,7 @@ class CustomOpenpyxl:
                 returned_val.append(_main_rec)
         return returned_val
 
-    def filter_rows_by_val_not_in_a_col_in_active_ws(self, _header_row_num, _filter_col_name, _filter_val):
+    def filter_rows_by_val_not_in_a_col_in_active_ws(self, _header_row_num: int, _filter_col_name, _filter_val):
         '''
         Method to filter rows based on a value present in a specific column of worksheet
         Arguments to this method are: - value used as filter, column idx where filter will be applied
