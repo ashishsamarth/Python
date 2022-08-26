@@ -558,7 +558,7 @@ class CustomOpenpyxl:
         self.save_wb()
 
     # Method to delete a row based on row index
-    def del_row_by_idx(self, _row_idx):
+    def del_row_by_idx(self, _row_idx: int):
         return self.my_base_active_ws.delete_rows(_row_idx)
 
     def del_row_by_val_in_col_exact_match(self, _header_row_num, _col_name, _cell_val):
