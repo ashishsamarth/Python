@@ -717,7 +717,7 @@ class CustomOpenpyxl:
                 returned_val.append(_main_rec)
         return returned_val
 
-    def format_header_row(self, _header_row_num: int, _cell_color, _font_color):
+    def format_header_row(self, _header_row_num: int, _cell_color: str, _font_color):
         '''
         Method to format header row with user defined, cell color and font color
         Arguments to this method are: - Row number of the header row, fill color for the cells in header row
