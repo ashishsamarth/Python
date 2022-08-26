@@ -741,7 +741,7 @@ class CustomOpenpyxl:
                                      color=self._my_color_map[_font_color])
         self.save_wb()
 
-    def format_val_in_column(self, _header_row_num: int, _col_name, _h_align, _font_color):
+    def format_val_in_column(self, _header_row_num: int, _col_name: str, _h_align, _font_color):
         '''
         Method to format columns values with user defined, horizontal alignment ant font color
         Arguments to this method are: - Row number of the header row, column name,
