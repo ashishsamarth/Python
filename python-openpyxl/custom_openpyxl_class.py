@@ -769,7 +769,7 @@ class CustomOpenpyxl:
                                     color=self._my_color_map[_font_color])
         self.save_wb()
 
-    def get_col_names_active_ws(self, _header_row_num):
+    def get_col_names_active_ws(self, _header_row_num: int):
         '''
         Method to get column names of the active worksheet
         '''
