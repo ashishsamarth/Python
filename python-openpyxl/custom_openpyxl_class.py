@@ -561,7 +561,7 @@ class CustomOpenpyxl:
     def del_row_by_idx(self, _row_idx: int):
         return self.my_base_active_ws.delete_rows(_row_idx)
 
-    def del_row_by_val_in_col_exact_match(self, _header_row_num, _col_name, _cell_val):
+    def del_row_by_val_in_col_exact_match(self, _header_row_num: int, _col_name: str, _cell_val):
         '''
         Method to delete rows based on an exact match of cell value in a given column
         Argument to this method are: - Row number of the header row, Column name and cell value
