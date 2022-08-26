@@ -509,7 +509,7 @@ class CustomOpenpyxl:
                                                                                                                column=_col).value
             self.save_wb()
 
-    def copy_header_row_src_ws_to_tgt_ws(self, _header_row_num, _src_ws_name, _tgt_ws_name):
+    def copy_header_row_src_ws_to_tgt_ws(self, _header_row_num: int, _src_ws_name: str, _tgt_ws_name: str):
         '''
         Method to copy the header value from one worksheet to another
         Arguments to this method are: Row number of the header row, source worksheet name and target worksheet name  
