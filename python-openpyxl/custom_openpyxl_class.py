@@ -589,7 +589,7 @@ class CustomOpenpyxl:
                     # delete the last element from the index to deplete the iteration count
                     del _depleting_idx[-1]
 
-    def del_row_by_val_in_col_near_match(self, _header_row_num, _col_name, _search_val):
+    def del_row_by_val_in_col_near_match(self, _header_row_num: int, _col_name: str, _search_val):
         '''
         Method to delete rows based on a near match of cell value in a given column
         Argument to this method are: - Row number of the header row, Column name and cell value
