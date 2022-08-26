@@ -631,7 +631,7 @@ class CustomOpenpyxl:
         # Save the workbook
         self.save_wb()
 
-    def drop_col_by_letter_in_active_ws(self, _header_row_num, _ws_name, _col_letter):
+    def drop_col_by_letter_in_active_ws(self, _ws_name: str, _col_letter):
         '''
         Method to drop the column by column letter
         Arguments to this method are:- Row number for header row, worksheet name and column letter
