@@ -545,7 +545,7 @@ class CustomOpenpyxl:
             _my_dict[_] = [_row[1] for _row in self.my_base_active_ws.values if _row[0] == _]
         return _my_dict
 
-    def df_to_rows(self, _dataframe, _ws_name):
+    def df_to_rows(self, _dataframe, _ws_name: str):
         '''
         Method to convert dataframe to excel rows
         Arguments to this method are: - Dataframe and Worksheet name
