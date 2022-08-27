@@ -938,7 +938,7 @@ class CustomOpenpyxl:
             # Return a dictionary of values
             return _result_set
 
-    def if_ws_in_wb(self, _ws_name):
+    def if_ws_in_wb(self, _ws_name: str):
         '''
         Method to check if a given worksheet exists in workbook
         Argument to this method is: workbook name
