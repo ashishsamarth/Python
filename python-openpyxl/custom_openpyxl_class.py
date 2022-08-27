@@ -879,7 +879,7 @@ class CustomOpenpyxl:
         # Return type is list
         return _row_idx_list
 
-    def get_row_idx_lst_of_empty_rows_specific_col(self, _header_row_num, _col_name):
+    def get_row_idx_lst_of_empty_rows_specific_col(self, _header_row_num: int, _col_name):
         '''
         Method to get row indexes of empty rows in a specific column
         Arguments to this method are: - Row number of header row and Column name
