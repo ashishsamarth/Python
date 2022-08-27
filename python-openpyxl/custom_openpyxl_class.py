@@ -904,7 +904,7 @@ class CustomOpenpyxl:
                 # Return a list of values
                 return [_cell.value for _cell in _row]
 
-    def get_specific_row_val_as_str_in_active_ws(self, _val_row_num):
+    def get_specific_row_val_as_str_in_active_ws(self, _val_row_num: int):
         '''
         Method to get values for specific row in a given worksheet
         Argument to this method is: - Row number of values to be fetched
