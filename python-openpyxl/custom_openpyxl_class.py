@@ -846,7 +846,7 @@ class CustomOpenpyxl:
         except AssertionError:
             print('AssertionError: Column Letter Outside Data-Set Range')
 
-    def get_row_idx_lst_based_on_search_val_specific_col_near_match(self, _header_row_num, _col_name, _search_val):
+    def get_row_idx_lst_based_on_search_val_specific_col_near_match(self, _header_row_num: int, _col_name: str, _search_val):
         '''
         Method to get row indexes of searched values in a specific column with near match condition
         Arguments to this method are:- Row number for header row, Column name & Search value
