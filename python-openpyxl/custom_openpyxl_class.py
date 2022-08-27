@@ -1001,7 +1001,7 @@ class CustomOpenpyxl:
                 self.my_base_active_ws.cell(row=_idx + _header_row_num, column=_col_idx).value = _join_by_delim.join(sorted([_ for _ in _val.split(_delim)]))
         self.save_wb()
 
-    def sort_dsc_row_val_in_col_sep_by_delim_active_ws(self, _header_row_num: int, _col_name: str, _delim: str, _join_by_delim: str):
+    def sort_dsc_row_val_in_col_sep_by_delim_active_ws(self, _header_row_num: int, _col_name: str, _delim: str, _join_by_delim:str):
         '''
         Method to sort values in a given row in an iterative manner
         Arguments to this method are: - Index of column, row number of header, delimiter the values are separated by
