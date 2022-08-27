@@ -974,7 +974,7 @@ class CustomOpenpyxl:
             _my_val.append(_val)
         return _my_val
 
-    def remove_ws_from_wb(self, _ws_name):
+    def remove_ws_from_wb(self, _ws_name: str):
         '''
         Method to remove a worksheet from a workbook
         Arguments to this method is: - worksheet name
