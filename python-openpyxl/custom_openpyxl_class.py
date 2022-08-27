@@ -1034,7 +1034,7 @@ class CustomOpenpyxl:
         '''
         return self.my_base_wb.save(self.my_filename)
 
-    def save_wb_as_new_file(self, _new_file_name):
+    def save_wb_as_new_file(self, _new_file_name: str):
         '''
         Method to save the workbook to new file
         Argument for this method is: - New File Name
