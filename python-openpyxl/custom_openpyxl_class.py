@@ -1042,7 +1042,7 @@ class CustomOpenpyxl:
         assert _new_file_name.split('.')[-1] in ['xls', 'xlsx'], 'Input file does not have valid excel extension'
         return self.my_base_wb.save(_new_file_name)
 
-    def write_values_to_empty_cells_in_column(self, _header_row_num: int, _col_name, _write_val):
+    def write_values_to_empty_cells_in_column(self, _header_row_num: int, _col_name: str, _write_val):
         '''
         Method to write static value to empty cells in a given column
         Arguments to this method are:- Row number of the header wow, Column name and static to be written
