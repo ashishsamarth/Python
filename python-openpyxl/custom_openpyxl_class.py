@@ -986,7 +986,7 @@ class CustomOpenpyxl:
         except KeyError:
             print('Worksheet by name:- "{}" was not found'.format(_ws_name))
 
-    def sort_asc_row_val_in_col_sep_by_delim_active_ws(self, _header_row_num: int, _col_name: str, _delim, _join_by_delim):
+    def sort_asc_row_val_in_col_sep_by_delim_active_ws(self, _header_row_num: int, _col_name: str, _delim: str, _join_by_delim):
         '''
         Method to sort values in a given row in an iterative manner
         Arguments to this method are: - Index of column, row number of header, delimiter the values are separated by
