@@ -948,7 +948,7 @@ class CustomOpenpyxl:
             return True
         return False
 
-    def read_values_from_cell_range_active_ws(self, _header_row_num: int, _start_range, _end_range):
+    def read_values_from_cell_range_active_ws(self, _header_row_num: int, _start_range: int, _end_range):
         '''
         Method to read values from a cell range
         Arguments to this method are:- Row number for header row, Start range and Ending range
