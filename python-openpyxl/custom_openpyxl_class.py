@@ -893,7 +893,7 @@ class CustomOpenpyxl:
         # Return type is list
         return _row_idx_list
 
-    def get_specific_row_val_as_list_in_active_ws(self, _val_row_num):
+    def get_specific_row_val_as_list_in_active_ws(self, _val_row_num: int):
         '''
         Method to get values for specific row in a given worksheet
         Argument to this method is: - Row number of values to be fetched
