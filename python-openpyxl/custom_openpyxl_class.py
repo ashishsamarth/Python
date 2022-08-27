@@ -916,7 +916,7 @@ class CustomOpenpyxl:
                 # Return a string of values
                 return ', '.join(map(str, [_cell.value for _cell in _row]))
 
-    def get_specific_row_val_as_dict_in_active_ws(self, _header_row_num: int, _val_row_num):
+    def get_specific_row_val_as_dict_in_active_ws(self, _header_row_num: int, _val_row_num: int):
         '''
         Method to get values for specific row in a given worksheet
         Arguments to this method are: - Row number of values to be fetched and Row number of header row
