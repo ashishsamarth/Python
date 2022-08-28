@@ -77,7 +77,7 @@ class CustomPandas:
 
     # Method to add multiple columns with no-values to the dataframe (or excel)
     # Note: _col_names must be an iterable preferable a list
-    def add_cols_at_end(self, _col_names):
+    def add_cols_at_end(self, _col_names: list):
         # following line will add the new columns, only if they do not exist already
         # The list comprehension provides the string of column names
         # The columns are added without any value hence ' = '' '
