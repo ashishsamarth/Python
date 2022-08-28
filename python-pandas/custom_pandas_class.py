@@ -95,7 +95,7 @@ class CustomPandas:
 
     # Method to create dataframe from specific sheet in excel
     # Argument for this method is: - worksheet name for which dataframe needs to be created
-    def create_df_from_excel_specific_ws(self, _ws_name):
+    def create_df_from_excel_specific_ws(self, _ws_name: str):
         # read the excel file provided with the sheet_name parameter
         # keep_default_na = False, this stops null cells with being filed with N/A
         self.df = pd.read_excel(self.my_filename, skiprows=0, keep_default_na=False, sheet_name=_ws_name)
