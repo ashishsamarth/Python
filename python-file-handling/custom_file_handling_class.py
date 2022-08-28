@@ -8,7 +8,7 @@ from time import ctime
 class CustomFileHandler:
 
     # Initialize the class with filename
-    def __init__(self, _my_file_name):
+    def __init__(self, _my_file_name: str):
         self.my_filename = _my_file_name
 
     # Method to get the file extension using the split method of class <str>
