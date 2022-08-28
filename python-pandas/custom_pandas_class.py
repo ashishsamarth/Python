@@ -7,7 +7,7 @@ class CustomPandas:
     # Initialize the class with the filename as only argument
     # The initialization method will identify the file extension and use appropriate pandas function to create dataframe
     # If the sheet name is not provided the first worksheet will be loaded to dataframe
-    def __init__(self, _my_file_name, _sheet_name=0):
+    def __init__(self, _my_file_name: str, _sheet_name=0):
         self.my_filename = _my_file_name
         # If the file extension is xlsx, then read_excel function will be used
         if self.my_filename.split('.')[-1] == 'xlsx':
