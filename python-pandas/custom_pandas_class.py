@@ -133,7 +133,7 @@ class CustomPandas:
     # argument: _conditions should preferably be a list
     # It has to be a 1:1 mapping of _col_name and condition and is sequence sensitive
     # Do not convert is to a static method
-    def create_df_from_filtered_data_multiple_and_conditions(self, _col_names, _conditions):
+    def create_df_from_filtered_data_multiple_and_conditions(self, _col_names: str, _conditions):
         try:
             if len(_col_names) == len(_conditions):
                 _filter_con = []
