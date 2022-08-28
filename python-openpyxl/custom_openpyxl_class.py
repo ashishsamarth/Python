@@ -777,7 +777,7 @@ class CustomOpenpyxl:
         # Return type is a list
         return _col_names
 
-    def get_cell_coordinate_by_search_string(self, _search_val):
+    def get_cell_coordinate_by_search_string(self, _search_val: str):
         '''
         Method to get list of cell coordinate by a search value
         Argument to this method is:- search string
