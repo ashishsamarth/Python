@@ -798,7 +798,7 @@ class CustomOpenpyxl:
         # Return type is a list
         return _match_row_idx_lst
 
-    def get_specific_col_val_by_col_name_in_active_ws(self, _header_row_num, _col_name):
+    def get_specific_col_val_by_col_name_in_active_ws(self, _header_row_num: int, _col_name):
         '''
         Method to get column values for a given column name
         Arguments to this method are:- Row number for header row & column name
