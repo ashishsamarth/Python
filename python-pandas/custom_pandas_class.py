@@ -86,7 +86,7 @@ class CustomPandas:
 
     # Method to copy the contents from one column to another column of dataframe
     # Arguments to this method are source column name and target column name
-    def copy_paste_cols_data(self, _src_col_name: str, _tgt_col_name):
+    def copy_paste_cols_data(self, _src_col_name: str, _tgt_col_name: str):
         # NOTE: - If target col does not exist in the dataframe, it will be created at run time
         try:
             self.my_df[_tgt_col_name] = self.my_df[_src_col_name]
