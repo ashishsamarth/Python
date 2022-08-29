@@ -10,7 +10,7 @@ class CustomParamiko:
     # Initialize the class to set the SSH client and set up host addition policy
     # Arguments to this method is - **kwargs
     # **Key word argument (has three params, user, password and the location of private key)
-    def __init__(self, **connection_params):
+    def __init__(self, **connection_params: dict):
         self.ssh = paramiko.SSHClient()
         # setting up the host addition policy is important since, if not defined it will throw
         # paramiko.ssh_exception.SSHException
