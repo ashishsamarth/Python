@@ -1,4 +1,4 @@
-def s3_bucket_delete_specific_file(self, _bucket_name: str, _file_name):
+def s3_bucket_delete_specific_file(self, _bucket_name: str, _file_name: str):
     '''
     Method to delete specific file from a given S3 bucket
     Arguments to this method are:- Bucket-Name and File-Name to be deleted
