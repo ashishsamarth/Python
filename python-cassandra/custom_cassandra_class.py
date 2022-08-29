@@ -18,8 +18,7 @@ class CustomCassandra:
     # **Key word argument (has three params, user, password and the location of private key)
     # Default data type of response is a named_tuple, which allows accessing the columns using col names instead of index
     def __init__(self, **cassandra_params: dict):
-        self.auth = PlainTextAuthProvider(username = cassandra_params.get('cassandra_user'), 
-                                            password = cassandra_params.get('cassandra_password'))
+        self.auth = PlainTextAuthProvider(username = cassandra_params.get('cassandra_user'), password = cassandra_params.get('cassandra_password'))
         self.host = cassandra_params.get('cassandra_host')
         self.port = cassandra_params.get('cassandra_port')
         self.my_keyspace = ''
