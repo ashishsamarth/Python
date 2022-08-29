@@ -448,9 +448,11 @@ class CustomPandas:
     def set_col_as_index(self, _col_name: str):
         return self.my_df.set_index(_col_name)
 
-    # Method to get frequency of occurrences per unique item in a given column
-    # Argument to this method is: - Column index position
     def value_frequency_in_col_by_idx(self, _col_idx: int):
+        '''
+        Method to get frequency of occurrences per unique item in a given column
+        Argument to this method is: - Column index position
+        '''
         return self.my_df[self.my_df_col_idx_name[_col_idx]].value_counts()
 
     def value_frequency_in_col_by_name(self, _col_name: str):
