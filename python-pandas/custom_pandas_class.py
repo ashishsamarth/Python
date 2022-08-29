@@ -389,9 +389,11 @@ class CustomPandas:
     def prefix_delim(self, _tgt_col_name, _delim):
         self.my_df[_tgt_col_name] = _delim + self.my_df[_tgt_col_name].astype(str)
 
-    # Method to reset the index to default integer values
-    # No Arguments to this method
     def reset_to_default_int_idx(self):
+        '''
+        Method to reset the index to default integer values
+        No Arguments to this method
+        '''
         return self.my_df.reset_index()
 
     def rename_col(self, _old_col_name, _new_col_name):
