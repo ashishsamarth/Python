@@ -434,9 +434,11 @@ class CustomPandas:
         elif self.my_filename.split('.')[-1] == 'csv':
             return self.my_df.to_csv(self.my_filename, index=False)
 
-    # Method to save the dataframe to a different file
-    # Based on the file extension appropriate pandas function will be called to save the data
     def save_df_diff_tgt(self, _tgt_file_name: str):
+        '''
+        Method to save the dataframe to a different file
+        Based on the file extension appropriate pandas function will be called to save the data
+        '''
         # If the file extension is xlsx then 'to_excel' will be called
         if self.my_filename.split('.')[-1] == 'xlsx':
             return self.my_df.to_excel(_tgt_file_name, index=False)
