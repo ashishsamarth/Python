@@ -1,4 +1,4 @@
-def s3_bucket_copy_file_from_one_bucket_to_another(self, _src_bucket_name: str, _src_file_name: str, _tgt_bucket_name, _tgt_file_name):
+def s3_bucket_copy_file_from_one_bucket_to_another(self, _src_bucket_name: str, _src_file_name: str, _tgt_bucket_name: str, _tgt_file_name):
     '''
     Method to copy file from one data bucket to another
     Arguments to this method are:- Source-Bucket-Name, Source-File-Name, Target-Bucket-Name, Target-File-Name
