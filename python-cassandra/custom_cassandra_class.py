@@ -24,7 +24,7 @@ class CustomCassandra:
         self.my_keyspace = ''
     
     # Method to set the user provided keyspace name
-    def set_keyspace(self, _keyspace_name):
+    def set_keyspace(self, _keyspace_name: str):
         # Update the __init__ property to be used during session creation for keyspace
         # This approach is also helpful for query execution without passing the keyspace everytime
         self.my_keyspace = _keyspace_name
