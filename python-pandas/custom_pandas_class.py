@@ -404,10 +404,12 @@ class CustomPandas:
         except KeyError:
             print(f' Column Name :- "{_old_col_name}" not found in the dataframe')
 
-    # Method to rename multiple columns at once
-    # Arguments to this method are: - Two iterables, first with the old column names
-    # And second with the new column names
     def rename_multiple_cols(self, _old_col_name_iterable, _new_col_name_iterable):
+        '''
+        Method to rename multiple columns at once
+        Arguments to this method are: - Two iterables, first with the old column names
+        And second with the new column names
+        '''
         # The length of both the iterables must be same
         # Same number of column names in the list for replacement
         if len(_old_col_name_iterable) == len(_new_col_name_iterable):
