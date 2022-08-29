@@ -1,4 +1,4 @@
-def s3_create_bucket(self, _bucket_name):
+def s3_create_bucket(self, _bucket_name: str):
     '''
     Method to create a S3 Bucket
     Argument to this method is:- Bucket Name
