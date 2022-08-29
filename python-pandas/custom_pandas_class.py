@@ -379,9 +379,11 @@ class CustomPandas:
     def get_row_val_by_row_idx(self, _pandas_row_idx):
         return [_ for _ in self.my_df.itertuples()][_pandas_row_idx]
 
-    # Method to get count of unique items in a given column
-    # Argument to this method is: - Column name
     def get_unique_value_count_in_col(self, _col_name):
+        '''
+        Method to get count of unique items in a given column
+        Argument to this method is: - Column name
+        '''
         return self.my_df[_col_name].nunique()
 
     def prefix_delim(self, _tgt_col_name, _delim):
