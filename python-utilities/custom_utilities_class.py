@@ -11,7 +11,7 @@ import operator
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class UsefulUtils:
 
-    def add_same_idx_elems_in_lists(*_lists_iterable) -> list:
+    def add_same_idx_elems_in_lists(*_lists_iterable: list) -> list:
         '''
         Method to add elements at same index from multiple lists and create a new list
         Argument to this method: Multiple lists as arguments (separated by comma)
