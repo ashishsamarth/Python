@@ -1,4 +1,4 @@
-def s3_delete_empty_bucket(self, _bucket_name):
+def s3_delete_empty_bucket(self, _bucket_name: str):
     '''
     Method to delete empty bucket
     Argument to this method is:- Bucket Name
