@@ -419,9 +419,11 @@ class CustomPandas:
                 # so that changes are reflected in spreadsheet
                 self.my_df = self.my_df.rename(columns={str(_ocv): str(_ncv)})
 
-    # Method to add a delimiter as suffix
-    # Note:- This was added for understanding, however their are pre-built functions in pandas for this task
     def suffix_delim(self, _tgt_col_name: str, _delim: str):
+        '''
+        Method to add a delimiter as suffix
+        Note:- This was added for understanding, however their are pre-built functions in pandas for this task
+        '''
         self.my_df[_tgt_col_name] = self.my_df[_tgt_col_name].astype(str) + _delim
 
     def save_df_same_tgt(self):
