@@ -394,9 +394,11 @@ class CustomPandas:
     def reset_to_default_int_idx(self):
         return self.my_df.reset_index()
 
-    # Method to rename an existing column
-    # Arguments to this method are: - Old column name and New Column Name
     def rename_col(self, _old_col_name, _new_col_name):
+        '''
+        Method to rename an existing column
+        Arguments to this method are: - Old column name and New Column Name
+        '''
         try:
             # Assign the renamed columns to original dataframe
             # so that changes are reflected in spreadsheet
