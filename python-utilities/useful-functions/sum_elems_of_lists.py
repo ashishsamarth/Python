@@ -1,3 +1,5 @@
+import itertools
+
 def sum_elems_of_lists(*_inp_list):
     '''
     Method to join multiple lists into one list and sum all the digits
