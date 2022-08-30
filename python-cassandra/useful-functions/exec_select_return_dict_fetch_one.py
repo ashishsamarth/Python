@@ -1,4 +1,3 @@
-# 
 def exec_select_return_dict_fetch_one(self, _query):
     '''
     Method to execute a cql query
