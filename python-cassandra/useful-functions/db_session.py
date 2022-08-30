@@ -1,4 +1,3 @@
-# 
 def db_session(self):
     '''
     Method to connect to Cassandra Cluster on the remote host
