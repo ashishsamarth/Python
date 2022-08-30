@@ -1,3 +1,5 @@
+import collections
+
 def top_5_elem_occurrences_in_str(_inp_str):
     '''
     Method to get top 5 alphabets based on their occurrences in string
