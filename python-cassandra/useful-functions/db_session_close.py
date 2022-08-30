@@ -1,5 +1,4 @@
 # 
-# 
 def db_session_close(self):
     '''
     Method to close the session
