@@ -1,5 +1,4 @@
 # 
-# 
 def exec_select_return_named_tuple_fetch_all(self, _query):
     '''
     Method to execute a cql query
