@@ -833,6 +833,8 @@ class CustomOpenpyxl:
         Method to get the column values for a given column name as str
         Arguments to this method are: Row number for header row & Column Name
         '''
+        # Check if provided column name exists in the worksheet
+        
 
 
     def get_specific_col_val_by_col_idx_in_active_ws(self, _header_row_num: int, _col_idx: int):
