@@ -61,7 +61,6 @@ class CustomFileHandler:
             # Meaning if the method is called without passing the argument, the method will return first 5 characters from the file
             return read_char.read(num_of_characters)
 
-    # 
     def file_write_mode_write_char(self, data_set, in_newline):
         '''
         Method to write to file in newlines
