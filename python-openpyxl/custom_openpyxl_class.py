@@ -834,7 +834,8 @@ class CustomOpenpyxl:
         Arguments to this method are: Row number for header row & Column Name
         '''
         # Check if provided column name exists in the worksheet
-        
+        if _col_name in self.ref_col_idx_name_map(_header_row_num).values():
+            
 
 
     def get_specific_col_val_by_col_idx_in_active_ws(self, _header_row_num: int, _col_idx: int):
