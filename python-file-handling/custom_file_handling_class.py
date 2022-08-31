@@ -21,9 +21,11 @@ class CustomFileHandler:
         # This will only return the result and does not perform printing
         return my_file_extension
         
-    # Method to get file metadata
-    # Argument to this method: None
     def get_file_metadata(self):
+        '''
+        Method to get file metadata
+        Argument to this method: None
+        '''
         file_metadata = {'File_Name': self.my_filename,
                      'File_Owner_username': getpwuid(os.stat(self.my_filename).st_uid).pw_name,
                      'File_Owner_name': getpwuid(os.stat(self.my_filename).st_uid).pw_gecos,
