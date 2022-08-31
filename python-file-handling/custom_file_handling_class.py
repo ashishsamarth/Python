@@ -103,7 +103,6 @@ class CustomFileHandler:
             elif in_newline.lower() in ['n', 'no']:
                 append_mode.write(data_set)
 
-    # 
     @staticmethod
     def display_separator():
         '''
