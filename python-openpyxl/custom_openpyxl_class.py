@@ -560,6 +560,10 @@ class CustomOpenpyxl:
         _wb.save(filename=_file_location+_wb_name)
         return 'f New Workbook created with name:- {_wb_name}'
 
+    # Method to delete a row based on row index
+    def del_row_by_idx(self, _row_idx: int):
+        return self.my_base_active_ws.delete_rows(_row_idx)
+
     def df_to_rows(self, _dataframe, _ws_name: str):
         '''
         Method to convert dataframe to excel rows
@@ -571,10 +575,6 @@ class CustomOpenpyxl:
             self.my_base_wb[_ws_name].append(_)
         # Save workbook
         self.save_wb()
-
-    # Method to delete a row based on row index
-    def del_row_by_idx(self, _row_idx: int):
-        return self.my_base_active_ws.delete_rows(_row_idx)
 
     def del_row_by_val_in_col_exact_match(self, _header_row_num: int, _col_name: str, _cell_val):
         '''
