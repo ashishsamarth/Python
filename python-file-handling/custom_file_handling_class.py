@@ -35,7 +35,6 @@ class CustomFileHandler:
                      }
         return file_metadata
 
-    # 
     def file_read_mode_read_line(self, num_of_lines=0):
         '''
         Method to read the file, default num of lines is 0
