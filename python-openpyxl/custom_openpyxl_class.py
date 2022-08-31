@@ -443,6 +443,13 @@ class CustomOpenpyxl:
                 filled_cells.fill = _my_color
         self.save_wb()
 
+    def convert_multi_col_val_to_single_col_in_active_ws(self):
+        '''
+        Method to convert multi-column values in to single column values from active worksheet
+        '''
+        # Return a list of values
+        return [_cell.value for _ in self.my_base_active_ws.columns for _cell in _]
+
     def copy_and_paste_column_values_by_col_name(self, _src_col_name: str, _tgt_col_name: str, _header_row_num: int):
         '''
         Method to copy and paste data from one column to another, excluding header
@@ -522,13 +529,6 @@ class CustomOpenpyxl:
             self.my_base_wb[_tgt_ws_name].cell(row=_header_row_num, column=_col_idx).value = _col_val
         # Save the workbook
         self.save_wb()
-
-    def convert_multi_col_val_to_single_col_in_active_ws(self):
-        '''
-        Method to convert multi-column values in to single column values from active worksheet
-        '''
-        # Return a list of values
-        return [_cell.value for _ in self.my_base_active_ws.columns for _cell in _]
 
     def create_dict_from_values(self):
         '''
