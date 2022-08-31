@@ -91,7 +91,6 @@ class CustomFileHandler:
         with open(self.my_filename, 'a') as truncate_mode:
             truncate_mode.truncate(0)
 
-    # 
     def file_append_mode(self, data_set, in_newline):
         '''
         Method to append the text to file
