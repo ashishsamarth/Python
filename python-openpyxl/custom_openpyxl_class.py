@@ -837,6 +837,7 @@ class CustomOpenpyxl:
         if _col_name in self.ref_col_idx_name_map(_header_row_num).values():
             # Fetch the values from the column provdided
             # Skip the header row
+            # Fetch the column index from column name using 'ref_col_name_letter_map' method
 
 
     def get_specific_col_val_by_col_idx_in_active_ws(self, _header_row_num: int, _col_idx: int):
