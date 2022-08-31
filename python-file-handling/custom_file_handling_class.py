@@ -84,7 +84,6 @@ class CustomFileHandler:
             elif in_newline.lower() in ['n', 'no']:
                 write_mode.writelines(_text)
 
-    # 
     def file_truncate_mode(self):
         '''
         Method to truncate the file using the append mode
