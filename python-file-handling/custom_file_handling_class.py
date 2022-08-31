@@ -73,7 +73,6 @@ class CustomFileHandler:
             elif in_newline.lower() in ['n', 'no']:
                 write_mode.write(data_set)
 
-     # 
     def file_write_mode_write_line(self, _text, in_newline):
         '''
         Method to write user provided text to a file in single line followed by a new line character
