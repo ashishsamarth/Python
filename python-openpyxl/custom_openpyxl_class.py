@@ -828,7 +828,7 @@ class CustomOpenpyxl:
                                                                                      max_col=column_index_from_string(self.ref_col_name_letter_map(_header_row_num)[_col_name]),
                                                                                      values_only=True)]
 
-    def get_specific_col_val_by_col_idx_in_active_ws(self, _header_row_num: int, _col_idx: int):
+    def get_specific_col_val_by_col_idx_in_active_ws(self, _header_row_num: int, _col_idx: int) -> list:
         '''
         Method to get column values for a given column index
         Arguments to this method are:- Row number for header row & column index
