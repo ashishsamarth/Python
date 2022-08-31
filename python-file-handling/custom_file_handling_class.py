@@ -103,7 +103,10 @@ class CustomFileHandler:
             elif in_newline.lower() in ['n', 'no']:
                 append_mode.write(data_set)
 
-    # Method to separate the text printed on the terminal
+    # 
     @staticmethod
     def display_separator():
+        '''
+        Method to separate the text printed on the terminal
+        '''
         print('----XXXX'*6)
