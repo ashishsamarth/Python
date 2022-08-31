@@ -564,18 +564,6 @@ class CustomOpenpyxl:
     def del_row_by_idx(self, _row_idx: int):
         return self.my_base_active_ws.delete_rows(_row_idx)
 
-    def df_to_rows(self, _dataframe, _ws_name: str):
-        '''
-        Method to convert dataframe to excel rows
-        Arguments to this method are: - Dataframe and Worksheet name
-        '''
-        # Iterate over the rows in dataframe
-        for _ in dataframe_to_rows(_dataframe, index=False):
-            # Append the rows to worksheet
-            self.my_base_wb[_ws_name].append(_)
-        # Save workbook
-        self.save_wb()
-
     def del_row_by_val_in_col_exact_match(self, _header_row_num: int, _col_name: str, _cell_val):
         '''
         Method to delete rows based on an exact match of cell value in a given column
@@ -631,6 +619,18 @@ class CustomOpenpyxl:
                     self.save_wb()
                     # delete the last element from the index to deplete the iteration count
                     del _depleting_idx[-1]
+                    
+    def df_to_rows(self, _dataframe, _ws_name: str):
+        '''
+        Method to convert dataframe to excel rows
+        Arguments to this method are: - Dataframe and Worksheet name
+        '''
+        # Iterate over the rows in dataframe
+        for _ in dataframe_to_rows(_dataframe, index=False):
+            # Append the rows to worksheet
+            self.my_base_wb[_ws_name].append(_)
+        # Save workbook
+        self.save_wb()
 
     def drop_col_by_name_in_active_ws(self, _header_row_num: int, _ws_name: str, _col_name: str):
         '''
