@@ -862,7 +862,7 @@ class CustomOpenpyxl:
         except ValueError:
             print('ValueError: Row or column values must be at least 1')
 
-    def get_specific_col_val_by_col_letter_in_active_ws(self, _header_row_num, _col_letter) -> list:
+    def get_specific_col_val_as_list_by_col_letter_in_active_ws(self, _header_row_num, _col_letter) -> list:
         '''
         Method to get column values for a given column letter
         Arguments to this method are:- Row number for header row & column letter
