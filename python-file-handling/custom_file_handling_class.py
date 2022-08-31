@@ -35,8 +35,11 @@ class CustomFileHandler:
                      }
         return file_metadata
 
-    # Method to read the file, default num of lines is 0
+    # 
     def file_read_mode_read_line(self, num_of_lines=0):
+        '''
+        Method to read the file, default num of lines is 0
+        '''
         # open the filename captured during initialization in read mode
         with open(self.my_filename, 'r') as read_mode:
             # The default value of argument num_of_lines is zero, so following line of code will only read one line
