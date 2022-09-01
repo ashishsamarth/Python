@@ -1048,9 +1048,7 @@ class CustomOpenpyxl:
             # Bug fix to handle None values in the column
             # Otherwise it will fail during the sorting for split method
             if _val is not None:
-                self.my_base_active_ws.cell(row=_idx + _header_row_num,
-                                            column=_col_idx).value = _join_by_delim.join(
-                    sorted([_ for _ in _val.split(_delim)], reverse=True))
+                self.my_base_active_ws.cell(row=_idx + _header_row_num, column=_col_idx).value = _join_by_delim.join(sorted([_ for _ in _val.split(_delim)], reverse=True))
         self.save_wb()
 
     def reload_wb(self):
