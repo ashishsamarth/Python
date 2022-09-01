@@ -1,5 +1,4 @@
 # Note: openpyxl package provides both read and write capabilities to excel
-from curses import start_color
 import openpyxl
 from openpyxl.styles import PatternFill, Border, Side, Font, Alignment
 from openpyxl.utils import get_column_letter, column_index_from_string
