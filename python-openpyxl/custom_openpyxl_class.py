@@ -592,8 +592,7 @@ class CustomOpenpyxl:
         # 'ref_col_name_idx_map' method has return type of dict
         if _col_name in self.ref_col_name_idx_map(_header_row_num).keys():
             # Check if the value provided has a near match in the given column
-            if self.get_row_idx_lst_based_on_search_val_specific_col_near_match(_header_row_num, _col_name,
-                                                                                _search_val):
+            if self.get_row_idx_lst_based_on_search_val_specific_col_near_match(_header_row_num, _col_name, _search_val):
                 # Get the list of indexes based on match condition
                 _depleting_idx = [_ for _ in
                                   self.get_row_idx_lst_based_on_search_val_specific_col_near_match(_header_row_num,
