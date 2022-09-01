@@ -1,3 +1,7 @@
+from pwd import getpwuid
+from time import ctime
+import os
+
 # Method to get file metadata
 # Argument to this method: input filename
 def get_file_metadata(self):
