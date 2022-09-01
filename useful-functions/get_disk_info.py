@@ -1,4 +1,6 @@
 # Method to get disk information
+import shutil
+
 def get_disk_info():
     # Capture the disk usage in three different variable (Note these are in bytes)
     total_b, used_b, available_b = shutil.disk_usage('.')
