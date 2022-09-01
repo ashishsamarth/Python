@@ -237,8 +237,7 @@ class CustomOpenpyxl:
         for _idx, _val in enumerate(self.get_specific_col_val_by_col_name_in_active_ws(_header_row_num, _col_name), start=_header_row_num + 1):
             # LHS: Assign values to each cell in the column
             # RHS: Concatenate existing value of the cell with the prefixed value
-            self.my_base_active_ws.cell(row=_idx, column=_col_idx).value = (
-                    str(_prefix_val) + str(self.my_base_active_ws.cell(row=_idx, column=_col_idx).value))
+            self.my_base_active_ws.cell(row=_idx, column=_col_idx).value = (str(_prefix_val) + str(self.my_base_active_ws.cell(row=_idx, column=_col_idx).value))
         # Save workbook
         self.save_wb()
 
