@@ -522,8 +522,7 @@ class CustomOpenpyxl:
                 # Iterate over the number of rows in source
                 for _col in range(1, self.my_base_wb[_src_ws].max_column + 1):
                     # Assign the values to each target cell from source cell
-                    self.my_base_wb[_tgt_ws].cell(row=_row, column=_col).value = self.my_base_wb[_src_ws].cell(row=_row,
-                                                                                                               column=_col).value
+                    self.my_base_wb[_tgt_ws].cell(row=_row, column=_col).value = self.my_base_wb[_src_ws].cell(row=_row, column=_col).value
             self.save_wb()
 
     def create_dict_from_values(self):
