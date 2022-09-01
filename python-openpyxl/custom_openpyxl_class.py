@@ -570,10 +570,7 @@ class CustomOpenpyxl:
             # Check if the value provided has an exact match in the given column
             if self.get_row_idx_lst_based_on_search_val_specific_col_exact_match(_header_row_num, _col_name, _cell_val):
                 # Get the list of indexes based on match condition
-                _depleting_idx = [_ for _ in
-                                  self.get_row_idx_lst_based_on_search_val_specific_col_exact_match(_header_row_num,
-                                                                                                    _col_name,
-                                                                                                    _cell_val)]
+                _depleting_idx = [_ for _ in self.get_row_idx_lst_based_on_search_val_specific_col_exact_match(_header_row_num, _col_name, _cell_val)]
                 # Iterate for all values in _depleting_idx
                 while _depleting_idx:
                     # Delete the row for the iterated index value
