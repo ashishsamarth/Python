@@ -3,8 +3,10 @@ from botocore.exceptions import ClientError
 
 class AwsBoto3S3:
 
+    # Define class variable to manage the location
     AWS_REGION = {'loc_1': 'us-east-1'}
 
+    # Dictionary to manage Error Codes and Custom Error Messages
     S3_Error_Map = {'InvalidBucketName': 'BucketName does not align with S3 naming convention',
                     'BucketAlreadyExists': 'The requested bucket name is not available.',
                     'IllegalLocationConstraintException': 'The unspecified location constraint is incompatible for the region',
