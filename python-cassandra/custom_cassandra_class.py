@@ -62,6 +62,9 @@ class CustomCassandra:
     # Method to execute a cql query
     # Note the query must have the keyspace included in it, if 'set_keyspace' method was not executed before this
     def exec_select_return_named_tuple_fetch_one(self, _query):
+        '''
+        
+        '''
         session = self.db_session()
         # This line sets up the return type of the query as a named tuple
         session.row_factory = named_tuple_factory
