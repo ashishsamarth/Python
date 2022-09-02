@@ -70,7 +70,7 @@ class CustomCassandra:
         return row_result_as_named_tuple
 
 
-    # Note the query must have the keyspace included in it, if 'set_keyspace' method was not executed before this
+
     def exec_select_return_named_tuple_fetch_all(self, _query):
         '''
         Method to execute a cql query
