@@ -60,7 +60,6 @@ class CustomCassandra:
         return row_result_as_tuple
 
     # 
-    # 
     def exec_select_return_named_tuple_fetch_one(self, _query):
         '''
         Method to execute a cql query
