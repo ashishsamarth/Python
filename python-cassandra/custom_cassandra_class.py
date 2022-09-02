@@ -120,7 +120,6 @@ class CustomCassandra:
         return row_result_as_ordered_dict
 
     # 
-    # 
     def db_session_close(self):
         '''
         Method to close the session
