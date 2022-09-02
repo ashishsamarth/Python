@@ -69,8 +69,6 @@ class CustomCassandra:
         # return type of this method is a named tuple
         return row_result_as_named_tuple
 
-
-
     def exec_select_return_named_tuple_fetch_all(self, _query):
         '''
         Method to execute a cql query
