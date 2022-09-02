@@ -109,7 +109,6 @@ class CustomCassandra:
         # return type of this method is an ordered dictionary
         return row_result_as_ordered_dict
 
-    # 
     def exec_select_return_ordered_dict_fetch_all(self, _query):
         '''
         Method to execute a cql query
