@@ -119,7 +119,11 @@ class CustomCassandra:
         # return type of this method is a list of ordered dictionaries
         return row_result_as_ordered_dict
 
-    # Method to close the session
-    # Call the shutdown method on the session
+    # 
+    # 
     def db_session_close(self):
+        '''
+        Method to close the session
+        Call the shutdown method on the session
+        '''
         self.db_session().shutdown()
