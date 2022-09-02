@@ -119,7 +119,6 @@ class CustomCassandra:
         # return type of this method is a list of ordered dictionaries
         return row_result_as_ordered_dict
 
-    # 
     def db_session_close(self):
         '''
         Method to close the session
