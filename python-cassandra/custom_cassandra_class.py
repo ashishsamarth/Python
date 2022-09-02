@@ -79,7 +79,6 @@ class CustomCassandra:
         # return type of this method is a list of named tuples
         return row_result_as_named_tuple        
     
-    # 
     def exec_select_return_dict_fetch_one(self, _query):
         '''
         Method to execute a cql query
