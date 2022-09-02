@@ -99,7 +99,6 @@ class CustomCassandra:
         # return type of this method is a list of dictionaries
         return row_result_as_dict
 
-    # 
     def exec_select_return_ordered_dict_fetch_one(self, _query):
         '''
         Method to execute a cql query
