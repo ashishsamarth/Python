@@ -23,7 +23,6 @@ class CustomCassandra:
         self.port = cassandra_params.get('cassandra_port')
         self.my_keyspace = ''
     
-    # 
     def set_keyspace(self, _keyspace_name: str):
         '''
         Method to set the user provided keyspace name
