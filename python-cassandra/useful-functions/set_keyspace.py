@@ -1,4 +1,3 @@
-# 
 def set_keyspace(self, _keyspace_name):
     '''
     Method to set the user provided keyspace name
