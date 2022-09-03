@@ -14,7 +14,6 @@ import cassandra_conf
 class CustomCassandra:
 
     # 
-    # 
     def __init__(self, **cassandra_params: dict):
         '''
         Initialize the class to set the SSH client and set up host addition policy
