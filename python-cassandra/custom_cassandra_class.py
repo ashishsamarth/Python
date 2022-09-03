@@ -30,7 +30,6 @@ class CustomCassandra:
         self.my_keyspace = _keyspace_name
         return self.my_keyspace
     
-    # 
     def db_session(self):
         '''
         Method to connect to Cassandra Cluster on the remote host
