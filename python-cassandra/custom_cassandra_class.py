@@ -39,7 +39,6 @@ class CustomCassandra:
         session = cluster.connect(self.my_keyspace)
         return session
     
-    # 
     def exec_select_return_tuple_fetch_one(self, _query):
         '''
         Method to execute a cql query
