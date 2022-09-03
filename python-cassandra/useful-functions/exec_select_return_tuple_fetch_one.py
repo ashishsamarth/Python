@@ -1,6 +1,5 @@
 from cassandra.query import tuple_factory
-# 
-# 
+
 def exec_select_return_tuple_fetch_one(self, _query):
     '''
     Method to execute a cql query
