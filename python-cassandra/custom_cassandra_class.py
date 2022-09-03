@@ -13,11 +13,14 @@ import cassandra_conf
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class CustomCassandra:
 
-    # Initialize the class to set the SSH client and set up host addition policy
+    # 
     # Arguments to this method is - **kwargs
     # **Key word argument (has three params, user, password and the location of private key)
     # Default data type of response is a named_tuple, which allows accessing the columns using col names instead of index
     def __init__(self, **cassandra_params: dict):
+        '''
+        Initialize the class to set the SSH client and set up host addition policy
+        '''
         self.auth = PlainTextAuthProvider(username = cassandra_params.get('cassandra_user'), password = cassandra_params.get('cassandra_password'))
         self.host = cassandra_params.get('cassandra_host')
         self.port = cassandra_params.get('cassandra_port')
