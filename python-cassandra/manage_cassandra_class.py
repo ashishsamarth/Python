@@ -55,7 +55,6 @@ class ManageCassandra:
     
     # 
     # 
-    # 
     def stop_dse_cassandra(self, _dir_path):
         '''
         Method to stop DSE-Cassandra on remote host
