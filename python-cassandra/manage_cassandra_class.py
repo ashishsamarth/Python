@@ -21,7 +21,6 @@ class ManageCassandra:
         # assign the user provided db_user to initialization method, for reuse during connection
         self.key_filename = connection_params.get('key_filename')
 
-    # 
     def host_connect(self):
         '''
         Method to remotely connect to host
