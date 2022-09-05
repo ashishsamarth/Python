@@ -53,7 +53,6 @@ class ManageCassandra:
         self.execute_command(start_cassandra)
         # The return type of this method is None
     
-    # 
     def stop_dse_cassandra(self, _dir_path):
         '''
         Method to stop DSE-Cassandra on remote host
