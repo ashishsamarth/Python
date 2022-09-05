@@ -42,7 +42,6 @@ class ManageCassandra:
     
     # 
     # 
-    # 
     def start_dse_cassandra(self, _dir_path):
         '''
         Method to start DSE-Cassandra on remote host
