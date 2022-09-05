@@ -40,7 +40,6 @@ class ManageCassandra:
         # command output is returned to the code execution
         return command_output
     
-    # 
     def start_dse_cassandra(self, _dir_path):
         '''
         Method to start DSE-Cassandra on remote host
