@@ -72,9 +72,10 @@ class ManageCassandra:
         # The return type of this method is None
     
     # 
-    # Argument to this method is: None
+    # 
     def close_connection(self):
         '''
         Method to close the connection of remote host
+        Argument to this method is: None
         '''
         self.ssh.close()
