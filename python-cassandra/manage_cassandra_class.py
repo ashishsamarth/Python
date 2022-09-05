@@ -53,10 +53,13 @@ class ManageCassandra:
         self.execute_command(start_cassandra)
         # The return type of this method is None
     
-    # Method to stop DSE-Cassandra on remote host
+    # 
     # Since the Cassandra DB is on a cloud server, managing it from location machine needs SSH client
     # Hence 'execute_method()' of 'paramiko' module is used, even though the focus is to manage Cassandra and not the remote server
     def stop_dse_cassandra(self, _dir_path):
+        '''
+        Method to stop DSE-Cassandra on remote host
+        '''
         # Build the chained command to navigate to the directory and execute the required command
         # This command will navigate to the cassandra_home directory and stop Datastax-Enterprise version of Cassandra
         stop_cassandra = f'cd {_dir_path}' + ';' + './dse cassandra-stop'
