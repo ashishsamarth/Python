@@ -40,10 +40,13 @@ class ManageCassandra:
         # command output is returned to the code execution
         return command_output
     
-    # Method to start DSE-Cassandra on remote host
+    # 
     # Since the Cassandra DB is on a cloud server, managing it from location machine needs SSH client
     # Hence 'execute_method()' of 'paramiko' module is used, even though the focus is to manage Cassandra and not the remote server
     def start_dse_cassandra(self, _dir_path):
+        '''
+        Method to start DSE-Cassandra on remote host
+        '''
         # Build the chained command to navigate to the directory and execute the required command
         start_cassandra = f'cd {_dir_path}' + ';' + './dse cassandra'
         # execute the command
