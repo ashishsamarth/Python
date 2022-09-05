@@ -22,7 +22,6 @@ class ManageCassandra:
         self.key_filename = connection_params.get('key_filename')
 
     # 
-    # Argument to this method is: Hostname, Username and Location of Private Key for authentication
     def host_connect(self):
         '''
         Method to remotely connect to host
