@@ -30,7 +30,6 @@ class ManageCassandra:
         return remote_connect
     
     # 
-    # 
     def execute_command(self, _command):
         '''
         Method to execute specific commands on the connected host
