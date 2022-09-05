@@ -29,7 +29,6 @@ class ManageCassandra:
         remote_connect = self.ssh.connect(hostname=self.hostname, username=self.username, key_filename = self.key_filename)
         return remote_connect
     
-    # 
     def execute_command(self, _command):
         '''
         Method to execute specific commands on the connected host
