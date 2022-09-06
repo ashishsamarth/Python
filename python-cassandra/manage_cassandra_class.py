@@ -66,7 +66,6 @@ class ManageCassandra:
         # The return type of this method is None
     
     # 
-    # 
     def cassandra_status(self, _dir_path):
         '''
         Method to check the status of Cassandra Nodes on remote host
