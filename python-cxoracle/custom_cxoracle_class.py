@@ -102,6 +102,7 @@ class CustomCxOracle:
             if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold() and not self.chk_db_object_existence(_sql_query_or_sql_variable):
                 with self.db_auto_connect.cursor() as cursor:
                     cursor.execute(_sql_query_or_sql_variable)
+            print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
 
 
         # Execute the statement, if create keyword is present in the sql query
