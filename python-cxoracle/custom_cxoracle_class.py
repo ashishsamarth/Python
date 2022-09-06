@@ -73,6 +73,7 @@ class CustomCxOracle:
         '''
         # Get the DB object name from the sql query or sql variable
         obj_name = str(_sql_query_or_sql_variable).split(' ')[2]
+        # SQL code to check the object existence
         _existence_result = f"Select Owner, Object_name, Object_Type from all_objects where 1=1 and object_name= '{obj_name}'"
         with self.db_auto_connect.cursor() as cursor:
             return ((False, True) [not bool(cursor.execute(_existence_result))])
