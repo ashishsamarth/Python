@@ -85,7 +85,12 @@ class CustomCxOracle:
         Method to Create a DB object
         Arguments to this Method: Sql Query or SQL Variable
         Note: Method verifies the existence of create keyword in the input statement
-        '''        
+        '''
+        if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold():
+            with self.db_auto_connect.cursor() as cursor:
+                cursor.execute(_sql_query_or_sql_variable)
+        else:
+            print(f'SQL Statement Error: Input SQL does not seem to be a valid Create Statement')
 
     # Method to create a privileged connection as SYSDBA
     # Arguments to this method: Keyword Argument defined in db_conf as privileged_user
