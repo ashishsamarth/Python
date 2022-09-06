@@ -10,6 +10,9 @@ class ManageCassandra:
     # Arguments to this method is - **kwargs
     # **Key word argument (has three params, user, password and the location of private key)
     def __init__(self, **connection_params):
+        '''
+        
+        '''
         self.ssh = paramiko.SSHClient()
         # setting up the host addition policy is important since, if not defined it will throw paramiko.ssh_exception.SSHException
         # This line adds the hostname to the known_hosts file on the operating system (just once)
