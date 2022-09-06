@@ -66,6 +66,11 @@ class CustomCxOracle:
                 # user will be provided with error brief and code will exit without execute any more statements
                 sys.exit()
 
+    def create_db_object(self, _sql_query_or_sql_variable):
+        if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold():
+            with self.db_auto_connect.cursor() as cursor:
+                cursor.execute(_sql_query_or_sql_variable)
+
     # Method to create a privileged connection as SYSDBA
     # Arguments to this method: Keyword Argument defined in db_conf as privileged_user
     def db_sys_privileged_conn(self, **privileged_creds: dict):
