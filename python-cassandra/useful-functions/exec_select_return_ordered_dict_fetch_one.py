@@ -1,7 +1,5 @@
 from cassandra.query import ordered_dict_factory
 
-# 
-# 
 def exec_select_return_ordered_dict_fetch_one(self, _query):
     '''
     Method to execute a cql query
