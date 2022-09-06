@@ -104,7 +104,7 @@ class CustomCxOracle:
                     cursor.execute(_sql_query_or_sql_variable)
             print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
         except cx_Oracle.DatabaseError as ora_error:
-            
+            ecode, emsg = ora_error.args[0].message[:-1].split(': ', 1)
 
 
         # Execute the statement, if create keyword is present in the sql query
