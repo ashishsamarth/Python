@@ -8,7 +8,6 @@ import paramiko_conf
 class ManageCassandra:
     # 
     # 
-    # 
     def __init__(self, **connection_params):
         '''
         Initialize the class to set the SSH client and set up host addition policy
