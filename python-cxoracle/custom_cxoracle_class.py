@@ -66,7 +66,7 @@ class CustomCxOracle:
                 # user will be provided with error brief and code will exit without execute any more statements
                 sys.exit()
 
-    def create_db_object(self, _sql_query_or_sql_variable):
+    def create_db_object_auto_commit(self, _sql_query_or_sql_variable):
         '''
         Method to Create a DB object
         Arguments to this Method: Sql Query or SQL Variable
