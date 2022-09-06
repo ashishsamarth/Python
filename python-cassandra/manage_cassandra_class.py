@@ -66,12 +66,13 @@ class ManageCassandra:
         # The return type of this method is None
     
     # 
-    # Since the Cassandra DB is on a cloud server, managing it from location machine needs SSH client
+    # 
     # Hence 'execute_method()' of 'paramiko' module is used, even though the focus is to manage Cassandra and not the remote server
     def cassandra_status(self, _dir_path):
         '''
         Method to check the status of Cassandra Nodes on remote host
-        
+        Since the Cassandra DB is on a cloud server, managing it from location machine needs SSH client
+
         '''
         # Build the chained command to navigate to the directory and execute the required command
         # This command will navigate to the cassandra_home directory and check the node status of Datastax-Enterprise version of Cassandra
