@@ -6,7 +6,7 @@ import paramiko_conf
 
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class ManageCassandra:
-    # 
+    
     def __init__(self, **connection_params):
         '''
         Initialize the class to set the SSH client and set up host addition policy
