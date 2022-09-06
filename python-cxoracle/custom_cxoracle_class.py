@@ -109,7 +109,6 @@ class CustomCxOracle:
                 print(CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))])
             else:
                 print('Method - create_db_object_auto_commit: Unmapped Error Code')
-
         # Execute the statement, if create keyword is present in the sql query
         if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold():
             with self.db_auto_connect.cursor() as cursor:
