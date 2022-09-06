@@ -76,6 +76,7 @@ class CustomCxOracle:
         # SQL code to check the object existence
         _existence_result = f"Select Owner, Object_name, Object_Type from all_objects where 1=1 and object_name= '{obj_name}'"
         with self.db_auto_connect.cursor() as cursor:
+            # Use Ternary operator, validate the bool return type of the query
             return ((False, True) [not bool(cursor.execute(_existence_result))])
 
     def create_db_object_auto_commit(self, _sql_query_or_sql_variable):
