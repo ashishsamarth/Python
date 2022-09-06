@@ -1,3 +1,5 @@
+from cassandra.query import ordered_dict_factory
+
 # Method to execute a cql query
 # Note the query must have the keyspace included in it, if 'set_keyspace' method was not executed before this
 def exec_select_return_ordered_dict_fetch_one(self, _query):
