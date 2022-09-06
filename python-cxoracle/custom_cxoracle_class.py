@@ -98,6 +98,12 @@ class CustomCxOracle:
         Arguments to this Method: Sql Query or SQL Variable
         Note: Method verifies the existence of create keyword in the input statement
         '''
+        try:
+            if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold() and not self.chk_db_object_existence(_sql_query_or_sql_variable):
+                with self.db_auto_connect.cursor() as cursor:
+                    cursor.execute(_sql_query_or_sql_variable)
+
+
         # Execute the statement, if create keyword is present in the sql query
         if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold():
             with self.db_auto_connect.cursor() as cursor:
