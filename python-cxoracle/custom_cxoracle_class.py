@@ -66,7 +66,6 @@ class CustomCxOracle:
                 # user will be provided with error brief and code will exit without execute any more statements
                 sys.exit()
 
-
     def chk_db_object_existence(self, _sql_query_or_sql_variable):
         obj_name = str(_sql_query_or_sql_variable).split(' ')[2]
         _existence_result = f"Select Owner, Object_name, Object_Type from all_objects where 1=1 and object_name= '{obj_name}'"
