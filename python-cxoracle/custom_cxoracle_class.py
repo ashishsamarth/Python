@@ -67,6 +67,11 @@ class CustomCxOracle:
                 sys.exit()
 
     def chk_db_object_existence(self, _sql_query_or_sql_variable):
+        '''
+        Method to check Existence of a Database Object
+        Arguments to this Method: Sql Query or Sql Variable
+        '''
+        # Get the DB object name from the sql query or sql variable
         obj_name = str(_sql_query_or_sql_variable).split(' ')[2]
         _existence_result = f"Select Owner, Object_name, Object_Type from all_objects where 1=1 and object_name= '{obj_name}'"
         with self.db_auto_connect.cursor() as cursor:
