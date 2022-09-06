@@ -84,14 +84,13 @@ class CustomCxOracle:
                 with self.db_auto_connect.cursor() as cursor:
                     cursor.execute(_sql_query_or_sql_variable)
                 self.db_commit()
-                return f'DB Object: Created Successfully'
-            else:
-                return f'SQL Statement Error; Input SQL does not see to be a valid Create Statement'
+            print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
         except cx_Oracle.DatabaseError as ora_error:
             ecode, emsg = ora_error.args[0].message[:-1].split(': ', 1)
             if int(ecode.split('-')[-1].lstrip('0')) in CustomCxOracle._oracle_error_map.keys():
-                return CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))]
-            return 'Method - create_db_object_auto_commit: Unmapped Error Code'
+                print(CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))])
+            else:
+                print('Method - create_db_object_auto_commit: Unmapped Error Code')
     
     def create_db_object(self, _sql_query_or_sql_variable):
         '''
