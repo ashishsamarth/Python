@@ -68,7 +68,7 @@ class CustomCxOracle:
 
     def create_db_object_auto_commit(self, _sql_query_or_sql_variable):
         '''
-        Method to Create a DB object
+        Method to Create a DB object and commit the changes
         Arguments to this Method: Sql Query or SQL Variable
         Note: Method verifies the existence of create keyword in the input statement
         '''
@@ -79,6 +79,13 @@ class CustomCxOracle:
             self.db_commit()
         else:
             print(f'SQL Statement Error: Input SQL does not seem to be a valid Create Statement')
+    
+    def create_db_object(self, _sql_query_or_sql_variable):
+        '''
+        Method to Create a DB object
+        Arguments to this Method: Sql Query or SQL Variable
+        Note: Method verifies the existence of create keyword in the input statement
+        '''        
 
     # Method to create a privileged connection as SYSDBA
     # Arguments to this method: Keyword Argument defined in db_conf as privileged_user
