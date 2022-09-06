@@ -75,6 +75,7 @@ class CustomCxOracle:
         if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold():
             with self.db_auto_connect.cursor() as cursor:
                 cursor.execute(_sql_query_or_sql_variable)
+            # Once the statement is executed, perform commit of the executed statement
             self.db_commit()
         else:
             print(f'SQL Statement Error: Input SQL does not seem to be a valid Create Statement')
