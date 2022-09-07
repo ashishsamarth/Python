@@ -89,18 +89,16 @@ class CustomCxOracle:
         Note: Method verifies the existence of create keyword in the input statement
         '''
         try:
-            if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold() and not chk_db_object_existence(_sql_query_or_sql_variable):
-                with self.db_auto_connect.cursor() as cursor:
-                    cursor.execute(_sql_query_or_sql_variable)
-                self.db_commit()
-            else:
-                print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
+            with self.db_auto_connect.cursor() as cursor:
+                cursor.execute(_sql_query_or_sql_variable)
+            self.db_commit()
         except cx_Oracle.DatabaseError as _errors:
             _error, = _errors.args
             if _error.code in CustomCxOracle._oracle_error_map.keys():
-                print(CustomCxOracle._oracle_error_map[_error.code])
-            else:
-                print('Method - create_db_object_auto_commit: Unmapped Error Code')
+                if _error.code == 955:
+                    pass
+                else:
+                    print(CustomCxOracle._oracle_error_map[_error.code])
 
     # Method to create a privileged connection as SYSDBA
     # Arguments to this method: Keyword Argument defined in db_conf as privileged_user
