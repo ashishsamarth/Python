@@ -82,30 +82,12 @@ class CustomCxOracle:
             # Use Ternary operator, validate the bool return type of the query
             return ((False, True) [bool(cursor.execute(_existence_qry))])
 
-
     def create_db_object_auto_commit(self, _sql_query_or_sql_variable):
         '''
         Method to Create a DB object and commit the changes
         Arguments to this Method: Sql Query or SQL Variable
         Note: Method verifies the existence of create keyword in the input statement
         '''
-        # Internal Method
-        '''
-        Method to check Existence of a Database Object
-        Arguments to this Method: Sql Query or Sql Variable
-        # Note SQL Variable Can only be a DB Object Name and nothing else
-        While SQL query should have the Create Table Syntax
-
-        ''' 
-        def chk_db_object_existence(_sql_query_or_sql_variable):
-            # Get the DB object name from the sql query or sql variable
-            obj_name = str(_sql_query_or_sql_variable).split(' ')[2] if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold() else str(_sql_query_or_sql_variable)
-            # SQL code to check the object existence
-            _existence_result = f"Select Owner, Object_name, Object_Type from all_objects where 1=1 and object_name= '{obj_name}'"
-            with self.db_auto_connect.cursor() as cursor:
-                # Use Ternary operator, validate the bool return type of the query
-                return ((False, True) [not bool(cursor.execute(_existence_result))])
-
         try:
             if 'create'.casefold() in str(_sql_query_or_sql_variable).casefold() and not chk_db_object_existence(_sql_query_or_sql_variable):
                 with self.db_auto_connect.cursor() as cursor:
