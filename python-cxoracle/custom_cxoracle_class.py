@@ -97,6 +97,7 @@ class CustomCxOracle:
                 cursor.execute(_sql_query_or_sql_variable)
             # Commit the DDL
             self.db_commit()
+        # In Case Database Error occurs
         except cx_Oracle.DatabaseError as _errors:
             _error, = _errors.args
             if _error.code in CustomCxOracle._oracle_error_map.keys():
