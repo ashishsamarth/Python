@@ -10,7 +10,8 @@ import db_conf
 class CustomCxOracle:
 
     # Create an Error Code Map as Class Variable to be used in any of the custom methods
-    _oracle_error_map = {1109: 'Error: Database Is not Open',
+    _oracle_error_map = {955: 'Table Already Exists',
+                         1109: 'Error: Database Is not Open',
                          12153: 'Error: Not currently connected to a remote host. Please check connection',
                          12154: 'Error: Could not resolve the connect identifier specified',
                          12236: 'Error: Protocol support not loaded',
@@ -99,10 +100,10 @@ class CustomCxOracle:
                 self.db_commit()
             else:
                 print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
-        except cx_Oracle.DatabaseError as ora_error:
-            ecode, emsg = ora_error.args[0].message[:-1].split(': ', 1)
-            if int(ecode.split('-')[-1].lstrip('0')) in CustomCxOracle._oracle_error_map.keys():
-                print(CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))])
+        except cx_Oracle.DatabaseError as _errors:
+            _error, = _errors.args
+            if _error.code in CustomCxOracle._oracle_error_map.keys():
+                print(CustomCxOracle._oracle_error_map[_error.code])
             else:
                 print('Method - create_db_object_auto_commit: Unmapped Error Code')
     
