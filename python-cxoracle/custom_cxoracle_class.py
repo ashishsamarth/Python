@@ -119,7 +119,7 @@ class CustomCxOracle:
                     cursor.execute(_sql_query_or_sql_variable)
             print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
         except cx_Oracle.DatabaseError as _errors:
-            ecode, emsg = ora_error.args[0].message[:-1].split(': ', 1)
+            _error, = _errors.args
             if int(ecode.split('-')[-1].lstrip('0')) in CustomCxOracle._oracle_error_map.keys():
                 print(CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))])
             else:
