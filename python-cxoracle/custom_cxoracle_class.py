@@ -99,6 +99,8 @@ class CustomCxOracle:
                     pass
                 else:
                     print(CustomCxOracle._oracle_error_map[_error.code])
+            else:
+                print('Method- create_db_object_auto_commit: Unmapped Errod Code, Please update error mapping for the class')
 
     # Method to create a privileged connection as SYSDBA
     # Arguments to this method: Keyword Argument defined in db_conf as privileged_user
