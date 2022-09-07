@@ -80,7 +80,9 @@ class CustomCxOracle:
         # Connect to Database
         with self.db_auto_connect.cursor() as cursor:
             # Use Ternary operator, validate the bool return type of the query
-            return ((False, True) [bool(cursor.execute(_existence_qry))])
+            # fetchall() is needed to pull the results of the existence query in a list
+            # If the list is empty, then the table does not exists
+            return ((False, True) [bool(len(cursor.execute(_existence_qry).fetchall()))])
 
     def create_db_object_auto_commit(self, _sql_query_or_sql_variable):
         '''
