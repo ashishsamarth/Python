@@ -25,10 +25,13 @@ class CustomCxOracle:
                          12168: 'Error: Unable to contact LDAP Directory Server',
                          12157: 'Error: Internal error during network communication.'}
 
-    # Initialize the class to load the oracle client
-    # Arguments to this method is - **kwargs
-    # **Key word argument (has three params, user, password and the dsn)
     def __init__(self, **connection_params: dict):
+        '''
+        Initialize the class to load the oracle client
+        Arguments to this method is - **kwargs
+        **Key word argument (has three params, user, password and the dsn)
+        '''
+
         # use the 'orcl_client_path' path from configuration file
         # since the 64bit client is kept in that location
         cx_Oracle.init_oracle_client(lib_dir=db_conf.ora_client_config['orcl_client_path'])
