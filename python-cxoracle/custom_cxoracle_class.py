@@ -120,7 +120,7 @@ class CustomCxOracle:
             print(f'SQL Statement Error; Input SQL does not see to be a valid Create Statement')
         except cx_Oracle.DatabaseError as _errors:
             _error, = _errors.args
-            if int(ecode.split('-')[-1].lstrip('0')) in CustomCxOracle._oracle_error_map.keys():
+            if _error.code in CustomCxOracle._oracle_error_map.keys():
                 print(CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))])
             else:
                 print('Method - create_db_object_auto_commit: Unmapped Error Code')
