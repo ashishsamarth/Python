@@ -121,7 +121,7 @@ class CustomCxOracle:
         except cx_Oracle.DatabaseError as _errors:
             _error, = _errors.args
             if _error.code in CustomCxOracle._oracle_error_map.keys():
-                print(CustomCxOracle._oracle_error_map[(int(ecode.split('-')[-1].lstrip('0')))])
+                print(CustomCxOracle._oracle_error_map[_error.code])
             else:
                 print('Method - create_db_object_auto_commit: Unmapped Error Code')
 
