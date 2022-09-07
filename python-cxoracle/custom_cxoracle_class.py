@@ -79,6 +79,7 @@ class CustomCxOracle:
         _existence_qry = f"Select owner, object_name, object_type from all_objects where 1=1 and owner='{db_schema_name}' and object_name='{db_obj_name}'"
         # Connect to Database
         with self.db_auto_connect.cursor() as cursor:
+            # Use Ternary operator, validate the bool return type of the query
             return ((False, True) [bool(cursor.execute(_existence_qry))])
 
 
