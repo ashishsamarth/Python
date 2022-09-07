@@ -70,6 +70,18 @@ class CustomCxOracle:
                 # user will be provided with error brief and code will exit without execute any more statements
                 sys.exit()
 
+    def chk_db_object_existence(self, db_schema_name, db_obj_name):
+        '''
+        Method to check Existence of a Database Object
+        Arguments to this Method: schema name and object name
+        '''
+        # Prepare the query to check the object in Oracle Database
+        _existence_qry = f"Select owner, object_name, object_type from all_objects where 1=1 and owner='{db_schema_name}' and object_name='{db_obj_name}'"
+        # Connect to Database
+        with self.db_auto_connect.cursor() as cursor:
+            return ((False, True) [bool(cursor.execute(_existence_qry))])
+
+
     def create_db_object_auto_commit(self, _sql_query_or_sql_variable):
         '''
         Method to Create a DB object and commit the changes
