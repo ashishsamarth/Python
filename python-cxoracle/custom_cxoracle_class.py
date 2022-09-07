@@ -105,8 +105,10 @@ class CustomCxOracle:
             # Check if the encountered error is defined in the error map
             # If its defined, print the custom message based on the mapped key and value            
             if _error.code in CustomCxOracle._oracle_error_map.keys():
+                # Following will be generated, if the Object already exists, if thats the case, simply ignore it
                 if _error.code == 955:
                     pass
+                # Else, present the error code, so that it can be added to the code
                 else:
                     print(CustomCxOracle._oracle_error_map[_error.code])
             else:
