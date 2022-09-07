@@ -91,8 +91,11 @@ class CustomCxOracle:
         Note: Method verifies the existence of create keyword in the input statement
         '''
         try:
+            # Connect to Database
             with self.db_auto_connect.cursor() as cursor:
+                # Execute the query using the cursor
                 cursor.execute(_sql_query_or_sql_variable)
+            # Commit the DDL
             self.db_commit()
         except cx_Oracle.DatabaseError as _errors:
             _error, = _errors.args
