@@ -99,6 +99,7 @@ class CustomCxOracle:
             self.db_commit()
         # In Case Database Error occurs
         except cx_Oracle.DatabaseError as _errors:
+            # Capture the errors in a variable
             _error, = _errors.args
             if _error.code in CustomCxOracle._oracle_error_map.keys():
                 if _error.code == 955:
