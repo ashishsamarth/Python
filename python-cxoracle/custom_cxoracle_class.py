@@ -101,6 +101,9 @@ class CustomCxOracle:
         except cx_Oracle.DatabaseError as _errors:
             # Capture the errors in a variable
             _error, = _errors.args
+            # The corresponding error code is loaded in to _error.code
+            # Check if the encountered error is defined in the error map
+            # If its defined, print the custom message based on the mapped key and value            
             if _error.code in CustomCxOracle._oracle_error_map.keys():
                 if _error.code == 955:
                     pass
