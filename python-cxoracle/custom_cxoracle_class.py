@@ -913,9 +913,11 @@ class CustomCxOracle:
         # return type of this method is a dict
         return results
 
-    # Method to manually close the cursor
-    # Arguments to this method: None
     def db_cursor_close(self):
+        '''
+        Method to manually close the cursor
+        Arguments to this method: None
+        '''
         return self.db_cursor_open().close()
 
     def db_commit(self):
