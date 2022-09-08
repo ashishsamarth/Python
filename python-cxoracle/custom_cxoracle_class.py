@@ -918,10 +918,12 @@ class CustomCxOracle:
     def db_cursor_close(self):
         return self.db_cursor_open().close()
 
-    # Method to manually commit the sql
-    # Arguments to this method: None
-    # Note: This is defined, since connection.autocommit is set to False by default, and I have kept it that way
     def db_commit(self):
+        '''
+        Method to manually commit the sql
+        Arguments to this method: None
+        Note: This is defined, since connection.autocommit is set to False by default, and I have kept it that way
+        '''
         self.db_auto_connect.commit()
 
     def db_disconnect(self):
