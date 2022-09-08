@@ -156,9 +156,11 @@ class CustomCxOracle:
         '''
         self.pool.close()
 
-    # Method to get the DB version of the connected DB
-    # Arguments to this method: None
     def db_version(self):
+        '''
+        Method to get the DB version of the connected DB
+        Arguments to this method: None
+        '''
         return self.db_auto_connect.version
 
     # Method to create a cursor on the connected database
