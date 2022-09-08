@@ -924,10 +924,12 @@ class CustomCxOracle:
     def db_commit(self):
         self.db_auto_connect.commit()
 
-    # Method to close the connection to database
-    # Arguments to this method: None
-    # Note: This method is manual, since I did not use auto object / connection termination using 'with'
     def db_disconnect(self):
+        '''
+        Method to close the connection to database
+        Arguments to this method: None
+        Note: This method is manual, since I did not use auto object / connection termination using 'with'
+        '''
         self.db_auto_connect.close()
 
     def db_get_column_names_of_table_by_sql_qry(self, _sql_query_or_sql_variable):
