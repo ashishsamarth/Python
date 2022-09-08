@@ -142,9 +142,11 @@ class CustomCxOracle:
         # return type of this method is tuple (default behavior)
         return results
 
-    # Method to release connections back to pool
-    # Argument to this method:- None
     def db_release_conn_to_pool(self):
+        '''
+        Method to release connections back to pool
+        Argument to this method:- None
+        '''
         self.pool.release(self.db_auto_connect)
 
     # Method to close the connection pool
