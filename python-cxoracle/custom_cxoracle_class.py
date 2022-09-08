@@ -949,10 +949,12 @@ class CustomCxOracle:
         # return type of this method is a list
         return columns
 
-    # Method to get the row count in a given table
-    # Argument to this method is: Name of the table
-    # Argument can be provided as standalone table name or with the schema.table_name
     def db_get_row_cnt_of_table(self, table_name):
+        '''
+        Method to get the row count in a given table
+        Argument to this method is: Name of the table
+        Argument can be provided as standalone table name or with the schema.table_name
+        '''
         # Open the cursor as 'with' so, it's automatically closed upon task completion
         with self.db_auto_connect.cursor() as cursor:
             '''
