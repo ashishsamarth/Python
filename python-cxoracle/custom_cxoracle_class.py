@@ -982,9 +982,11 @@ class CustomCxOracle:
                 if _error.code == 44002:
                     return 'Invalid SQL Object Name, Please verify Object Name provided....'
 
-    # Method to print data in tabular format for a given query
-    # Argument to this method: SQL Query or Variable containing the SQL query
     def db_print_tabular_data(self, _sql_query_or_sql_variable):
+        '''
+        Method to print data in tabular format for a given query
+        Argument to this method: SQL Query or Variable containing the SQL query
+        '''
         # Open the cursor as 'with' so, it's automatically closed upon task completion
         with self.db_auto_connect.cursor(scrollable=True) as cursor:
             # 'arraysize' attribute of cursor is a performance tuning parameter
