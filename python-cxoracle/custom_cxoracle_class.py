@@ -338,7 +338,6 @@ class CustomCxOracle:
         Argument to this method is: SQL Query or Variable containing the SQL query
         Note: Order of the result is driven by sql query
         '''
-
         # Open the cursor as 'with' so, it's automatically closed upon task completion
         with self.db_auto_connect.cursor() as cursor:
             '''
