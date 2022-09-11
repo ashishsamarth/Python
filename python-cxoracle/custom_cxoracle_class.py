@@ -549,7 +549,6 @@ class CustomCxOracle:
         # return type of this method is a dictionary
         return results
 
-    # 
     def db_execute_sql_fetch_last_row_as_tuples_m2(self, _sql_query_or_sql_variable):
         '''
         Method to fetch last row of sql output
