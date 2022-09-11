@@ -506,7 +506,6 @@ class CustomCxOracle:
         # return type of this method is a set
         return results
 
-    # 
     def db_execute_sql_fetch_top_row_as_dict_m2(self, _sql_query_or_sql_variable):
         '''
         Method to fetch first row of sql output
