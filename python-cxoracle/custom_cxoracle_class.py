@@ -624,7 +624,6 @@ class CustomCxOracle:
 
     # 
     # 
-    # 
     def db_execute_sql_fetch_last_row_as_set_m2(self, _sql_query_or_sql_variable):
         '''
         Method to fetch last row of sql output
