@@ -709,6 +709,9 @@ class CustomCxOracle:
     # Argument to this method is: SQL Query or Variable containing the SQL query
     # Note: Order of the result is driven by sql query
     def db_execute_sql_fetch_specific_num_of_rows_as_tuples(self, _sql_query_or_sql_variable, _num_of_rows):
+        '''
+        
+        '''
         with self.db_auto_connect.cursor() as cursor:
             '''
             If you are fetching a fixed number of rows, start your tuning by setting arraysize to the number of expected 
