@@ -129,6 +129,12 @@ class CustomCxOracle:
         '''
         self.db_auto_connect.commit()
 
+    def db_cursor_close(self):
+        '''
+        Method to manually close the cursor
+        Arguments to this method: None
+        '''
+        return self.db_cursor_open().close()
 
     def db_cursor_open(self):
         '''
@@ -137,7 +143,7 @@ class CustomCxOracle:
         '''
         print('Cursor is manually opened, always remember to close it by calling db_cursor_close')
         return self.db_auto_connect.cursor()
-        
+
     def db_execute_sql_as_sysdba(self, _sql_query_or_sql_variable):
         '''
         Method to execute any sql as sysdba
@@ -943,13 +949,6 @@ class CustomCxOracle:
             results = execute.fetchone()
         # return type of this method is a dict
         return results
-
-    def db_cursor_close(self):
-        '''
-        Method to manually close the cursor
-        Arguments to this method: None
-        '''
-        return self.db_cursor_open().close()
 
     def db_disconnect(self):
         '''
