@@ -129,6 +129,15 @@ class CustomCxOracle:
         '''
         self.db_auto_connect.commit()
 
+
+    def db_cursor_open(self):
+        '''
+        Method to create a cursor on the connected database
+        Arguments to this method: None
+        '''
+        print('Cursor is manually opened, always remember to close it by calling db_cursor_close')
+        return self.db_auto_connect.cursor()
+        
     def db_execute_sql_as_sysdba(self, _sql_query_or_sql_variable):
         '''
         Method to execute any sql as sysdba
@@ -142,14 +151,6 @@ class CustomCxOracle:
             results = sysdba_execute.fetchall()
         # return type of this method is tuple (default behavior)
         return results
-
-    def db_cursor_open(self):
-        '''
-        Method to create a cursor on the connected database
-        Arguments to this method: None
-        '''
-        print('Cursor is manually opened, always remember to close it by calling db_cursor_close')
-        return self.db_auto_connect.cursor()
 
     def db_execute_sql_fetch_all_as_tuples(self, _sql_query_or_sql_variable):
         '''
