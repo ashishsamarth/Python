@@ -143,13 +143,6 @@ class CustomCxOracle:
         # return type of this method is tuple (default behavior)
         return results
 
-    def db_release_conn_to_pool(self):
-        '''
-        Method to release connections back to pool
-        Argument to this method:- None
-        '''
-        self.pool.release(self.db_auto_connect)
-
     def db_cursor_open(self):
         '''
         Method to create a cursor on the connected database
@@ -1068,3 +1061,10 @@ class CustomCxOracle:
         sysdba_conn = cx_Oracle.connect(**privileged_creds)
         # return type of this method is a cx_Oracle connection object
         return sysdba_conn
+
+    def db_release_conn_to_pool(self):
+        '''
+        Method to release connections back to pool
+        Argument to this method:- None
+        '''
+        self.pool.release(self.db_auto_connect)        
