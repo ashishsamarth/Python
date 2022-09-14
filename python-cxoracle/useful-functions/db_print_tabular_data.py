@@ -1,6 +1,8 @@
-# Method to print data in tabular format for a given query
-# Argument to this method: SQL Query or Variable containing the SQL query
 def db_print_tabular_data(self, _sql_query_or_sql_variable):
+    '''
+    Method to print data in tabular format for a given query
+    Argument to this method: SQL Query or Variable containing the SQL query
+    '''
     # Open the cursor as 'with' so, it's automatically closed upon task completion
     with self.db_auto_connect.cursor(scrollable=True) as cursor:
         # 'arraysize' attribute of cursor is a performance tuning parameter
@@ -21,4 +23,4 @@ def db_print_tabular_data(self, _sql_query_or_sql_variable):
         # headers = holds the column names
         # tablefmt = 'psql' is the core of format
         # valid values for tablefmt are:- psql, grid, pipe, html
-        return tabulate(results, headers=columns, tablefmt='psql')
+        return tabulate(results, headers=columns, tablefmt='psql')        
