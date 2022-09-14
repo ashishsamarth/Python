@@ -1,6 +1,8 @@
-# Method to create a privileged connection as SYSDBA
-# Arguments to this method: Keyword Argument defined in db_conf as privileged_user
-def db_sys_privileged_conn(self, **privileged_creds):
+def db_sys_privileged_conn(self, **privileged_creds: dict):
+    '''
+    Method to create a privileged connection as SYSDBA
+    Arguments to this method: Keyword Argument defined in db_conf as privileged_user
+    '''
     self.client_version = cx_Oracle.clientversion()
     # username, password and dsn are read from the db_conf file
     # mode=cx_Oracle.SYSDBA is the key aspect for this privileged connection
@@ -9,7 +11,3 @@ def db_sys_privileged_conn(self, **privileged_creds):
     sysdba_conn = cx_Oracle.connect(**privileged_creds)
     # return type of this method is a cx_Oracle connection object
     return sysdba_conn
-
-# usage:
-# conn_obj = CustomCxOracle(**db_conf.python_api_user_config)
-# conn_obj.db_sys_privileged_conn(**db_conf.privileged_user)
