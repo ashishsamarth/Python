@@ -164,13 +164,6 @@ class CustomCxOracle:
         '''
         self.pool.release(self.db_auto_connect)
 
-    def db_version(self):
-        '''
-        Method to get the DB version of the connected DB
-        Arguments to this method: None
-        '''
-        return self.db_auto_connect.version
-
     def db_cursor_open(self):
         '''
         Method to create a cursor on the connected database
@@ -1068,3 +1061,10 @@ class CustomCxOracle:
             # tablefmt = 'psql' is the core of format
             # valid values for tablefmt are:- psql, grid, pipe, html
             return tabulate(results, headers=columns, tablefmt='psql')
+
+    def db_version(self):
+        '''
+        Method to get the DB version of the connected DB
+        Arguments to this method: None
+        '''
+        return self.db_auto_connect.version            
