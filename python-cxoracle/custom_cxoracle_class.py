@@ -114,6 +114,13 @@ class CustomCxOracle:
             else:
                 print('Method- create_db_object_auto_commit: Unmapped Errod Code, Please update error mapping for the class')
 
+    def db_close_conn_pool(self):
+        '''
+        Method to close the connection pool
+        Argument to this method:- None
+        '''
+        self.pool.close()
+
     def db_sys_privileged_conn(self, **privileged_creds: dict):
         '''
         Method to create a privileged connection as SYSDBA
@@ -148,13 +155,6 @@ class CustomCxOracle:
         Argument to this method:- None
         '''
         self.pool.release(self.db_auto_connect)
-
-    def db_close_conn_pool(self):
-        '''
-        Method to close the connection pool
-        Argument to this method:- None
-        '''
-        self.pool.close()
 
     def db_version(self):
         '''
