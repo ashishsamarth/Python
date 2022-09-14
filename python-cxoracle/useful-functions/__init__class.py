@@ -10,7 +10,8 @@ import db_conf
 class CustomCxOracle:
 
     # Create an Error Code Map as Class Variable to be used in any of the custom methods
-    _oracle_error_map = {1109: 'Error: Database Is not Open',
+    _oracle_error_map = {955: 'Table Already Exists',
+                         1109: 'Error: Database Is not Open',
                          12153: 'Error: Not currently connected to a remote host. Please check connection',
                          12154: 'Error: Could not resolve the connect identifier specified',
                          12236: 'Error: Protocol support not loaded',
@@ -25,10 +26,13 @@ class CustomCxOracle:
                          12168: 'Error: Unable to contact LDAP Directory Server',
                          12157: 'Error: Internal error during network communication.'}
 
-    # Initialize the class to load the oracle client
-    # Arguments to this method is - **kwargs
-    # **Key word argument (has three params, user, password and the dsn)
-    def __init__(self, **connection_params):
+    def __init__(self, **connection_params: dict):
+        '''
+        Initialize the class to load the oracle client
+        Arguments to this method is - **kwargs
+        **Key word argument (has three params, user, password and the dsn)
+        '''
+
         # use the 'orcl_client_path' path from configuration file
         # since the 64bit client is kept in that location
         cx_Oracle.init_oracle_client(lib_dir=db_conf.ora_client_config['orcl_client_path'])
