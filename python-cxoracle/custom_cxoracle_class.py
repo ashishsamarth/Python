@@ -121,6 +121,14 @@ class CustomCxOracle:
         '''
         self.pool.close()
 
+    def db_commit(self):
+        '''
+        Method to manually commit the sql
+        Arguments to this method: None
+        Note: This is defined, since connection.autocommit is set to False by default, and I have kept it that way
+        '''
+        self.db_auto_connect.commit()
+
     def db_sys_privileged_conn(self, **privileged_creds: dict):
         '''
         Method to create a privileged connection as SYSDBA
@@ -969,14 +977,6 @@ class CustomCxOracle:
         Arguments to this method: None
         '''
         return self.db_cursor_open().close()
-
-    def db_commit(self):
-        '''
-        Method to manually commit the sql
-        Arguments to this method: None
-        Note: This is defined, since connection.autocommit is set to False by default, and I have kept it that way
-        '''
-        self.db_auto_connect.commit()
 
     def db_disconnect(self):
         '''
