@@ -958,13 +958,6 @@ class CustomCxOracle:
         # return type of this method is a set
         return results
 
-    def db_version(self):
-        '''
-        Method to get the DB version of the connected DB
-        Arguments to this method: None
-        '''
-        return self.db_auto_connect.version
-
     def db_sys_privileged_conn(self, **privileged_creds: dict):
         '''
         Method to create a privileged connection as SYSDBA
@@ -1068,3 +1061,10 @@ class CustomCxOracle:
             columns = [row[0] for row in execute.description]
         # return type of this method is a list
         return columns
+
+    def db_version(self):
+        '''
+        Method to get the DB version of the connected DB
+        Arguments to this method: None
+        '''
+        return self.db_auto_connect.version        
