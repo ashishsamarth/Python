@@ -144,6 +144,14 @@ class CustomCxOracle:
         print('Cursor is manually opened, always remember to close it by calling db_cursor_close')
         return self.db_auto_connect.cursor()
 
+    def db_disconnect(self):
+        '''
+        Method to close the connection to database
+        Arguments to this method: None
+        Note: This method is manual, since I did not use auto object / connection termination using 'with'
+        '''
+        self.db_auto_connect.close()
+
     def db_execute_sql_as_sysdba(self, _sql_query_or_sql_variable):
         '''
         Method to execute any sql as sysdba
@@ -950,14 +958,6 @@ class CustomCxOracle:
         # return type of this method is a dict
         return results
 
-    def db_disconnect(self):
-        '''
-        Method to close the connection to database
-        Arguments to this method: None
-        Note: This method is manual, since I did not use auto object / connection termination using 'with'
-        '''
-        self.db_auto_connect.close()
-
     def db_version(self):
         '''
         Method to get the DB version of the connected DB
@@ -1067,4 +1067,4 @@ class CustomCxOracle:
             # 'description' attribute on a cursor holds the column names for the tables in question
             columns = [row[0] for row in execute.description]
         # return type of this method is a list
-        return columns                    
+        return columns
