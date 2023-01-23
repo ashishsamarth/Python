@@ -1,4 +1,15 @@
 # Drop Duplicates using drop_duplicates() method
+'''
+Important argument for drop_duplicates() is keep, which has three possible options:
+
+first: (default) Drop duplicates except for the first occurrence.
+last: Drop duplicates except for the last occurrence.
+False: Drop all duplicates.
+
+e.g.
+
+dataframe.drop_duplicates(inplace=True, keep=False)
+'''
 
 import pandas as pd
 _my_df = pd.read_csv('C://Users//Ashish Samarth//jupyter-notebook//Training//python-modules//pandas//biostats.csv')
@@ -111,3 +122,4 @@ Dropping Duplicates:
 Shape of Existing DataFrame: 
  (18, 5)
 '''
+
