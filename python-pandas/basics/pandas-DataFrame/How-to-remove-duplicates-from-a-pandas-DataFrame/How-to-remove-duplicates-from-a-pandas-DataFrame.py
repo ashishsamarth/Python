@@ -7,7 +7,7 @@ last: Drop duplicates except for the last occurrence.
 False: Drop all duplicates.
 
 e.g.
-
+dataframe.drop_duplicates(inplace=True, keep=first)
 dataframe.drop_duplicates(inplace=True, keep=last)
 dataframe.drop_duplicates(inplace=True, keep=False)
 '''
