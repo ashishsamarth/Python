@@ -60,3 +60,19 @@ Dropping Duplicates:
  (18, 5)
 
 '''
+
+
+# Drop Duplicates using drop_duplicates() method with inplace=True
+# This changes the current dataframe, and avoids the need to either create a new dataframe or reuse the same name
+
+import pandas as pd
+_my_df = pd.read_csv('C://Users//Ashish Samarth//jupyter-notebook//Training//python-modules//pandas//biostats.csv')
+
+print(f'my_df_has_duplicates: \n {_my_df} \n {_my_df.shape}')
+print('-------------------------------------------------------------')
+print()
+print(f'Dropping Duplicates: \n')
+_my_df.drop_duplicates(inplace=True)
+print('-------------------------------------------------------------')
+print()
+print(f'Shape of Existing DataFrame: \n {_my_df.shape}')
