@@ -84,6 +84,7 @@ e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Python provides the four types of literal collection such as List literals, Tuple literals, Dict literals, and Set literals
 
+**********************
 a.  Lists:  List contains items of different data types. Lists are mutable i.e., modifiable
         The values stored in List are separated by comma(,) and enclosed within square brackets([]). We can store different types of data in a List.
 
@@ -93,7 +94,7 @@ a.  Lists:  List contains items of different data types. Lists are mutable i.e.,
         print(list)                     #Output:  ['John',678,20.4,'Peter']
         print(list + list1)             #Output:  ['John',678,20.4,'Peter',456,'Andrew']
 
-
+**********************
 b.  Dictionary: Python dictionary stores the data in the key-value pair
         It is enclosed by curly-braces {} and each pair is separated by the commas(,).
 
@@ -101,14 +102,14 @@ b.  Dictionary: Python dictionary stores the data in the key-value pair
         dict = {'name': 'Peter', 'Age':18,'Roll_nu':101}
         print(dict)                                             #Output:{'name': 'Peter', 'Age': 18, 'Roll_nu': 101}
 
-
+**********************
 c.  Tuple:  Python tuple is a collection of different data-type. It is immutable which means it cannot be modified after creation.
         It is enclosed by the parentheses () and each element is separated by the comma(,).
     e.g.    
         tup = (10,20,"Dev",[2,3,4])
         print(tup)                      #Output: (10, 20, 'Dev', [2, 3, 4])
 
-
+**********************
 d.  Set:    Python set is the collection of the unordered dataset.
         It is enclosed by the {} and each element is separated by the comma(,).
         Its and un-ordered collection
