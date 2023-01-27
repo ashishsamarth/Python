@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python keywords are unique words reserved with defined meanings and functions that we can only apply for those functions
+You dont need to import any keyword into your program because they're permanently present.
+
+However Python built in methods and classes are different. Built-in methods and classes are constantly present.
+
+Assigning a particular meaning to Python keywords means you can't use them for other purposes in our code. 
+You'll get a message of SyntaxError if you attempt to do the same
+
+If you attempt to assign anything to a built-in method or type, you will not receive a SyntaxError message
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python contains the following keywords
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+False	await	    else	    import	    pass
+None	break	    except	    in	        raise
+True	class	    finally	    is	        return
+and	    continue	for	        lambda	    try
+as	    def	        from	    nonlocal	while
+assert	del	        global	    not	        with
+async	elif	    if	        or	        yield
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+To get the complete list of python keywords, you can use the following library
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 27 13:29:45 2023
+
+@author: Ashish Samarth
+"""
+
+# import keyword library
+import keyword
+
+# run dir() {python3 built-in} function on the libray
+# to get a list of attributes and methods
+print(f'Here is the complete list of attribues and methods of keyword library \n\n {dir(keyword)}')
+print('-'*60)
+
+# To get the list of all keywords in python 3
+print(f'Here is the current list of reserved keywords: \n\n{keyword.kwlist}')
+
+# Output
+'''
+Here is the complete list of attribues and methods of keyword library 
+
+ ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'iskeyword', 'kwlist', 'main']
+------------------------------------------------------------
+Here is the current list of reserved keywords: 
+
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
+'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+'''
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Value Keywords: True, False, None
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Note: True is 1 and False is 0
+e.g.
+
+print( 4 == 4 )             :   True
+print( 6 > 9 )              :   False
+print( True or False )      :   True    (Based on the OR condition)
+print( 9 <= 28 )            :   True    (Based on the OR condition)
+print( 6 > 9 )              :   False
+print( True and False )     :   False   (Based on the AND condition)
+
+**********************
+None is a Python keyword that means "nothing." 
+None is known as nil, null, or undefined in different computer languages
+
+Note: If a function does not have a return value, It will give None as the default output.
+e.g.
+
+print( None == 0 )          :   False
+print( None == " " )        :   False
+print( None == False )      :   False
+
+A = B = None
+print( A == B )             :   True
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
