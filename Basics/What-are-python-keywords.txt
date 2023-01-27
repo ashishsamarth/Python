@@ -188,3 +188,82 @@ print(A is B)                   : #Output   True
 A = B ='a'
 print(A == B)                   : #Output   True
 print(A is B)                   : #Output   True
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+nonlocal keyword
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nonlocal keyword usage is fairly analogous to global keyword usage. 
+The keyword nonlocal is designed to indicate that a variable within a function that is inside a function, i.e., a nested function is just not local to it, 
+implying that it is located in the outer function. 
+We must define a non-local parameter with nonlocal if we ever need to change its value under a nested function. Otherwise, the nested function creates a local 
+variable using that title
+
+e.g.
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 27 14:18:09 2023
+
+@author: Ashish Samarth
+"""
+# Display usage of nonlocal keyword
+
+# Create a function
+def the_outer_function():
+    # Define a local variable
+    var = 10  
+    # Create another function inside the outer function
+    def the_inner_function():  
+        # Define a new variable with keyword - nonlocal
+        nonlocal var  
+        var = 14  
+        print("The value inside the inner function: ", var)
+    
+    # Call the inner function
+    the_inner_function()  
+    print("The value inside the outer function: ", var)  
+
+# call the outher function
+the_outer_function()  
+
+'''
+# Output
+The value inside the inner function:  14
+The value inside the outer function:  14
+
+'''
+
+the_inner_function() is placed inside the_outer_function in this case.
+Var is not a global variable.As a result, if we wish to change it inside the the_inner_function(), we should declare it using nonlocal
+As a result, the variable was effectively updated within the nested the_inner_function
+
+Now see the variation without the nonlocal keyword
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 27 14:22:07 2023
+
+@author: Ashish Samarth
+"""
+
+# Display usage without nonlocal keyword
+def the_outer_function():
+    # Define a local variable
+    var = 10  
+    # Create another function inside the outer function
+    def the_inner_function():
+        # Define a new variable with in the inner function
+        var = 14  
+        print("Value inside the inner function: ", var)  
+     # Call the inner function
+    the_inner_function()  
+    print("Value inside the outer function: ", var)  
+# call the outher function  
+the_outer_function()  
+
+'''
+# Output
+Value inside the inner function:  14
+Value inside the outer function:  10
+'''
