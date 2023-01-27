@@ -120,8 +120,8 @@ False	    True
 IN Keyword
 
 The in keyword of Python is a robust confinement checker, also known as a membership operator.
-If you provide it an element to seek and a container or series to seek into, it will give True or False, depending on if that given element was located in the given 
-container
+If you provide it an element to seek and a container or series to seek into, it will give True or False, depending on if that given element was located in the 
+given container
 
 # -*- coding: utf-8 -*-
 """
@@ -145,3 +145,46 @@ print(f"Is P present in the string :-  {'P' in _my_spyder_var}")
 Is p present in the string :-  False
 Is P present in the string :-  True
 '''
+
+**********************
+IS Keyword
+
+The 'is' keyword is used to check the identification of objects. The '==' operation is used to determin where two arguments are identical.
+The 'is' keyword determines where two arguments related to the unique object.
+When the objects are the same, it results in True, else a False.
+
+e.g.
+
+print( True is True )           : #Output   True
+print( False is True )          : #Output   False
+print( None is not None )       : #Output   False
+print( (9 + 5) is (7 * 2) )     : #Output   True
+
+
+print( [] == [] )               : #Output   True
+print( [] is [] )               : #Output   False
+print( {} == {} )               : #Output   True
+print( {} is {} )               : #Output   False
+print( set() == set()  )        : #Output   True
+print( set() is set()  )        : #Output   False
+
+A blank dictionary or list or set is the same as another blank one. However, they aren't identical entities because they are stored independently in memory. 
+This is because both the list, set and the dictionary are changeable
+
+print( '' == '' )  
+print( '' is '' )  
+print( () == () )  
+print( () is () )  
+print( frozenset() == frozenset())
+print( frozenset() is frozenset())
+
+A blank string or tuple or frozenset is same as the another one and also they are identical because these are not mutable.
+
+A = 'a'
+B = 'a'
+print(A == B)                   : #Output   True
+print(A is B)                   : #Output   True
+
+A = B ='a'
+print(A == B)                   : #Output   True
+print(A is B)                   : #Output   True
