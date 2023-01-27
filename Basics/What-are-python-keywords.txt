@@ -267,3 +267,89 @@ the_outer_function()
 Value inside the inner function:  14
 Value inside the outer function:  10
 '''
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Iteration Keywords: for, while, break, continue
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+The iterative process and looping are essential programming fundamentals. To generate and operate with loops, Python has multiple keywords. These would be 
+utilized and observed in almost every Python program.
+
+**********************
+FOR Keyword
+
+The for loop is by far the most popular loop in Python. It's built by blending two Python keywords. They are for and in
+
+e.g.
+for i in range(15):
+    print( i + 4, end = " ") 
+
+'''
+#Output
+4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+'''
+
+**********************
+WHILE Keyword
+Python's while loop employs the term while and functions similarly to other computer languages' while loops. 
+The code block after the while phrase will be repeated until the condition following the while keyword is false.
+
+e.g.
+# looping from 1 to 15  
+i = 0 # initial condition  
+while i < 15:  
+        
+    # When i has value 9, loop will jump to next iteration using continue. It will not print  
+    if i == 9:  
+        i += 3
+    else:  
+        # when i is not equal to 9, adding 2 and printing the value  
+        print( i + 2, end = " ")  
+            
+    i += 1
+
+'''
+# Output
+2 3 4 5 6 7 8 9 10 15 16 
+'''
+
+**********************
+BREAK Keyword
+If you want to quickly break out of a loop, employ the break keyword. We can use this keyword in both for and while loops.
+
+e.g.
+
+for i in range(15):   
+    print( i + 4, end = " ")     
+    # breaking the loop when i = 9  
+    if i == 9:  
+        break     
+print()
+
+'''
+# Output
+4 5 6 7 8 9 10 11 12 13
+'''
+
+**********************
+CONTINUE Keyword
+ The continue keyword, enables you to quit performing the present loop iteration and go on to the subsequent one
+
+ e.g.
+# looping from 1 to 15  
+i = 0 # initial condition  
+while i < 15:  
+        
+    # When i has value 9, loop will jump to next iteration using continue. It will not print  
+    if i == 9:  
+        i += 3  
+        continue  
+    else:  
+        # when i is not equal to 9, adding 2 and printing the value  
+        print( i + 2, end = " ")  
+            
+    i += 1
+
+'''
+# Output
+2 3 4 5 6 7 8 9 10 14 15 16
+''' 
