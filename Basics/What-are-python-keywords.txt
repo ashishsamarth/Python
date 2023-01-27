@@ -57,6 +57,7 @@ Here is the current list of reserved keywords:
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Value Keywords: True, False, None
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+**********************
 Note: True is 1 and False is 0
 e.g.
 
@@ -82,5 +83,65 @@ A = B = None
 print( A == B )             :   True
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+Operator Keywords: and, or, not, in, is
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+**********************
+AND Keyword
+
+Truth Table for 'AND'
+
+X	    Y	        X and Y
+True----True	    True
+False---True	    False
+True----False	    False
+False---False	    False
+
+**********************
+OR Keyword
+
+Truth Table for 'OR'
+
+X	    Y	        X or Y
+True----True	    True
+True----False	    True
+False---True	    True
+False---False	    False
+
+**********************
+NOT Keyword
+
+Truth Table for 'NOT'
+
+X	        not X
+True	    False
+False	    True
+
+**********************
+IN Keyword
+
+The in keyword of Python is a robust confinement checker, also known as a membership operator.
+If you provide it an element to seek and a container or series to seek into, it will give True or False, depending on if that given element was located in the given 
+container
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 27 13:57:07 2023
+
+@author: Ashish Samarth
+"""
+
+# Define a variable to have a string
+_my_spyder_var = 'Python is awesome'
+
+# Checking membership using 'in' operator for lowercase 'p'
+print(f"Is p present in the string :-  {'p' in _my_spyder_var}")
+
+# Checking membership using 'in' operator for lowercase 'P'
+print(f"Is P present in the string :-  {'P' in _my_spyder_var}")
+
+'''
+# Output
+
+Is p present in the string :-  False
+Is P present in the string :-  True
+'''
