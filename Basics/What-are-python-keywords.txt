@@ -448,3 +448,88 @@ AssertionError: Divide by 0 error
 
 # This is am important functionality of assert, it will stop the execution if the assertion fails and not let the program continue.
 # None of the try, except, finally code blocks got executed.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+pass Keyword
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+A null sentence is called a pass. It serves as a stand-in for something else. 
+When it is executed, nothing occurs
+
+Let's say we possess a function that has not been coded yet however we wish to do so in the long term. If we write just this in the middle of code,
+
+def function_pass( arguments ):
+                                   ^
+IndentationError: expected an indented block after function definition on line 1
+
+IndentationError will be thrown. 
+Rather, we use the pass command to create a blank container.
+
+def function_pass( arguments ):  
+    pass  
+
+We can use the pass keyword to create an empty class too.
+class passed_class:  
+    pass
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+return Keyword
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+return expression is used to leave a function and generate a result.
+None keyword is returned by default if we don't specifically return a value
+
+e.g.
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 27 14:59:54 2023
+
+@author: Ashish Samarth
+"""
+
+def func_with_return():  
+    var = 13  
+    return var  
+  
+def func_with_no_return():  
+    var = 10  
+  
+print( func_with_return() )  
+print( func_with_no_return() )
+
+'''
+# Output
+13
+None
+'''
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+del keyword
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+del keyword is used to remove any reference to an object. In Python, every entity is an object. We can use the del command to remove a variable reference.
+
+e.g.
+
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 27 15:00:58 2023
+
+@author: Ashish Samarth
+"""
+
+var1 = var2 = 5  
+del var1  
+print( var2 )
+print('*' * 50) 
+print( var1 )  
+
+'''
+# output
+5
+**************************************************
+Traceback (most recent call last):
+
+  File "C:\Users\Ashish Samarth\untitled7.py", line 12, in <module>
+    print( var1 )
+
+NameError: name 'var1' is not defined
+'''
