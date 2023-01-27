@@ -353,3 +353,98 @@ while i < 15:
 # Output
 2 3 4 5 6 7 8 9 10 14 15 16
 ''' 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exception Handling Keywords: try, except, raise, finally and assert
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+**********************
+try: This keyword is designed to handle exceptions and is used in conjunction with the keyword except to handle problems in the program. When there is some 
+kind of error, the program inside the "try" block is verified, but the code in that block is not executed.
+
+**********************
+except: As previously stated, this operates in conjunction with "try" to handle exceptions.
+
+**********************
+finally: Whatever the outcome of the "try" section, the "finally" box is implemented every time.
+
+**********************
+raise: The raise keyword could be used to specifically raise an exception.
+
+**********************
+assert: This method is used to help in troubleshooting. Often used to ensure that code is correct. Nothing occurs if an expression is interpreted as true; 
+however, if it is false, "AssertionError" is raised. An output with the error, followed by a comma, can also be printed.
+
+
+e.g.
+
+# initializing the numbers  
+var1 = 4  
+var2 = 0  
+    
+# Exception raised in the try section  
+try:  
+    d = var1 // var2 # this will raise a "divide by zero" exception.  
+    print(f"d \n")  
+# this section will handle exception raised in try block  
+except ZeroDivisionError:  
+    print(f"Except Block: We cannot divide by zero \n")  
+finally:  
+    # If exception is raised or not, this block will be executed every time  
+    print(f"Finally Block: This is inside finally block \n")  
+
+print ("Try Block: The value of var1 / var2 is : ")    
+print (var1 / var2)  
+
+
+'''
+#Output
+
+Except Block: We cannot divide by zero 
+
+Finally Block: This is inside finally block 
+
+Try Block: The value of var1 / var2 is : 
+Traceback (most recent call last):
+
+  File "C:\Users\Ashish Samarth\untitled5.py", line 17, in <module>
+    print (var1 / var2)
+
+ZeroDivisionError: division by zero
+'''
+
+e.g.
+# initializing the numbers  
+var1 = 4  
+var2 = 0  
+    
+# By using assert keyword we will check if var2 is 0  
+assert var2 != 0, "Divide by 0 error"
+
+# Exception raised in the try section  
+try:  
+    d = var1 // var2 # this will raise a "divide by zero" exception.  
+    print(f"d \n")  
+# this section will handle exception raised in try block  
+except ZeroDivisionError:  
+    print(f"Except Block: We cannot divide by zero \n")  
+finally:  
+    # If exception is raised or not, this block will be executed every time  
+    print(f"Finally Block: This is inside finally block \n")  
+
+print ("Try Block: The value of var1 / var2 is : ")    
+print (var1 / var2)  
+
+
+'''
+# Output
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ashish Samarth\untitled5.py", line 6, in <module>
+    assert var2 != 0, "Divide by 0 error"
+
+AssertionError: Divide by 0 error
+'''
+
+# This is am important functionality of assert, it will stop the execution if the assertion fails and not let the program continue.
+# None of the try, except, finally code blocks got executed.
