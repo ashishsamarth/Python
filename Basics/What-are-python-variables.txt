@@ -104,4 +104,130 @@ e.g.
     print(b)        #Output:    10
     print(c)        #Output:    15
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 #   Python Variable Types
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+There are two types of variables in Python - Local variable and Global variable. Let's understand the following variables.
+
+**********************
+a.  Local Variable  :   Local variables are the variables that declared inside the function and have scope within the function
+
+# Declaring a function
+def add():  
+    # Defining local variables. They has scope only within a function  
+    a = 20  
+    b = 30  
+    c = a + b  
+    print("The sum is:", c)  
+  
+# Calling a function  
+add()
+
+# Output:   The sum is: 50
+# Explanation:  we declared a function named add() and assigned a few variables within the function. These variables will be referred to as the local variables 
+which have scope only inside the function. If we try to use them outside the function, we get a following error
+    
+add()  
+# Accessing local variable outside the function   
+print(a)  
+
+# Output:   The sum is: 50
+print(a)
+NameError: name 'a' is not defined
+    # We tried to use local variable outside their scope; it threw the NameError.
+
+**********************
+b.  Global Variables
+Global variables can be used throughout the program, and its scope is in the entire program. We can use global variables inside or outside the function
+A variable declared outside the function is the global variable by default. Python provides the global keyword to use global variable inside the function. 
+If we don't use the global keyword, the function treats it as a local variable. 
+Let's understand the following example
+
+e.g.:
+# Declare a variable and initialize it  
+x = 101  
+  
+# Global variable in function  
+def mainFunction():  
+    # printing a global variable  
+    global x  
+    print(x)  
+    # modifying a global variable  
+    x = 'Welcome To Javatpoint'  
+    print(x)  
+  
+mainFunction()  
+print(x)
+
+# Output:
+101
+Welcome To Javatpoint
+Welcome To Javatpoint
+
+we declare a global variable x and assign a value to it. Next, we defined a function and accessed the declared variable using the global keyword inside the function. 
+Now we can modify its value. Then, we assigned a new string value to the variable x
+
+**********************
+c.  Delete a variable
+We can delete the variable using the del keyword. The syntax is given below.
+
+    del <variable_name>
+
+In the following example, we create a variable x and assign value to it. We deleted variable x, and print it, we get the error "variable x is not defined". 
+The variable x will no longer use in future
+
+e.g.
+    # Assigning a value to x  
+    x = 6  
+    print(x)  
+    # deleting a variable.   
+    del x  
+    print(x)
+
+6
+Traceback (most recent call last):
+    print(x)
+NameError: name 'x' is not defined
+
+
+# Maximum Possible Value of an Integer in Python
+Unlike the other programming languages, Python doesn't have long int or float data types. It treats all integer values as an int data type.
+What is the maximum possible value can hold by the variable in Python? 
+
+e.g.
+    # A Python program to display that we can store  
+    # large numbers in Python  
+    
+    a = 10000000000000000000000000000000000000000000  
+    a = a + 1  
+    print(type(a))  
+    print (a)
+
+# Output:
+    <class 'int'>
+    10000000000000000000000000000000000000000001
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Print Single and Multiple Variables in Python
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+We can print multiple variables within the single print statement.
+
+# printing single value   
+a = 5  
+print(a)  
+print((a)
+
+# Output
+5
+5
+
+
+# Printing Multiple Variables
+a = 5
+b = 6
+
+# printing multiple variables
+print(a,b)  
+# separate the variables by the comma 
+Print(1, 2, 3, 4, 5, 6, 7, 8)   
