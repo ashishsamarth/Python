@@ -27,16 +27,21 @@ Python does not bind us to declare a variable before using it in the application
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 #   Object References
 
-    It is necessary to understand how the Python interpreter works when we declare a variable. The process of treating variables is somewhat different from 
-    many other programming languages.Python is the highly object-oriented programming language; that's why every data item belongs to a specific type of class. 
+    It is necessary to understand how the Python interpreter works when we declare a variable. The process of treating variables
+     is somewhat different from many other programming languages.Python is the highly object-oriented programming language; 
+     that's why every data item belongs to a specific type of class. 
+    
     Consider the following example.
 
     print("Python")         #Output:    Python
     print(type("Python"))   #Output:    <class 'str'>
 
-    -->In Python, variables are a symbolic name that is a reference or pointer to an object. The variables are used to denote objects by that name
+    -->In Python, variables are a symbolic name that is a reference or pointer to an object. 
+    The variables are used to denote objects by that name
+    
     Let's understand the example
         a = 50
+
     The variable a refers to an integer object.
     Suppose we assign the integer value 50 to a new variable b.
 
@@ -79,11 +84,16 @@ Consider the following example of valid variables names.
 
 The multi-word keywords can be created by the following method.
 
-    a.  Camel Case - In the camel case, each word or abbreviation in the middle of begins with a capital letter. There is no intervention of whitespace. 
-    For example - nameOfStudent, valueOfVaraible, etc.
+    a.  Camel Case - In the camel case, each word or abbreviation in the middle of begins with a capital letter. There is no 
+    intervention of whitespace. 
     
-    b.  Pascal Case - It is the same as the Camel Case, but here the first word is also capital. For example - NameOfStudent, etc.
-    c.  Snake Case - In the snake case, Words are separated by the underscore. For example - name_of_student, etc.
+        For example - nameOfStudent, valueOfVaraible, etc.
+    
+    b.  Pascal Case - It is the same as the Camel Case, but here the first word is also capital. 
+        For example - NameOfStudent, etc.
+    
+    c.  Snake Case - In the snake case, Words are separated by the underscore. 
+        For example - name_of_student, etc.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Multiple Assignment
@@ -94,6 +104,7 @@ We can apply multiple assignments in two ways, either by assigning a single valu
 Consider the following example
 
 1.  Assigning single value to multiple variables
+
 e.g.
 
     x=y=z=50    
@@ -101,7 +112,9 @@ e.g.
     print(y)    #Output:    50
     print(z)    #Output:    50
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 2.  Assigning multiple values to multiple variables:
+
 e.g.
 
     a,b,c=5,10,15
