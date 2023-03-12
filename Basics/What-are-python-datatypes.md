@@ -98,7 +98,7 @@ e.g.
     hello javatpoint how are you
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-List
+__List__
 
 Python Lists are similar to arrays in C. However, the list can contain data of different types. The items stored in the list are separated with a comma (,) and enclosed within square brackets [].
 
@@ -134,7 +134,7 @@ e.g.
     [1, 'hi', 'Python', 2, 1, 'hi', 'Python', 2, 1, 'hi', 'Python', 2]
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Tuple
+__Tuple__
 
 A tuple is similar to the list in many ways. Like lists, tuples also contain the collection of the items of different data types. The items of the tuple are separated with a comma (,) and enclosed in parentheses ()
 
@@ -177,7 +177,7 @@ e.g.
     TypeError: 'tuple' object does not support item assignment
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Dictionary
+__Dictionary__
 
 Dictionary is an unordered set of a key-value pair of items. It is like an associative array or a hash table where each key stores a specific value. Key can hold any primitive data type, whereas value is an arbitrary Python object.
 
@@ -206,7 +206,7 @@ e.g.
     dict_values(['Jimmy', 'Alex', 'john', 'mike'])
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Boolean
+__Boolean__
 
 Boolean type provides two built-in values, True and False. These values are used to determine the given statement true or false. It denotes by the class bool. True can be represented by any non-zero value or 'T' whereas false can be represented by the 0 or 'F'
 
@@ -224,7 +224,7 @@ e.g.
     NameError: name 'false' is not defined
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Set
+__Set__
 
 Python Set is the unordered collection of the data type. It is iterable, mutable(can modify after creation), and has unique elements. In set, the order of the elements is undefined; it may return the changed sequence of the element. The set is created by using a built-in function set(), or a sequence of elements is passed in the curly braces and separated by the comma. It can contain various types of values
 
