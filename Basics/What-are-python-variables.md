@@ -142,8 +142,10 @@ a.  Local Variable  :   Local variables are the variables that declared inside t
     add()
 
     # Output:   The sum is: 50
-    # Explanation:  we declared a function named add() and assigned a few variables within the function. These variables will be referred to as the local variables 
-    which have scope only inside the function. If we try to use them outside the function, we get a following error
+
+    # Explanation:  we declared a function named add() and assigned a few variables within the function. 
+    These variables will be referred to as the local variables which have scope only inside the function. 
+    If we try to use them outside the function, we get a following error
         
     add()  
     # Accessing local variable outside the function   
@@ -152,7 +154,7 @@ a.  Local Variable  :   Local variables are the variables that declared inside t
     # Output:   The sum is: 50
     print(a)
     NameError: name 'a' is not defined
-        # We tried to use local variable outside their scope; it threw the NameError.
+    # We tried to use local variable outside their scope; it threw the NameError.
 
 **********************
 b.  Global Variables : Global variables can be used throughout the program, and its scope is in the entire program. We can use global variables inside or outside the function. A variable declared outside the function is the global variable by default. Python provides the global keyword to use global variable inside the function. If we don't use the global keyword, the function treats it as a local variable. 
@@ -208,7 +210,8 @@ e.g.
 
 
     # Maximum Possible Value of an Integer in Python
-    Unlike the other programming languages, Python doesn't have long int or float data types. It treats all integer values as an int data type.
+    Unlike the other programming languages, Python doesn't have long int or float data types. 
+    It treats all integer values as an int data type.
     What is the maximum possible value can hold by the variable in Python? 
 
 e.g.
