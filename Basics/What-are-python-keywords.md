@@ -23,50 +23,44 @@ async	elif	    if	        or	        yield
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 To get the complete list of python keywords, you can use the following library
 
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 27 13:29:45 2023
+    # import keyword library
+    import keyword
 
-@author: Ashish Samarth
-"""
+    # run dir() {python3 built-in} function on the libray
+    # to get a list of attributes and methods
+    print(f'Here is the complete list of attribues and methods of keyword library \n\n {dir(keyword)}')
+    print('-'*60)
 
-# import keyword library
-import keyword
+    # To get the list of all keywords in python 3
+    print(f'Here is the current list of reserved keywords: \n\n{keyword.kwlist}')
 
-# run dir() {python3 built-in} function on the libray
-# to get a list of attributes and methods
-print(f'Here is the complete list of attribues and methods of keyword library \n\n {dir(keyword)}')
-print('-'*60)
+    # Output
+    '''
+    Here is the complete list of attribues and methods of keyword library 
 
-# To get the list of all keywords in python 3
-print(f'Here is the current list of reserved keywords: \n\n{keyword.kwlist}')
+    ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'iskeyword', 'kwlist', 'main']
+    ------------------------------------------------------------
+    Here is the current list of reserved keywords: 
 
-# Output
-'''
-Here is the complete list of attribues and methods of keyword library 
+    ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
+    'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 
- ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'iskeyword', 'kwlist', 'main']
-------------------------------------------------------------
-Here is the current list of reserved keywords: 
-
-['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
-'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
-
-'''
+    '''
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Value Keywords: True, False, None
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 **********************
 Note: True is 1 and False is 0
 e.g.
 
-print( 4 == 4 )             :   True
-print( 6 > 9 )              :   False
-print( True or False )      :   True    (Based on the OR condition)
-print( 9 <= 28 )            :   True    (Based on the OR condition)
-print( 6 > 9 )              :   False
-print( True and False )     :   False   (Based on the AND condition)
+    print( 4 == 4 )             :   True
+    print( 6 > 9 )              :   False
+    print( True or False )      :   True    (Based on the OR condition)
+    print( 9 <= 28 )            :   True    (Based on the OR condition)
+    print( 6 > 9 )              :   False
+    print( True and False )     :   False   (Based on the AND condition)
 
 **********************
 None is a Python keyword that means "nothing." 
@@ -75,15 +69,16 @@ None is known as nil, null, or undefined in different computer languages
 Note: If a function does not have a return value, It will give None as the default output.
 e.g.
 
-print( None == 0 )          :   False
-print( None == " " )        :   False
-print( None == False )      :   False
+    print( None == 0 )          :   False
+    print( None == " " )        :   False
+    print( None == False )      :   False
 
-A = B = None
-print( A == B )             :   True
+    A = B = None
+    print( A == B )             :   True
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Operator Keywords: and, or, not, in, is
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 **********************
 AND Keyword
