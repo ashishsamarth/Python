@@ -11,14 +11,15 @@ If you attempt to assign anything to a built-in method or type, you will not rec
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Python contains the following keywords
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-False	await	    else	    import	    pass
-None	break	    except	    in	        raise
-True	class	    finally	    is	        return
-and	    continue	for	        lambda	    try
-as	    def	        from	    nonlocal	while
-assert	del	        global	    not	        with
-async	elif	    if	        or	        yield
+    False	await	    else	    import	    pass
+    None	break	    except	    in	        raise
+    True	class	    finally	    is	        return
+    and	    continue	for	        lambda	    try
+    as	    def	        from	    nonlocal	while
+    assert	del	        global	    not	        with
+    async	elif	    if	        or	        yield
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 To get the complete list of python keywords, you can use the following library
@@ -35,17 +36,16 @@ To get the complete list of python keywords, you can use the following library
     print(f'Here is the current list of reserved keywords: \n\n{keyword.kwlist}')
 
     # Output
-    '''
     Here is the complete list of attribues and methods of keyword library 
 
-    ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'iskeyword', 'kwlist', 'main']
+    ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 
+    'iskeyword', 'kwlist', 'main']
     ------------------------------------------------------------
     Here is the current list of reserved keywords: 
 
-    ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
-    'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
-
-    '''
+    ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 
+    'else', 'except', 'finally', 'for',     'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 
+    'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Value Keywords: True, False, None
