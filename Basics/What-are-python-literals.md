@@ -5,7 +5,9 @@ Python Literals can be defined as data that is given in a variable or constant.
 # 1.  String Literals
 
 There are two types of Strings supported in Python:
-a.  Single-line String- Strings that are terminated within a single-line are known as Single line Strings       e.g.        text1='Python'  
+a.  Single-line String- Strings that are terminated within a single-line are known as Single line Strings       
+    e.g.        text1='Python' 
+
 b.  Multi-line String - A piece of text that is written in multiple lines is known as multiple lines string     
 
 e.g. 
@@ -28,7 +30,8 @@ Numeric Literals are immutable. Numeric literals can belong to following four di
     Int(signed integers)    :   Numbers( can be both positive and negative) with no fractional part.eg: 100
     Long(long integers)     :   Integers of unlimited size followed by lowercase or uppercase L eg: 87032845L
     float(floating point)   :   Real numbers with both integer and fractional part eg: -26.2
-    Complex(complex)        :   In the form of a+bj where a forms the real part and b forms the imaginary part of the complex number. eg: 3.14j
+    Complex(complex)        :   In the form of a+bj where a forms the real part and b forms the imaginary part of the complex 
+                                number. eg: 3.14j
 
 
     x = 0b10100 #Binary Literals            
@@ -85,7 +88,7 @@ e.g.
 Python provides the four types of literal collection such as List literals, Tuple literals, Dict literals, and Set literals
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-a.  Lists:  List contains items of different data types. Lists are mutable i.e., modifiable. The values stored in List are separated by comma(,) and enclosed within square brackets([]). We can store different types of data in a List.
+a.  __Lists__:  List contains items of different data types. Lists are mutable i.e., modifiable. The values stored in List are separated by comma(,) and enclosed within square brackets([]). We can store different types of data in a List.
 
 e.g.
 
@@ -95,7 +98,7 @@ e.g.
     print(list + list1)             #Output:  ['John',678,20.4,'Peter',456,'Andrew']
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-b.  Dictionary: Python dictionary stores the data in the key-value pair. It is enclosed by curly-braces {} and each pair is separated by the commas(,).
+b.  __Dictionary__: Python dictionary stores the data in the key-value pair. It is enclosed by curly-braces {} and each pair is separated by the commas(,).
 
 e.g.
 
@@ -103,7 +106,7 @@ e.g.
     print(dict)                                             #Output:{'name': 'Peter', 'Age': 18, 'Roll_nu': 101}
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-c.  Tuple:  Python tuple is a collection of different data-type. It is immutable which means it cannot be modified after creation. It is enclosed by the parentheses () and each element is separated by the comma(,).
+c.  __Tuple__:  Python tuple is a collection of different data-type. It is immutable which means it cannot be modified after creation. It is enclosed by the parentheses () and each element is separated by the comma(,).
 
 e.g.    
         
@@ -111,7 +114,7 @@ e.g.
     print(tup)                      #Output: (10, 20, 'Dev', [2, 3, 4])
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-d.  Set:    Python set is the collection of the unordered dataset. It is enclosed by the {} and each element is separated by the comma(,).Its and un-ordered collection
+d.  __Set__:    Python set is the collection of the unordered dataset. It is enclosed by the {} and each element is separated by the comma(,).Its and un-ordered collection
 
 e.g.    
         
