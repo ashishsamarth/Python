@@ -10,7 +10,7 @@ You'll get a message of SyntaxError if you attempt to do the same
 If you attempt to assign anything to a built-in method or type, you will not receive a SyntaxError message
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Python contains the following keywords
+# Python contains the following keywords
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
     False	await	    else	    import	    pass
@@ -24,7 +24,6 @@ Python contains the following keywords
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 To get the complete list of python keywords, you can use the following library
 
-```
     # import keyword library
     import keyword
 
@@ -37,7 +36,6 @@ To get the complete list of python keywords, you can use the following library
     # To get the list of all keywords in python 3
 
     print(f'Here is the current list of reserved keywords: \n\n{keyword.kwlist}')
-```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
     # Output
@@ -53,7 +51,7 @@ To get the complete list of python keywords, you can use the following library
     'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Value Keywords: True, False, None
+# Value Keywords: True, False, None
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -82,11 +80,11 @@ e.g.
     print( A == B )             :   True
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Operator Keywords: and, or, not, in, is
+# Operator Keywords: and, or, not, in, is
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-AND Keyword
+__AND Keyword__
 
 Truth Table for 'AND'
 
@@ -97,7 +95,7 @@ Truth Table for 'AND'
     False---False	    False
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-OR Keyword
+__OR Keyword__
 
 Truth Table for 'OR'
 
@@ -108,7 +106,7 @@ Truth Table for 'OR'
     False---False	    False
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-NOT Keyword
+__NOT Keyword__
 
 Truth Table for 'NOT'
 
@@ -117,7 +115,7 @@ Truth Table for 'NOT'
     False	    True
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-IN Keyword
+__IN Keyword__
 
 The in keyword of Python is a robust confinement checker, also known as a membership operator.
 If you provide it an element to seek and a container or series to seek into, it will give True or False, depending on if that given element was located in the 
@@ -141,7 +139,7 @@ given container
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-IS Keyword
+__IS Keyword__
 
 The 'is' keyword is used to check the identification of objects. The '==' operation is used to determin where two arguments are identical.
 The 'is' keyword determines where two arguments related to the unique object.
@@ -185,7 +183,7 @@ A blank string or tuple or frozenset is same as the another one and also they ar
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-nonlocal keyword
+# nonlocal keyword
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Nonlocal keyword usage is fairly analogous to global keyword usage. 
@@ -248,12 +246,12 @@ Now see the variation without the nonlocal keyword
     Value inside the outer function:  10
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Iteration Keywords: for, while, break, continue
+# Iteration Keywords: for, while, break, continue
 
 The iterative process and looping are essential programming fundamentals. To generate and operate with loops, Python has multiple keywords. These would be utilized and observed in almost every Python program.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOR Keyword
+__FOR Keyword__
 
 The for loop is by far the most popular loop in Python. It's built by blending two Python keywords. They are for and in
 
@@ -266,7 +264,7 @@ e.g.
     4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-WHILE Keyword
+__WHILE Keyword__
 
 Python's while loop employs the term while and functions similarly to other computer languages' while loops. 
 The code block after the while phrase will be repeated until the condition following the while keyword is false.
@@ -291,7 +289,7 @@ e.g.
     2 3 4 5 6 7 8 9 10 15 16 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-BREAK Keyword
+__BREAK Keyword__
 If you want to quickly break out of a loop, employ the break keyword. We can use this keyword in both for and while loops.
 
 e.g.
@@ -308,8 +306,8 @@ e.g.
     4 5 6 7 8 9 10 11 12 13
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-CONTINUE Keyword
- The continue keyword, enables you to quit performing the present loop iteration and go on to the subsequent one
+__CONTINUE Keyword__
+The continue keyword, enables you to quit performing the present loop iteration and go on to the subsequent one
 
  e.g.
 
@@ -328,27 +326,27 @@ CONTINUE Keyword
         i += 1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Output
-2 3 4 5 6 7 8 9 10 14 15 16
+    # Output
+    2 3 4 5 6 7 8 9 10 14 15 16
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Exception Handling Keywords: try, except, raise, finally and assert
+# Exception Handling Keywords: try, except, raise, finally and assert
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-try: This keyword is designed to handle exceptions and is used in conjunction with the keyword except to handle problems in the program. When there is some kind of error, the program inside the "try" block is verified, but the code in that block is not executed.
+__try__: This keyword is designed to handle exceptions and is used in conjunction with the keyword except to handle problems in the program. When there is some kind of error, the program inside the "try" block is verified, but the code in that block is not executed.
 
 
-except: As previously stated, this operates in conjunction with "try" to handle exceptions.
+__except__: As previously stated, this operates in conjunction with "try" to handle exceptions.
 
 
-finally: Whatever the outcome of the "try" section, the "finally" box is implemented every time.
+__finally__: Whatever the outcome of the "try" section, the "finally" box is implemented every time.
 
 
-raise: The raise keyword could be used to specifically raise an exception.
+__raise__: The raise keyword could be used to specifically raise an exception.
 
 
-assert: This method is used to help in troubleshooting. Often used to ensure that code is correct. Nothing occurs if an expression is interpreted as true; however, if it is false, "AssertionError" is raised. An output with the error, followed by a comma, can also be printed.
+__assert__: This method is used to help in troubleshooting. Often used to ensure that code is correct. Nothing occurs if an expression is interpreted as true; however, if it is false, "AssertionError" is raised. An output with the error, followed by a comma, can also be printed.
 
 e.g.
 
@@ -412,21 +410,21 @@ e.g.
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Output
+    # Output
 
-Traceback (most recent call last):
+    Traceback (most recent call last):
 
-  File "C:\Users\Ashish Samarth\untitled5.py", line 6, in <module>
-    assert var2 != 0, "Divide by 0 error"
+    File "C:\Users\Ashish Samarth\untitled5.py", line 6, in <module>
+        assert var2 != 0, "Divide by 0 error"
 
-AssertionError: Divide by 0 error
+    AssertionError: Divide by 0 error
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
     # This is am important functionality of assert, it will stop the execution if the assertion fails and not let the program continue.
     # None of the try, except, finally code blocks got executed.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-pass Keyword
+__pass Keyword__
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 A null sentence is called a pass. It serves as a stand-in for something else. 
@@ -449,7 +447,7 @@ Let's say we possess a function that has not been coded yet however we wish to d
         pass
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-return Keyword
+__return Keyword__
 
 return expression is used to leave a function and generate a result.
 None keyword is returned by default if we don't specifically return a value
@@ -472,7 +470,7 @@ e.g.
     None
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-del keyword
+__del keyword__
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 del keyword is used to remove any reference to an object. In Python, every entity is an object. We can use the del command to remove a variable reference.
 
