@@ -1,16 +1,19 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Variables can hold values, and every value has a data-type. Python is a dynamically typed language; hence we do not need to define the type of the variable while 
 declaring it. The interpreter implicitly binds the value with its type.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 a=5
 
 The variable a holds integer value five and we did not define its type. Python interpreter will automatically interpret Variables 
 a as an integer type.
+
 Python enables us to check the type of the variable used in the program. Python provides us the type() function, which returns the 
 type of the variable passed.
 
-e.g.    
+e.g.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
     a=10  
     b="Hi Python"  
     c = 10.5  
@@ -18,11 +21,13 @@ e.g.
     print(type(b))  
     print(type(c))
 
-#Output:
-<type 'int'>
-<type 'str'>
-<type 'float'>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Output:
+    <type 'int'>
+    <type 'str'>
+    <type 'float'>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 Standard Data Types:
 A variable can hold different types of values. For example, a person's name must be stored as a string whereas its id must be 
 stored as an integer.
