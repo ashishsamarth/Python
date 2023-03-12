@@ -64,7 +64,7 @@ e.g.
 __Sequence Type__
 
 **********************
-String
+__String__
 
 The string can be defined as the sequence of characters represented in the quotation marks. In Python, we can use single, double, or triple quotes to define a string.String handling in Python is a straightforward task since Python provides built-in functions and operators to perform operations in the string.
 
