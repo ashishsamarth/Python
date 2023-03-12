@@ -29,18 +29,19 @@ e.g.
     <type 'float'>
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Standard Data Types:
+#Standard Data Types:
+
 A variable can hold different types of values. For example, a person's name must be stored as a string whereas its id must be 
 stored as an integer.
 
 Python provides various standard data types that define the storage method on each of them. The data types defined in Python 
 are given below.
 
-a.  Numbers         :-  Integer, Float, Complex Number
-b.  Sequence Type   :-  Strings, Type, Tuple
-c.  Boolean
-d.  Set
-e.  dictionary
+    a.  Numbers         :-  Integer, Float, Complex Number
+    b.  Sequence Type   :-  Strings, Type, Tuple
+    c.  Boolean
+    d.  Set
+    e.  dictionary
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
