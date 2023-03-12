@@ -78,17 +78,19 @@ String handling in Python is a straightforward task since Python provides built-
 In the case of string handling, the operator + is used to concatenate two strings as the operation "hello"+" python" returns "hello python".
 The operator * is known as a repetition operator as the operation "Python" *2 returns 'Python Python'
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 e.g.
+
     str = "string using double quotes"  
     print(str)  
     s = '''A multiline 
     string'''  
     print(s)
 
-# Output
-string using double quotes
-A multiline
-string
+    Output
+    string using double quotes
+    A multiline
+    string
 
     str1 = 'hello javatpoint' #string str1    
     str2 = ' how are you' #string str2    
@@ -97,13 +99,13 @@ string
     print (str1*2) #printing the string twice    
     print (str1 + str2) #printing the concatenation of str1 and str2
 
-# Output
-he
-o
-hello javatpointhello javatpoint
-hello javatpoint how are you
+    Output
+    he
+    o
+    hello javatpointhello javatpoint
+    hello javatpoint how are you
 
-**********************
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 List
 
 Python Lists are similar to arrays in C. However, the list can contain data of different types. The items stored in the list are separated with a comma (,) and 
