@@ -5,6 +5,7 @@ Python Literals can be defined as data that is given in a variable or constant.
 # 1.  String Literals
 
 There are two types of Strings supported in Python:
+
 a.  Single-line String- Strings that are terminated within a single-line are known as Single line Strings       
     e.g.        text1='Python' 
 
