@@ -24,6 +24,7 @@ Python contains the following keywords
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 To get the complete list of python keywords, you can use the following library
 
+```
     # import keyword library
     import keyword
 
@@ -36,6 +37,7 @@ To get the complete list of python keywords, you can use the following library
     # To get the list of all keywords in python 3
 
     print(f'Here is the current list of reserved keywords: \n\n{keyword.kwlist}')
+```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
     # Output
