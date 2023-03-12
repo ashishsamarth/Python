@@ -29,7 +29,7 @@ e.g.
     <type 'float'>
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Standard Data Types:
+__Standard Data Types__:
 
 A variable can hold different types of values. For example, a person's name must be stored as a string whereas its id must be 
 stored as an integer.
