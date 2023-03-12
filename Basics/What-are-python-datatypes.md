@@ -12,8 +12,9 @@ a as an integer type.
 Python enables us to check the type of the variable used in the program. Python provides us the type() function, which returns the 
 type of the variable passed.
 
-e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+e.g.
+
     a=10  
     b="Hi Python"  
     c = 10.5  
