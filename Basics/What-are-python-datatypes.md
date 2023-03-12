@@ -87,7 +87,7 @@ e.g.
     string'''  
     print(s)
 
-    Output
+    #Output
     string using double quotes
     A multiline
     string
@@ -99,7 +99,7 @@ e.g.
     print (str1*2) #printing the string twice    
     print (str1 + str2) #printing the concatenation of str1 and str2
 
-    Output
+    #Output
     he
     o
     hello javatpointhello javatpoint
@@ -114,7 +114,9 @@ enclosed within square brackets [].
 We can use slice [:] operators to access the data of the list. The concatenation operator (+) and repetition operator (*) works with the list in the same way as 
 they were working with the strings.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 e.g.
+
     list1  = [1, "hi", "Python", 2]    
     #Checking type of given list  
     print(type(list1))  
@@ -122,26 +124,26 @@ e.g.
     #Printing the list1  
     print (list1)  
       
-    # List slicing  
+    #List slicing  
     print (list1[3:])  
       
-    # List slicing  
+    #List slicing  
     print (list1[0:2])   
       
-    # List Concatenation using + operator  
+    #List Concatenation using + operator  
     print (list1 + list1)  
       
-    # List repetation using * operator  
+    #List repetation using * operator  
     print (list1 * 3)  
 
-# Output
+    #Output
     [1, 'hi', 'Python', 2]
     [2]
     [1, 'hi']
     [1, 'hi', 'Python', 2, 1, 'hi', 'Python', 2]
     [1, 'hi', 'Python', 2, 1, 'hi', 'Python', 2, 1, 'hi', 'Python', 2]
 
-**********************
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 Tuple
 
 A tuple is similar to the list in many ways. Like lists, tuples also contain the collection of the items of different data types. The items of the tuple are separated 
