@@ -45,13 +45,16 @@ are given below.
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Numbers
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+__Numbers__
+
 Number stores numeric values. The integer, float, and complex values belong to a Python Numbers data-type. Python provides the type() function to know the 
 data-type of the variable. Similarly, the isinstance() function is used to check an object belongs to a particular class
 
 Python creates Number objects when a number is assigned to a variable.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 e.g.
+
     a = 5  
     print("The type of a", type(a))                             # Output:   The type of a <class 'int'>
       
@@ -63,8 +66,8 @@ e.g.
     print(" c is a complex number", isinstance(1+3j,complex))   # Output:    c is a complex number: True
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Sequence Type
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+__Sequence Type__
+
 **********************
 String
 
