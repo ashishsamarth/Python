@@ -1,4 +1,6 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 What are python literals?
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 Python Literals can be defined as data that is given in a variable or constant.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,7 +91,8 @@ e.g.
 Python provides the four types of literal collection such as List literals, Tuple literals, Dict literals, and Set literals
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-a.  __Lists__:  List contains items of different data types. Lists are mutable i.e., modifiable. The values stored in List are separated by comma(,) and enclosed within square brackets([]). We can store different types of data in a List.
+a.  __Lists__:  List contains items of different data types. Lists are mutable i.e., modifiable. The values stored in List are separated by comma(,) and 
+enclosed within square brackets([]). We can store different types of data in a List.
 
 e.g.
 
@@ -107,7 +110,8 @@ e.g.
     print(dict)                                             #Output:{'name': 'Peter', 'Age': 18, 'Roll_nu': 101}
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-c.  __Tuple__:  Python tuple is a collection of different data-type. It is immutable which means it cannot be modified after creation. It is enclosed by the parentheses () and each element is separated by the comma(,).
+c.  __Tuple__:  Python tuple is a collection of different data-type. It is immutable which means it cannot be modified after creation. It is enclosed by the 
+parentheses () and each element is separated by the comma(,).
 
 e.g.    
         
@@ -115,7 +119,8 @@ e.g.
     print(tup)                      #Output: (10, 20, 'Dev', [2, 3, 4])
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-d.  __Set__:    Python set is the collection of the unordered dataset. It is enclosed by the {} and each element is separated by the comma(,).Its and un-ordered collection
+d.  __Set__:    Python set is the collection of the unordered dataset. It is enclosed by the {} and each element is separated by the comma(,).Its and 
+un-ordered collection
 
 e.g.    
         
