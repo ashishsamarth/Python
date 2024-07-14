@@ -29,7 +29,6 @@ e.g.
 # Standard Data Types:
 
 A variable can hold different types of values. For example, a person's name must be stored as a string whereas its id must be stored as an integer.
-
 Python provides various standard data types that define the storage method on each of them. The data types defined in Python are given below.
 
     a.  Numbers         :-  Integer, Float, Complex Number
@@ -42,7 +41,8 @@ Python provides various standard data types that define the storage method on ea
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __Numbers__
 
-Number stores numeric values. The integer, float, and complex values belong to a Python Numbers data-type. Python provides the type() function to know the data-type of the variable. Similarly, the isinstance() function is used to check an object belongs to a particular class
+Number stores numeric values. The integer, float, and complex values belong to a Python Numbers data-type. Python provides the type() function to know the 
+data-type of the variable. Similarly, the isinstance() function is used to check an object belongs to a particular class
 
 Python creates Number objects when a number is assigned to a variable.
 
@@ -65,9 +65,11 @@ __Sequence Type__
 **********************
 __String__
 
-The string can be defined as the sequence of characters represented in the quotation marks. In Python, we can use single, double, or triple quotes to define a string.String handling in Python is a straightforward task since Python provides built-in functions and operators to perform operations in the string.
+The string can be defined as the sequence of characters represented in the quotation marks. In Python, we can use single, double, or triple quotes to define a 
+string.String handling in Python is a straightforward task since Python provides built-in functions and operators to perform operations in the string.
 
-In the case of string handling, the operator + is used to concatenate two strings as the operation "hello"+" python" returns "hello python".The operator * is known as a repetition operator as the operation "Python" *2 returns 'Python Python'
+In the case of string handling, the operator + is used to concatenate two strings as the operation "hello"+" python" returns "hello python".The operator * is 
+known as a repetition operator as the operation "Python" *2 returns 'Python Python'
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 e.g.
@@ -99,9 +101,11 @@ e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __List__
 
-Python Lists are similar to arrays in C. However, the list can contain data of different types. The items stored in the list are separated with a comma (,) and enclosed within square brackets [].
+Python Lists are similar to arrays in C. However, the list can contain data of different types. The items stored in the list are separated with a comma (,) and 
+enclosed within square brackets [].
 
-We can use slice [:] operators to access the data of the list. The concatenation operator (+) and repetition operator (*) works with the list in the same way as they were working with the strings.
+We can use slice [:] operators to access the data of the list. The concatenation operator (+) and repetition operator (*) works with the list in the same way as 
+they were working with the strings.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 e.g.
@@ -135,7 +139,8 @@ e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __Tuple__
 
-A tuple is similar to the list in many ways. Like lists, tuples also contain the collection of the items of different data types. The items of the tuple are separated with a comma (,) and enclosed in parentheses ()
+A tuple is similar to the list in many ways. Like lists, tuples also contain the collection of the items of different data types. The items of the tuple are 
+separated with a comma (,) and enclosed in parentheses ()
 
 A tuple is a read-only data structure as we can't modify the size and value of the items of a tuple
 
@@ -178,7 +183,8 @@ e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __Dictionary__
 
-Dictionary is an unordered set of a key-value pair of items. It is like an associative array or a hash table where each key stores a specific value. Key can hold any primitive data type, whereas value is an arbitrary Python object.
+Dictionary is an unordered set of a key-value pair of items. It is like an associative array or a hash table where each key stores a specific value. Key can 
+hold any primitive data type, whereas value is an arbitrary Python object.
 
 The items in the dictionary are separated with the comma (,) and enclosed in the curly braces {}.
 
@@ -207,7 +213,8 @@ e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __Boolean__
 
-Boolean type provides two built-in values, True and False. These values are used to determine the given statement true or false. It denotes by the class bool. True can be represented by any non-zero value or 'T' whereas false can be represented by the 0 or 'F'
+Boolean type provides two built-in values, True and False. These values are used to determine the given statement true or false. It denotes by the class bool.
+ True can be represented by any non-zero value or 'T' whereas false can be represented by the 0 or 'F'
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 e.g.
@@ -225,7 +232,9 @@ e.g.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __Set__
 
-Python Set is the unordered collection of the data type. It is iterable, mutable(can modify after creation), and has unique elements. In set, the order of the elements is undefined; it may return the changed sequence of the element. The set is created by using a built-in function set(), or a sequence of elements is passed in the curly braces and separated by the comma. It can contain various types of values
+Python Set is the unordered collection of the data type. It is iterable, mutable(can modify after creation), and has unique elements. In set, the order of the 
+elements is undefined; it may return the changed sequence of the element. The set is created by using a built-in function set(), or a sequence of elements is 
+passed in the curly braces and separated by the comma. It can contain various types of values
 
     #Creating Empty set  
     set1 = set()  
