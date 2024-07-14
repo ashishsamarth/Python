@@ -1,23 +1,24 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python Keywords
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 Python keywords are unique words reserved with defined meanings and functions that we can only apply for those functions
 You dont need to import any keyword into your program because they're permanently present.
 
 However Python built in methods and classes are different. Built-in methods and classes are constantly present.
 
-Assigning a particular meaning to Python keywords means you can't use them for other purposes in our code. 
-You'll get a message of SyntaxError if you attempt to do the same
+Assigning a particular meaning to Python keywords means you can't use them for other purposes in our code. You'll get a message of SyntaxError if you attempt 
+to do the same
 
 If you attempt to assign anything to a built-in method or type, you will not receive a SyntaxError message
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Python contains the following keywords
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
     False	await	    else	    import	    pass
     None	break	    except	    in	        raise
-    True	class	    finally	    is	        return
-    and	    continue	for	        lambda	    try
-    as	    def	        from	    nonlocal	while
+    True    class	    finally	    is	        return
+    and continue	for	        lambda	    try
+    as  def	        from	    nonlocal	while
     assert	del	        global	    not	        with
     async	elif	    if	        or	        yield
 
@@ -41,18 +42,15 @@ To get the complete list of python keywords, you can use the following library
     # Output
     Here is the complete list of attribues and methods of keyword library 
 
-    ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 
-    'iskeyword', 'kwlist', 'main']
+    ['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'iskeyword', 'kwlist', 'main']
     ------------------------------------------------------------
     Here is the current list of reserved keywords: 
 
-    ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 
-    'else', 'except', 'finally', 'for',     'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 
-    'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+    ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif',     'else', 'except', 'finally', 
+    'for',     'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or',     'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Value Keywords: True, False, None
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Note: True is 1 and False is 0
@@ -81,7 +79,6 @@ e.g.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Operator Keywords: and, or, not, in, is
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 __AND Keyword__
@@ -184,13 +181,14 @@ A blank string or tuple or frozenset is same as the another one and also they ar
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # nonlocal keyword
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Nonlocal keyword usage is fairly analogous to global keyword usage. 
 
-The keyword nonlocal is designed to indicate that a variable within a function that is inside a function, i.e., a nested function is just not local to it, mplying that it is located in the outer function. 
+The keyword nonlocal is designed to indicate that a variable within a function that is inside a function, i.e., a nested function is just not local to it, 
+implying that it is located in the outer function. 
 
-We must define a non-local parameter with nonlocal if we ever need to change its value under a nested function. Otherwise, the nested function creates a local variable using that title
+We must define a non-local parameter with nonlocal if we ever need to change its value under a nested function. Otherwise, the nested function creates a local 
+variable using that title
 
 e.g.
 
@@ -248,7 +246,8 @@ Now see the variation without the nonlocal keyword
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Iteration Keywords: for, while, break, continue
 
-The iterative process and looping are essential programming fundamentals. To generate and operate with loops, Python has multiple keywords. These would be utilized and observed in almost every Python program.
+The iterative process and looping are essential programming fundamentals. To generate and operate with loops, Python has multiple keywords. These would be 
+utilized and observed in almost every Python program.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 __FOR Keyword__
@@ -334,7 +333,8 @@ The continue keyword, enables you to quit performing the present loop iteration 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-__try__: This keyword is designed to handle exceptions and is used in conjunction with the keyword except to handle problems in the program. When there is some kind of error, the program inside the "try" block is verified, but the code in that block is not executed.
+__try__: This keyword is designed to handle exceptions and is used in conjunction with the keyword except to handle problems in the program. When there is some
+ kind of error, the program inside the "try" block is verified, but the code in that block is not executed.
 
 
 __except__: As previously stated, this operates in conjunction with "try" to handle exceptions.
@@ -346,7 +346,8 @@ __finally__: Whatever the outcome of the "try" section, the "finally" box is imp
 __raise__: The raise keyword could be used to specifically raise an exception.
 
 
-__assert__: This method is used to help in troubleshooting. Often used to ensure that code is correct. Nothing occurs if an expression is interpreted as true; however, if it is false, "AssertionError" is raised. An output with the error, followed by a comma, can also be printed.
+__assert__: This method is used to help in troubleshooting. Often used to ensure that code is correct. Nothing occurs if an expression is interpreted as true; 
+however, if it is false, "AssertionError" is raised. An output with the error, followed by a comma, can also be printed.
 
 e.g.
 
