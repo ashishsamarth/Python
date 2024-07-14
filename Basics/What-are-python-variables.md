@@ -1,3 +1,6 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+What-are-python-variables ?
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 Variable is a name that is used to refer to memory location. 
 Python variable is also known as an identifier and used to hold value
 
@@ -22,14 +25,15 @@ Variables are the example of identifiers. An Identifier is used to identify the 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Declaring Variable and Assigning Values
 
-Python does not bind us to declare a variable before using it in the application. It allows us to create a variable at the required time.We don't need to declare explicitly variable in Python. When we assign any value to the variable, that variable is declared automatically.The equal (=) operator is used to assign value to a variable
+Python does not bind us to declare a variable before using it in the application. It allows us to create a variable at the required time.We don't need to 
+declare explicitly variable in Python. When we assign any value to the variable, that variable is declared automatically.The equal (=) operator is used to 
+assign value to a variable
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 #   Object References
 
-    It is necessary to understand how the Python interpreter works when we declare a variable. The process of treating variables
-     is somewhat different from many other programming languages.Python is the highly object-oriented programming language; 
-     that's why every data item belongs to a specific type of class. 
+    It is necessary to understand how the Python interpreter works when we declare a variable. The process of treating variables is somewhat different from many
+    other programming languages.Python is the highly object-oriented programming language; that's why every data item belongs to a specific type of class. 
     
     Consider the following example.
 
@@ -157,7 +161,9 @@ a.  Local Variable  :   Local variables are the variables that declared inside t
     # We tried to use local variable outside their scope; it threw the NameError.
 
 **********************
-b.  Global Variables : Global variables can be used throughout the program, and its scope is in the entire program. We can use global variables inside or outside the function. A variable declared outside the function is the global variable by default. Python provides the global keyword to use global variable inside the function. If we don't use the global keyword, the function treats it as a local variable. 
+b.  Global Variables : Global variables can be used throughout the program, and its scope is in the entire program. We can use global variables inside or outside 
+the function. A variable declared outside the function is the global variable by default. Python provides the global keyword to use global variable inside the 
+function. If we don't use the global keyword, the function treats it as a local variable. 
 
 Let's understand the following example
 
