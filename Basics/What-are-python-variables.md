@@ -14,13 +14,12 @@ It is recommended to use lowercase letters for the variable name. MyVar and myva
 
 Variables are the example of identifiers. An Identifier is used to identify the literals used in the program. The rules to name an identifier are given below
 
-    1.  The first character of the variable must be an alphabet or underscore ( _ )
-    2.  All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore, or digit (0-9)
-    3.  All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore, or digit (0-9)
-    4.  Identifier name must not be similar to any keyword defined in the language
-    5.  Identifier names are case sensitive; for example, my name, and MyName is not the same.
-            Examples of valid identifiers: a123, _n, n_9, etc.
-            Examples of invalid identifiers: 1a, n%4, n 9, etc.
+1.  The first character of the variable must be an alphabet or underscore ( _ )
+2.  All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore, or digit (0-9)
+3.  Identifier name must not be similar to any keyword defined in the language
+4.  Identifier names are case sensitive; for example, my name, and MyName is not the same.
+        Examples of valid identifiers: a123, _n, n_9, etc.
+        Examples of invalid identifiers: 1a, n%4, n 9, etc.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Declaring Variable and Assigning Values
