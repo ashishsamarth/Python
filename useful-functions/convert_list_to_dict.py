@@ -4,9 +4,9 @@
 def convert_list_to_dict(inp_list, starting_idx_position):
     # define an empty dictionary
     output_dict = dict()
-    # Enumerate over the input list with a starting counter as zero
+    # Enumerate over the input set with a starting counter as provided by user
     for count, item in enumerate(inp_list,start=starting_idx_position):
-        # Assign the counter as key and tuple members as values
+        # Assign the counter as key and list members as values
         output_dict[count] = item
     return output_dict
 
