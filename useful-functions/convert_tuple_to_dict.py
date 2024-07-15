@@ -1,4 +1,4 @@
-# Method to convert a list to a dictionary
+# Method to convert a tuple to a dictionary
 # Input:1 - Iterable Sequence
 # Input:2 - Starting index position
 def convert_tuple_to_dict(inp_tuple, starting_idx_position):
