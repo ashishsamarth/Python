@@ -220,6 +220,56 @@ Output:
 <class 'map'>=['11', '22', '33', '44', '55']
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Filter Function
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a. Filter() is used to create a list of elements for which a function returns “True”.
+b. While printing the output, you must define the data type of the output, else a filter object notation will be printed.
+
+Consider the Following Example
+---------------------------
+a. using regular function approach
+
+my_iterable = [20, 33, 56, 90, 2,4,5,12]
+
+def even_items(n):
+    even_list=[]
+    for i in n:
+        if i%2 == 0:
+            even_list.append(i)
+    return even_list
+
+def odd_items(n):
+    odd_list=[]
+    for i in n:
+        if i%2 != 0:
+            odd_list.append(i)
+    return odd_list        
+        
+my_even_iterables = even_items(my_iterable)
+my_odd_iterables = odd_items(my_iterable)
+print('my_even_iterables :- ', my_even_iterables)
+print('my_odd_iterables :- ', my_odd_iterables)
+
+Output:
+my_even_iterables :-  [20, 56, 90, 2, 4, 12]
+my_odd_iterables :-  [33, 5]
+---------------------------
+
+b. using Filter Function with lambda and a iterable list
+
+my_iterable = [20, 33, 56, 90, 2,4,5,12]
+
+my_even_iterable = list(filter(lambda x: (x%2==0), my_iterable))
+my_odd_iterable = list(filter(lambda x: (x%2!=0), my_iterable))
+
+print('my_even_iterables :- ', my_even_iterable)
+print('my_odd_iterables :- ', my_odd_iterable)
+
+Output:
+my_even_iterables :-  [20, 56, 90, 2, 4, 12]
+my_odd_iterables :-  [33, 5]
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Yield
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Yield keyword in Python is similar to a return statement used for returning values or objects in Python. However, there is a slight difference. The yield statement returns a generator object
