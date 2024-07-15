@@ -1,6 +1,6 @@
 # Method to convert a tuple to a dictionary
 # Input:1 - Iterable Sequence
-# Input:2 - Starting index position
+# Input:2 - Starting Counter position
 def convert_tuple_to_dict(inp_tuple, starting_idx_position):
     # define an empty dictionary
     output_dict = dict()
