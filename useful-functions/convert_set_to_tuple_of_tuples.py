@@ -11,3 +11,6 @@ def convert_set_to_tuple_of_tuples(inp_set, starting_idx_position, increment_by)
         yield starting_idx_position, item
         # increment counter position by this number
         starting_idx_position += increment_by
+
+# Note: The final Print statement will determine the output datatype
+# Example:  print(tuple(convert_set_to_tuple_of_tuples(inp_set, 2,  3))) : Will generate a tuple of tuples        
