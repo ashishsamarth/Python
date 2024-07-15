@@ -19,3 +19,275 @@ The 0x prefix means that the number after it is denoted as :
 A hexadecimal
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A Value returned by the input() function is
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A String
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The 0o prefix means that the number after it is denoted as:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A octal
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constructors
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constructors are generally used for instantiating an object. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created. In Python 
+the __init__() method is called the constructor and is always called when an object is created.
+
+def __init__(self):
+    # body of the constructor
+
+Types of constructors : 
+
+a. default constructor      : The default constructor is a simple constructor which doesn’t accept any arguments. Its definition has only one argument which is a reference to the instance being 
+                                constructed.
+
+class Employee:
+   'Common base class for all employees'
+   def __init__(self):
+      self.name = "Ashish"
+      self.age = 24
+
+e1 = Employee()
+print ("Name: {}".format(e1.name))
+print ("age: {}".format(e1.age))
+
+
+b. parameterized constructor: A constructor with parameters is known as parameterized constructor. The parameterized constructor takes its first argument as a reference to the instance being constructed
+                                 known as self and the rest of the arguments are provided by the programmer.    
+
+class Employee:
+   'Common base class for all employees'
+   def __init__(self, name, age):
+      self.name = name
+      self.age = age
+
+e1 = Employee("Ashish", 24)
+e2 = Employee("Samarth", 25)
+
+print ("Name: {}".format(e1.name))
+print ("age: {}".format(e1.age))
+print ("Name: {}".format(e2.name))
+print ("age: {}".format(e2.age))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python Error Codes and Details
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+errno.EPERM         Operation not permitted
+errno.ENOENT        No such file or directory
+errno.ESRCH         No such process
+errno.EINTR         Interrupted system call.
+errno.EIO           I/O error
+errno.ENXIO         No such device or address
+errno.E2BIG         Arg list too long
+errno.ENOEXEC       Exec format error
+errno.EBADF         Bad file number
+errno.ECHILD        No child processes
+errno.EAGAIN        Try again
+errno.ENOMEM        Out of memory
+errno.EACCES        Permission denied
+errno.EFAULT        Bad address
+errno.ENOTBLK       Block device required
+errno.EBUSY         Device or resource busy
+errno.EEXIST        File exists
+errno.EXDEV         Cross-device link
+errno.ENODEV        No such device
+errno.ENOTDIR       Not a directory
+errno.EISDIR        Is a directory
+errno.EINVAL        Invalid argument
+errno.ENFILE        File table overflow
+errno.EMFILE        Too many open files
+errno.ENOTTY        Not a typewriter
+errno.ETXTBSY       Text file busy
+errno.EFBIG         File too large
+errno.ENOSPC        No space left on device
+errno.ESPIPE        Illegal seek
+errno.EROFS         Read-only file system
+errno.EMLINK        Too many links
+errno.EPIPE         Broken pipe
+errno.EDOM          Math argument out of domain of func
+errno.ERANGE        Math result not representable
+errno.EDEADLK       Resource deadlock would occur
+errno.ENAMETOOLONG  File name too long
+errno.ENOLCK        No record locks available
+errno.ENOSYS        Function not implemented
+errno.ENOTEMPTY     Directory not empty
+errno.ELOOP         Too many symbolic links encountered
+errno.EWOULDBLOCK   Operation would block
+errno.ENOMSG        No message of desired type
+errno.EIDRM         Identifier removed
+errno.ECHRNG        Channel number out of range
+errno.EL2NSYNC      Level 2 not synchronized
+errno.EL3HLT        Level 3 halted
+errno.EL3RST        Level 3 reset
+errno.ELNRNG        Link number out of range
+errno.EUNATCH       Protocol driver not attached
+errno.ENOCSI        No CSI structure available
+errno.EL2HLT        Level 2 halted
+errno.EBADE         Invalid exchange
+errno.EBADR         Invalid request descriptor
+errno.EXFULL        Exchange full
+errno.ENOANO        No anode
+errno.EBADRQC       Invalid request code
+errno.EBADSLT       Invalid slot
+errno.EDEADLOCK     File locking deadlock error
+errno.EBFONT        Bad font file format
+errno.ENOSTR        Device not a stream
+errno.ENODATA       No data available
+errno.ETIME         Timer expired
+errno.ENOSR         Out of streams resources
+errno.ENONET        Machine is not on the network
+errno.ENOPKG        Package not installed
+errno.EREMOTE       Object is remote
+errno.ENOLINK       Link has been severed
+errno.EADV          Advertise error
+errno.ESRMNT        Srmount error
+errno.ECOMM         Communication error on send
+errno.EPROTO        Protocol error
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lambda Function
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lambda function mainly used to create a function without a name. It is mainly used with filter() and map() functions.
+
+a. The lambda function can evaluate only one expression
+b. The lambda function can accept any number of arguments
+
+Consider Following Example:
+
+a = int(input('Please-Enter-#-1 :- '))
+b = int(input('Please-Enter-#-2 :- '))
+c = int(input('Please-Enter-#-3 :- '))
+
+sum = lambda a,b,c: (a**2 + 2*a*b + c**2)
+
+print("Output of the Lambda Function is:- ", sum(a,b,c))
+
+Output: 
+Please-Enter-#-1 :- 2
+Please-Enter-#-2 :- 4
+Please-Enter-#-3 :- 6
+Output of the Lambda Function is:-  56  
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Map Function
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a. The Map() function takes a function and a iterable sequence as input.Map() performs an operation on the entire list and return the result in a new list
+b. The second map() function argument can be a iterable sequence [List, Tuple, Set]
+c. While printing the output, you must define the data type of the output, else a map object notation will be printed.
+d. If the ask is to apply a function to an iterable, combination of map and lambda is very useful
+
+Consider the following Examples:
+---------------------------
+a. usage of Map with a Function, a list and a tuple
+
+a=['What', 'are', 'these', 'numbers']
+b=('1','2','3','4','5')
+
+def sum_iterable(a,b):
+    return a+b
+
+my_map=map(sum_iterable, a,b)
+print(type(my_map), tuple(my_map), sep='=')
+
+Output:
+<class 'map'>=('What1', 'are2', 'these3', 'numbers4')
+---------------------------
+b. usage of Map with a Function, a set and a tuple
+
+a={'1','2','3','4','5'}
+b=('1','2','3','4','5')
+
+def sum_iterable(a,b):
+    return a+b
+
+my_map=map(sum_iterable, a,b)
+print(type(my_map), tuple(my_map), sep='=')
+
+Output: 
+<class 'map'>=('41', '12', '53', '34', '25')
+---------------------------
+c. usage of Map with a Lambda Function, a list and a list
+
+a=['1','2','3','4','5']
+b=['1','2','3','4','5']
+
+my_map=map((lambda a,b: a+b), a,b)
+print(type(my_map), list(my_map), sep='=')
+
+Output: 
+<class 'map'>=['11', '22', '33', '44', '55']
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Yield
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Yield keyword in Python is similar to a return statement used for returning values or objects in Python. However, there is a slight difference. The yield statement returns a generator object
+{Continuous values [as a list]} to the one who calls the function which contains yield, instead of simply returning A value. 
+Unlike the return keyword which stops further execution of the function, the yield keyword continues to the end of the function.
+
+Consider the following Example:
+---------------------------
+def filter_odd(numbers):
+   for number in range(numbers):
+       if(number%2!=0):
+           yield number 
+
+odd_numbers = filter_odd(50)
+
+print(type(odd_numbers),list(odd_numbers), sep='=')
+
+Output: <class 'generator'>=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]
+
+Another Example of Fibonacci Series via Yeild and Non-Yield Functions
+---------------------------
+-Without Yield
+
+def fibonacci_series(n):
+	a,b=0,1
+	print(a, b, (a+b))
+	for i in range(n-3):
+		a,b=b,a+b
+		print(a+b)
+		
+fibonacci_series(20)
+
+Output: 
+0 1 1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+2584
+4181
+---------------------------
+-Via Yield 
+
+def fibonacci_series_via_yield(n):
+	a,b=0,1
+	total=0
+	while total < n:
+		yield a
+		c=a+b
+		a=b
+		b=c
+		total +=1
+
+fib_object=(fibonacci_series_via_yield(20))
+
+print(type(fib_object),list(fib_object), sep='=')
+
+Output: <class 'generator'>=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
