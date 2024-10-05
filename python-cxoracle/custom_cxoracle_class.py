@@ -39,9 +39,11 @@ class CustomCxOracle:
         # get the client version and assign it to initialization attribute
         self.client_version = cx_Oracle.clientversion()
         # assign the user provided db_user to initialization method, for reuse across all methods
-        self.db_user = connection_params.get('user')
+        # use _ to make this a private variable, which can be read but cannot be modified
+        self._db_user = connection_params.get('user')
         # assign the user provided db_password to initialization method, for reuse across all methods
-        self.db_password = connection_params.get('password')
+        # use __ to mangle the variable, so that the instantiated object cannot see this variable and its value
+        self.__db_password = connection_params.get('password')
         # assign the user provided connection_dsn to initialization method, for reuse across all methods
         self.connection_dsn = connection_params.get('dsn')
         '''
@@ -56,7 +58,7 @@ class CustomCxOracle:
             When a heterogeneous pool is created by setting homogeneous to False and no credentials are supplied during pool
             creation, then a user name and password may be passed to acquire():
             '''
-            self.db_auto_connect = self.pool.acquire(user=self.db_user, password=self.db_password)
+            self.db_auto_connect = self.pool.acquire(user=self._db_user, password=self.__db_password)
         # In Case Database Error occurs
         except cx_Oracle.DatabaseError as _errors:
             # Capture the errors in a variable
