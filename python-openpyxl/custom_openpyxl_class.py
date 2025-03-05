@@ -1072,7 +1072,7 @@ class CustomOpenpyxl:
         Argument for this method is: - New File Name
         '''
         assert _new_file_name.split('.')[-1] in ['xls', 'xlsx'], 'Input file does not have valid excel extension'
-        return self.my_base_wb.save(_new_file_name)
+        return self.my_base_wb.save(_new_file_name+'.xlsx')
 
     def write_values_to_empty_cells_in_column(self, _header_row_num: int, _col_name: str, _write_val):
         '''
