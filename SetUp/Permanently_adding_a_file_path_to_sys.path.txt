@@ -1,0 +1,31 @@
+To permanently add a path to Python's sys.path, which dictates where Python looks for modules and packages, the following methods can be utilized:
+
+1. Using the PYTHONPATH Environment Variable:
+This is a common and effective method for both Unix-like systems (Linux, macOS) and Windows. Unix-like Systems.
+Edit your shell's configuration file (e.g., ~/.bashrc, ~/.zshrc, or ~/.bash_profile) and add the following line:
+
+    export PYTHONPATH="/path/to/your/directory:$PYTHONPATH"
+
+Replace /path/to/your/directory with the actual path you want to add. If adding multiple paths, separate them with colons (:). After saving the file, either restart your terminal or source the file (e.g., source ~/.bashrc) for the changes to take effect.
+
+Windows:
+1.Right-click on "This PC" or "My Computer" and select "Properties."
+2.Navigate to "Advanced system settings" and then click "Environment Variables."
+3.Under "System variables" or "User variables," find or create a variable named PYTHONPATH.
+4.Edit the variable and add your desired path(s), separating multiple paths with semicolons (;).
+
+2. Using Path Configuration Files (.pth files):
+
+This method involves creating a simple text file that Python will automatically read.
+Locate your Python installation's site-packages directory. This is typically where third-party packages are installed. You can find it by running:
+
+    import site
+    print(site.getsitepackages())
+
+1.Inside the site-packages directory, create a new file with a .pth extension (e.g., my_custom_paths.pth).
+2.Inside this .pth file, add each path you want to include on a new line. For example:
+
+    /path/to/first/directory
+    /path/to/second/directory
+
+Python will read these paths when it starts and add them to sys.path
