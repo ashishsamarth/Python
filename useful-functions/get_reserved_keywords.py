@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 27 13:38:43 2023
-
-@author: Ashish Samarth
-"""
-
 # Import the keyword library
 from keyword import kwlist
 
@@ -26,5 +19,6 @@ Here is the <list> of reserved keywords in python3:
 
  ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 
  'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
 
 '''
