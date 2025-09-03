@@ -1,8 +1,10 @@
-# Method to get disk information
 import shutil
 
 def get_disk_info():
-    # Capture the disk usage in three different variable (Note these are in bytes)
+    '''
+    Method to get disk information
+    Capture the disk usage in three different variable (Note these are in bytes)
+    '''
     total_b, used_b, available_b = shutil.disk_usage('.')
     gb = 10 ** 9
     # Convert bytes to gigabytes
@@ -13,4 +15,5 @@ def get_disk_info():
     disk_info={'Total': total_gb,
            'Used': used_gb,
            'Available': available_gb}
+
     return disk_info
