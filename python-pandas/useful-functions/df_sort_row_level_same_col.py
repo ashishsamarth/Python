@@ -1,11 +1,13 @@
-# Method to sort data in a column at row level (basically each cell of a column)
-# It has four arguments
-# Column Name:- Where Data Needs to be sorted
-# _delim:- The current delimiter of the dataset in the cell
-# _sort_type:- Can be 'asc' or 'desc'
-# _str_join_param:- User provided _delim to join the strings
-# Important Note:- For this method to provide results, the column name in question must have data in it
 def df_sort_row_level_same_col(self, _col_name, _delim, _sort_type, _str_join_param):
+    '''
+    Method to sort data in a column at row level (basically each cell of a column)
+    It has four arguments
+    Column Name:- Where Data Needs to be sorted
+    _delim:- The current delimiter of the dataset in the cell
+    _sort_type:- Can be 'asc' or 'desc'
+    _str_join_param:- User provided _delim to join the strings
+    Important Note:- For this method to provide results, the column name in question must have data in it
+    '''
     # The for loop will run for the number of rows in the dataframe
     for item in range(0, self.my_df.shape[0]):
         if _sort_type == 'asc':
@@ -20,4 +22,5 @@ def df_sort_row_level_same_col(self, _col_name, _delim, _sort_type, _str_join_pa
         elif _sort_type == 'desc':
             self.my_df.loc[item, _col_name] = _str_join_param.join(
                 sorted(self.my_df.loc[item, _col_name].split(_delim), reverse=True))
+
     return self.my_df
