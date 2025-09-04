@@ -10,7 +10,6 @@ from time import ctime
 # Class definitions should use CamelCase convention based on pep-8 guidelines
 class CustomOs:
 
-
     # Initialize the class with filepath and filename
     def __init__(self, _my_file_path, _my_file_name):
         self.my_filepath = _my_file_path
@@ -24,14 +23,18 @@ class CustomOs:
         # Get the OS Machine name
         self.os_machine = os.uname().machine
     
-    # Method to get the shell
-    # Assumption: OS is Linux
     def get_shell_info(self):
+        '''
+        Method to get the shell
+        Assumption: OS is Linux
+        '''
         if self.os_type == 'Linux':
             return os.environ['SHELL'].split('/')[-1]
     
-    # Method to get disk information
     def get_disk_info():
+        '''
+        Method to get disk information
+        '''
         # Capture the disk usage in three different variable (Note these are in bytes)
         total_b, used_b, available_b = shutil.disk_usage('.')
         gb = 10 ** 9
@@ -45,9 +48,11 @@ class CustomOs:
                'Available': available_gb}
         return disk_info
 
-    # Method to get file metadata
-    # Argument to this method: input filename
     def get_file_metadata(self):
+        '''
+        Method to get file metadata
+        Argument to this method: input filename        
+        '''
         file_metadata = {'File_Name': self.my_filename,
                      'File_Owner_username': getpwuid(os.stat(self.my_filename).st_uid).pw_name,
                      'File_Owner_name': getpwuid(os.stat(self.my_filename).st_uid).pw_gecos,
@@ -57,25 +62,37 @@ class CustomOs:
                      }
         return file_metadata
 
-    # Method to navigate into a target directory
-    # This method utilizes the file path captured during class initialization
+    
     def change_dir(self):
+        '''
+        Method to navigate into a target directory
+        This method utilizes the file path captured during class initialization        
+        '''
         os.chdir(self.my_filepath)
     
-    # Method to rename the files
+    
     @staticmethod
     def rename_files(self, _current_file_name, _new_file_name):
+        '''
+        Method to rename the files
+        '''
         os.renames(_current_file_name, _new_file_name)
     
-    # Method to list the contents of the directory
-    # Note: listdir() does not need an argument
+
     @staticmethod
     def dir_contents(self):
+        '''
+        Method to list the contents of the directory
+        Note: listdir() does not need an argument        
+        '''
         os.listdir()
     
-    # Method to go back n number of directories
-    # Argument to this method is: number (integer) of directories to go back
+
     def go_back_n_dirs(self, num_of_dirs: int):
+        '''
+        Method to go back n number of directories
+        Argument to this method is: number (integer) of directories to go back
+        '''
         # method variable to hold the message
         note = 'Input Argument must be valid integer'
         try:
@@ -91,4 +108,5 @@ class CustomOs:
             # return type of this method is string
             return f'Navigated Back to {self.current_directory}'
         except AssertionError:
+
             return note
