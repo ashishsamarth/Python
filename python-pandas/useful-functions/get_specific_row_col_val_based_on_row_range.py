@@ -1,7 +1,9 @@
-# Method to get values from specific rows based on a row range for selected columns (inclusive of ending row)
-# Arguments to this method are: - starting row index, ending row index and list with column names
-# Only selected columns will be printed based on the column names provided
 def get_specific_row_col_val_based_on_row_range(self, _row_start, _row_end, _col_names_list):
+    '''
+    Method to get values from specific rows based on a row range for selected columns (inclusive of ending row)
+    Arguments to this method are: - starting row index, ending row index and list with column names
+    Only selected columns will be printed based on the column names provided
+    '''
     # The columns name(s) provided should be in a list, other iterable methods will not work
     if isinstance(_col_names_list, list):
         # using list comprehension, get the index of the columns
@@ -16,4 +18,5 @@ def get_specific_row_col_val_based_on_row_range(self, _row_start, _row_end, _col
             # A list containing column indexes can also be used
             return self.my_df.iloc[_row_start:_row_end + 1, _col_idx_list]
     else:
+
         print('Column Names must be in a list')
