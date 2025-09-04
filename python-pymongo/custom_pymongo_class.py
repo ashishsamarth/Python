@@ -5,8 +5,11 @@ from pprint import pprint
 
 class CustomPymongo:
 
-    # Initialize the class with **kwargs containing the parameters (host, port, username, password, authsource & authMechanism)
     def __init__(self, **connection_params):
+        '''
+        Initialize the class with **kwargs containing the parameters (host, port, username, password, authsource & authMechanism)
+        usage: my_obj = CustomPymongo(**db_conf.python_api_connect)
+        '''
         self.my_client = MongoClient(host=connection_params.get('host') + ':' + str(connection_params.get('port')),
                                      username=connection_params.get(
                                          'username'),
@@ -24,15 +27,17 @@ class CustomPymongo:
         self.connected_as = ''
         self.connected_db = ''
 
-    # usage: my_obj = CustomPymongo(**db_conf.python_api_connect)
-
-    # Method to see existing database in connected Mongo Instance
     def show_dbs(self):
+        '''
+        Method to see existing database in connected Mongo Instance
+        '''
         return self.my_client.list_database_names()
-
-    # Method to connect (use) specific Mongo-DB or Schema
-    # Argument to this method is:- Database Name
+        
     def connect_db(self, _db_name):
+        '''
+        Method to connect (use) specific Mongo-DB or Schema
+        Argument to this method is:- Database Name
+        '''
         note = 'Database Name provided, does not exist in connected Mongo Instance'
         assert _db_name in self.show_dbs(), note
         # following line connects to the user provided DB, only if its a existing DB in mongo instance
@@ -52,23 +57,29 @@ class CustomPymongo:
         self.connected_as = 'Connected to DB as :- ' + self.connected_db.command('connectionStatus')['authInfo']['authenticatedUsers'][0]['user']
         # return type of this method is the DB instance
         return _my_db
-
-    # Method to get the collection names for a connected DB of Mongo Instance
+        
     def get_collection_names(self):
+        '''
+        Method to get the collection names for a connected DB of Mongo Instance
+        '''
         return self.connected_db.list_collection_names()
 
-    # Method to access a collection in connected DB of Mongo Instance
-    # Argument to this method: A valid collection name
     def accessed_collection(self, _collection_name):
+        '''
+        Method to access a collection in connected DB of Mongo Instance
+        Argument to this method: A valid collection name
+        '''
         note = 'Collection Name provided is not a present in Connected Database'
         assert _collection_name in self.get_collection_names(), note
         # In case of Assertion error, the collection cannot be accessed
         _my_collection = self.connected_db[_collection_name]
         return _my_collection
 
-    # Method to see one sample document from a given collection name
-    # Argument to this method: Collection Name
     def accessed_collection_find_one(self, _collection_name):
+        '''
+        Method to see one sample document from a given collection name
+        Argument to this method: Collection Name
+        '''
         note = 'Collection Name provided is not a present in Connected Database'
         # Assert if the provided colleciton name exists in the connected DB
         assert _collection_name in self.get_collection_names(), note
@@ -77,17 +88,22 @@ class CustomPymongo:
         # return type is dict
         return _my_collection.find_one()
 
-    # Method to execute specific DB commands on connected database
-    # Argument to this method: DB command
-    # Reference URL for list of executable commands:- "https://www.mongodb.com/docs/manual/reference/command/"
     def db_execute_command(self, _command):
+        '''
+        Method to execute specific DB commands on connected database
+        Argument to this method: DB command
+        Reference URL for list of executable commands:- "https://www.mongodb.com/docs/manual/reference/command/"
+        '''
         return self.connected_db.command(_command)
 
-    # Method to close the connection of connected Mongo instance
     def connection_close(self):
+        '''
+        Method to close the connection of connected Mongo instance
+        '''
         self.my_client.close()
 
 # _my_obj = CustomPymongo(**db_conf.python_api_connect)
 # pprint(_my_obj.show_dbs())
 # pprint(_my_obj.connect_db('development'))
+
 # pprint(_my_obj.accessed_collection('zips'))    
